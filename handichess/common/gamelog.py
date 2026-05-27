@@ -23,9 +23,9 @@ class GameRecord:
     Record of a single completed game.
 
     Fields:
-        pattern_id:       Removal pattern identifier (e.g. "queen", "rook_bishop_pawn").
-        handicap_side:    "white" or "black" — who had pieces removed.
-        result:           Game result from the *handicap side's* perspective:
+        pattern_id:       Removal pattern identifier (e.g. "rook_bishop_pawn").
+        q_side:           "white" or "black" — which side has the Queen.
+        result:           Game result from the *q_side's* perspective:
                           "win", "draw", or "loss".
         result_score:     Numeric score: 1.0 (win), 0.5 (draw), 0.0 (loss).
         ply:              Total number of half-moves played.
@@ -39,7 +39,7 @@ class GameRecord:
         extra:            Optional dict for additional metadata.
     """
     pattern_id: str
-    handicap_side: str          # "white" | "black"
+    q_side: str                 # "white" | "black"
     result: str                 # "win" | "draw" | "loss"
     result_score: float         # 1.0 | 0.5 | 0.0
     ply: int
@@ -54,8 +54,8 @@ class GameRecord:
         if not self.timestamp:
             self.timestamp = datetime.now().isoformat()
         # Validate
-        assert self.handicap_side in ("white", "black"), (
-            f"Invalid handicap_side: {self.handicap_side}"
+        assert self.q_side in ("white", "black"), (
+            f"Invalid q_side: {self.q_side}"
         )
         assert self.result in ("win", "draw", "loss"), (
             f"Invalid result: {self.result}"
@@ -67,15 +67,15 @@ class GameRecord:
 
 def result_from_outcome(
     outcome: str,
-    handicap_side: str,
+    q_side: str,
 ) -> tuple[str, float]:
     """
     Convert a game outcome string to (result, result_score) from the
-    handicap side's perspective.
+    Q side's perspective.
 
     Args:
         outcome: "1-0" (white wins), "0-1" (black wins), "1/2-1/2" (draw).
-        handicap_side: "white" or "black".
+        q_side: "white" or "black".
 
     Returns:
         (result, result_score) tuple.
@@ -83,12 +83,12 @@ def result_from_outcome(
     if outcome == "1/2-1/2":
         return "draw", 0.5
     elif outcome == "1-0":
-        if handicap_side == "white":
+        if q_side == "white":
             return "win", 1.0
         else:
             return "loss", 0.0
     elif outcome == "0-1":
-        if handicap_side == "black":
+        if q_side == "black":
             return "win", 1.0
         else:
             return "loss", 0.0
@@ -165,7 +165,7 @@ class GameLog:
     def filter(
         self,
         pattern_id: Optional[str] = None,
-        handicap_side: Optional[str] = None,
+        q_side: Optional[str] = None,
         engine: Optional[str] = None,
     ) -> list[GameRecord]:
         """Filter records by pattern, side, or engine."""
@@ -173,7 +173,7 @@ class GameLog:
         for record in self.read():
             if pattern_id and record.pattern_id != pattern_id:
                 continue
-            if handicap_side and record.handicap_side != handicap_side:
+            if q_side and record.q_side != q_side:
                 continue
             if engine and record.engine != engine:
                 continue

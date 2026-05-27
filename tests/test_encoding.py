@@ -82,6 +82,17 @@ class TestActionEncoding:
                 f"Roundtrip failed: {move} → action {action} → {decoded}"
             )
 
+    def test_roundtrip_black_underpromotion(self):
+        """Test roundtrip for black underpromotions."""
+        # Black pawn on c2 can promote to c1 or capture on d1/b1
+        board = chess.Board("8/8/8/8/8/8/2p5/1R2K3 b - - 0 1")
+        for move in board.legal_moves:
+            action = encode_action(move, board)
+            decoded = decode_action(action, board)
+            assert decoded == move, (
+                f"Roundtrip failed for black move: {move} → action {action} → {decoded}"
+            )
+
     def test_action_range(self):
         """All encoded actions should be in [0, ACTION_SIZE)."""
         board = chess.Board()

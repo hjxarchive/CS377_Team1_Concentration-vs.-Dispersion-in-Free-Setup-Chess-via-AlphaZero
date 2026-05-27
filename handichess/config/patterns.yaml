@@ -1,33 +1,17 @@
 # ============================================================
-# Handicap Removal Patterns — 9 points each
+# Matchup Patterns — Design B (NoQ vs Q)
 # ============================================================
-# Each pattern specifies which pieces to remove and from which
-# squares (for the white side; black squares are mirrored).
+# Each pattern specifies:
+#   - noq_removals: always Queen (9 pts).
+#   - q_removals: the bundle (9 pts).
 #
-# Square naming follows python-chess convention:
-#   a1=0, b1=1, ..., h1=7, a2=8, ..., h8=63
-#   For white: rank 1 (pieces) and rank 2 (pawns)
-#   For black: rank 8 (pieces) and rank 7 (pawns) — auto-mirrored
+# Square naming follows python-chess convention (for White).
+# Black's removals will be automatically mirrored (rank 1 -> 8).
 #
-# Concentration levels:
-#   1 piece removed  = highest concentration
-#   3 pieces removed = high
-#   5 pieces removed = medium
-#   7 pieces removed = low (maximum dispersion)
+# Both sides end up with exactly 30 material points.
 # ============================================================
 
 patterns:
-
-  # --- Highest concentration (1 piece) ---
-  queen:
-    description: "Remove queen (9 pts)"
-    total_points: 9
-    num_removed: 1
-    concentration: "highest"
-    phase: 1
-    removals:
-      - piece: Q
-        square: d1   # white queen
 
   # --- High concentration (3 pieces) ---
   rook_bishop_pawn:
@@ -36,7 +20,10 @@ patterns:
     num_removed: 3
     concentration: "high"
     phase: 1
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: R
         square: a1   # queenside rook
       - piece: B
@@ -50,7 +37,10 @@ patterns:
     num_removed: 3
     concentration: "high"
     phase: 1
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: R
         square: a1   # queenside rook
       - piece: N
@@ -64,7 +54,10 @@ patterns:
     num_removed: 3
     concentration: "high"
     phase: 1
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: B
         square: c1   # dark-square bishop
       - piece: B
@@ -79,7 +72,10 @@ patterns:
     num_removed: 5
     concentration: "medium"
     phase: 2
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: R
         square: a1
       - piece: P
@@ -97,7 +93,10 @@ patterns:
     num_removed: 5
     concentration: "medium"
     phase: 2
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: B
         square: c1
       - piece: N
@@ -116,7 +115,10 @@ patterns:
     num_removed: 7
     concentration: "low"
     phase: 2
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: B
         square: c1
       - piece: P
@@ -138,7 +140,10 @@ patterns:
     num_removed: 7
     concentration: "low"
     phase: 2
-    removals:
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
       - piece: N
         square: b1
       - piece: P

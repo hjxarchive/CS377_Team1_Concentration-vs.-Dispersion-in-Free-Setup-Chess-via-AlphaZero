@@ -81,17 +81,17 @@ class Lc0Runner:
         self,
         start_fen: str,
         pattern_id: str,
-        handicap_side: str,
+        q_side: str,
     ) -> GameRecord:
         """
-        Play a single game from a handicap position.
+        Play a single game from a match-up position.
 
         Both sides are played by the same lc0 instance (self-play).
 
         Args:
             start_fen: Starting FEN string.
             pattern_id: Pattern identifier for logging.
-            handicap_side: "white" or "black".
+            q_side: "white" or "black" (the side with the Queen).
 
         Returns:
             GameRecord with the game result.
@@ -132,11 +132,11 @@ class Lc0Runner:
                     outcome_str = "0-1"
                 termination = outcome.termination.name.lower()
 
-            result_str, result_score = result_from_outcome(outcome_str, handicap_side)
+            result_str, result_score = result_from_outcome(outcome_str, q_side)
 
             return GameRecord(
                 pattern_id=pattern_id,
-                handicap_side=handicap_side,
+                q_side=q_side,
                 result=result_str,
                 result_score=result_score,
                 ply=ply,
@@ -171,16 +171,17 @@ class Lc0Runner:
 
         wins = draws = losses = 0
 
-        for side in ["white", "black"]:
-            pos = generate_position(pattern, chess.WHITE if side == "white" else chess.BLACK)
+        for noq_color in ["white", "black"]:
+            pos = generate_position(pattern, chess.WHITE if noq_color == "white" else chess.BLACK)
+            q_side = "black" if noq_color == "white" else "white"
 
             for g in range(games_per_side):
                 logger.info(
                     f"Game {g+1}/{games_per_side} | "
-                    f"pattern={pattern_id} | handicap={side}"
+                    f"pattern={pattern_id} | noq_color={noq_color} (q_side={q_side})"
                 )
 
-                record = self.play_game(pos.fen, pattern_id, side)
+                record = self.play_game(pos.fen, pattern_id, q_side)
                 log.write(record)
 
                 if record.result == "win":

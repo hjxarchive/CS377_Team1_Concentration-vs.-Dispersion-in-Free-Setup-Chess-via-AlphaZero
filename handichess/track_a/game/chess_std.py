@@ -30,16 +30,18 @@ class ChessGame(Game):
     """
     Standard chess with optional handicap starting position.
 
-    The state is stored as a python-chess Board object serialized to FEN.
-    For efficiency, we cache the Board object alongside the numpy state.
+    State representation: the numpy state array stores the starting FEN
+    and the full move history (as UCI strings), separated by a newline:
 
-    Board numpy representation: we store the FEN string encoded as bytes
-    in a fixed-size array. The actual neural network input is produced
-    by get_encoded_state().
+        START_FEN\\nMOVE1 MOVE2 MOVE3 ...
+
+    This preserves the complete move stack, which is required for:
+      - is_repetition() → repetition planes in encode_board
+      - outcome() → threefold repetition draw detection
     """
 
-    # Maximum FEN length (generous upper bound)
-    _MAX_FEN_LEN = 256
+    # Generous upper bound: FEN (~90 bytes) + 512 moves × ~5 bytes each
+    _MAX_STATE_LEN = 4096
 
     def __init__(
         self,
@@ -55,10 +57,11 @@ class ChessGame(Game):
         self.max_moves = max_moves
         self._board_size = (8, 8)
         self._action_size = 8 * 8 * ACTION_PLANES  # 4672
+        self._state_cache: dict[str, chess.Board] = {}
 
     def get_init_board(self) -> np.ndarray:
-        """Return the initial board state as a FEN-encoded array."""
-        return self._fen_to_array(self.start_fen)
+        """Return the initial board state."""
+        return self._encode_state(self.start_fen, [])
 
     def get_board_size(self) -> tuple[int, int]:
         return self._board_size
@@ -69,38 +72,45 @@ class ChessGame(Game):
     def get_next_state(
         self, board: np.ndarray, player: int, action: int
     ) -> tuple[np.ndarray, int]:
-        b = self._array_to_board(board)
+        b = self._state_to_board(board)
         move = decode_action(action, b)
         assert move in b.legal_moves, f"Illegal move: {move} in position {b.fen()}"
-        b.push(move)
+        
+        start_fen, moves = self._decode_state(board)
+        moves.append(move.uci())
+        new_state = self._encode_state(start_fen, moves)
+        
+        # Incrementally update cache for the new state
+        new_key = bytes(new_state[new_state > 0].tolist()).decode("ascii")
+        b_next = b.copy()
+        b_next.push(move)
+        
+        if len(self._state_cache) > 100000:
+            self._state_cache.clear()
+        self._state_cache[new_key] = b_next
+        
         next_player = -player  # Alternating turns
-        return self._fen_to_array(b.fen()), next_player
+        return new_state, next_player
 
     def get_valid_moves(self, board: np.ndarray, player: int) -> np.ndarray:
-        b = self._array_to_board(board)
+        b = self._state_to_board(board)
         return get_legal_move_mask(b)
 
     def get_game_ended(self, board: np.ndarray, player: int) -> float:
-        b = self._array_to_board(board)
+        b = self._state_to_board(board)
 
         # Check half-move count for max_moves limit
         if b.fullmove_number * 2 - (1 if b.turn == chess.WHITE else 0) >= self.max_moves:
             return 1e-4  # Draw by max moves
 
-        outcome = b.outcome()
+        outcome = b.outcome(claim_draw=True)
         if outcome is None:
             return 0.0  # Game not over
 
         if outcome.winner is None:
             return 1e-4  # Draw
 
-        # Determine from current player's perspective
-        # player +1 = white at the start, but due to canonical form,
-        # the "current player" is whoever's turn it is in the board state.
-        # Since we track player separately, we need to check carefully.
-        #
-        # Convention: player=+1 is the side that moved first (white).
-        # If white won and player=+1, return +1. If player=-1, return -1.
+        # Convention: player=+1 is white, player=-1 is black.
         winner_is_white = outcome.winner == chess.WHITE
         if (winner_is_white and player == 1) or (not winner_is_white and player == -1):
             return 1.0
@@ -109,70 +119,104 @@ class ChessGame(Game):
 
     def get_canonical_form(self, board: np.ndarray, player: int) -> np.ndarray:
         """
-        For chess, canonical form means the board is always viewed from
-        the current player's perspective. If player is -1 (black),
-        we flip the board and swap piece colors.
-        """
-        if player == 1:
-            return board.copy()
+        No-op canonical form for chess.
 
-        b = self._array_to_board(board)
-        # Flip: mirror the board and swap colors
-        b_mirror = b.mirror()
-        return self._fen_to_array(b_mirror.fen())
+        Rationale: encode_board() already handles perspective correctly:
+          - Planes 0-5 = current player's pieces (via is_own = piece.color == turn)
+          - Planes 6-11 = opponent's pieces
+          - Plane 14 = color (white=1, black=0)
+
+        Mirroring the board would require remapping all action indices
+        (encode/decode, valid_moves mask) to the mirrored coordinate
+        system. Without that remapping, the net's policy (in mirrored
+        space) gets applied to actual-coordinate actions, silently
+        corrupting all black-side nodes.
+
+        The cost of no-op canonical: the net must learn both board
+        orientations. This is slightly less sample-efficient but
+        eliminates a class of subtle bugs entirely.
+        """
+        return board.copy()
 
     def get_encoded_state(self, board: np.ndarray) -> np.ndarray:
         """Encode the board as input planes for the neural network."""
-        b = self._array_to_board(board)
+        b = self._state_to_board(board)
         return encode_board(b)
 
     def string_representation(self, board: np.ndarray) -> str:
-        return self._array_to_fen(board)
+        """FEN of the current position (unique per position, not per path)."""
+        b = self._state_to_board(board)
+        return b.fen()
 
     def display(self, board: np.ndarray) -> None:
-        b = self._array_to_board(board)
+        b = self._state_to_board(board)
         print(b)
         print(f"FEN: {b.fen()}")
         print()
 
     # ── Internal helpers ────────────────────────────────────────────
 
-    def _fen_to_array(self, fen: str) -> np.ndarray:
-        """Convert FEN string to a fixed-size numpy array for storage."""
-        arr = np.zeros(self._MAX_FEN_LEN, dtype=np.uint8)
-        fen_bytes = fen.encode("ascii")
-        arr[: len(fen_bytes)] = list(fen_bytes)
+    def _encode_state(self, start_fen: str, moves: list[str]) -> np.ndarray:
+        """Pack start FEN + move list into a fixed-size numpy array."""
+        arr = np.zeros(self._MAX_STATE_LEN, dtype=np.uint8)
+        text = start_fen
+        if moves:
+            text += "\n" + " ".join(moves)
+        text_bytes = text.encode("ascii")
+        arr[: len(text_bytes)] = list(text_bytes)
         return arr
 
-    def _array_to_fen(self, arr: np.ndarray) -> str:
-        """Convert numpy array back to FEN string."""
-        fen_bytes = bytes(arr[arr > 0].tolist())
-        return fen_bytes.decode("ascii")
+    def _decode_state(self, arr: np.ndarray) -> tuple[str, list[str]]:
+        """Unpack numpy array → (start_fen, move_list)."""
+        text = bytes(arr[arr > 0].tolist()).decode("ascii")
+        parts = text.split("\n", 1)
+        start_fen = parts[0]
+        if len(parts) > 1 and parts[1].strip():
+            moves = parts[1].strip().split()
+        else:
+            moves = []
+        return start_fen, moves
 
-    def _array_to_board(self, arr: np.ndarray) -> chess.Board:
-        """Convert numpy array to a python-chess Board."""
-        fen = self._array_to_fen(arr)
-        return chess.Board(fen)
+    def _replay_board(self, start_fen: str, moves: list[str]) -> chess.Board:
+        """Reconstruct a Board by replaying moves from start FEN."""
+        board = chess.Board(start_fen)
+        for uci in moves:
+            board.push(chess.Move.from_uci(uci))
+        return board
+
+    def _state_to_board(self, arr: np.ndarray) -> chess.Board:
+        """Convert numpy state array to a python-chess Board with full history."""
+        key = bytes(arr[arr > 0].tolist()).decode("ascii")
+        if key in self._state_cache:
+            return self._state_cache[key]
+            
+        start_fen, moves = self._decode_state(arr)
+        board = self._replay_board(start_fen, moves)
+        
+        if len(self._state_cache) > 100000:
+            self._state_cache.clear()
+        self._state_cache[key] = board
+        return board
 
     # ── Factory methods ─────────────────────────────────────────────
 
     @classmethod
-    def from_handicap(
+    def from_matchup(
         cls,
         pattern_id: str,
-        handicap_side: str = "white",
+        noq_color: str = "white",
         max_moves: int = 512,
     ) -> "ChessGame":
         """
-        Create a ChessGame with a handicap starting position.
+        Create a ChessGame with a match-up starting position.
 
         Args:
-            pattern_id: Removal pattern ID (e.g. "queen", "rook_bishop_pawn").
-            handicap_side: "white" or "black".
+            pattern_id: Match-up pattern ID (e.g. "rook_bishop_pawn").
+            noq_color: "white" or "black" - which side plays without the Queen.
             max_moves: Maximum half-moves.
 
         Returns:
-            ChessGame instance with the handicap FEN.
+            ChessGame instance with the match-up FEN.
         """
         from handichess.common.handicap import (
             get_pattern_by_id,
@@ -180,7 +224,7 @@ class ChessGame(Game):
         )
         import chess as chess_module
 
-        side = chess_module.WHITE if handicap_side == "white" else chess_module.BLACK
+        side = chess_module.WHITE if noq_color == "white" else chess_module.BLACK
         pattern = get_pattern_by_id(pattern_id)
         pos = generate_position(pattern, side)
         return cls(start_fen=pos.fen, max_moves=max_moves)

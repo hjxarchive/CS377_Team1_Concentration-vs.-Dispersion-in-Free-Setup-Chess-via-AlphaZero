@@ -18,10 +18,10 @@ def main():
 
     print(f"Generated {len(positions)} positions:\n")
     for pos in positions:
-        side = "WHITE" if pos.handicap_side else "BLACK"
-        print(f"[{pos.pattern_id}] handicap={pos.to_dict()['handicap_side'].upper()}")
+        side = "WHITE" if pos.noq_color else "BLACK"
+        print(f"[{pos.pattern_id}] NoQ_Color={pos.to_dict()['noq_color'].upper()}")
         print(f"  FEN: {pos.fen}")
-        print(f"  Removed: {pos.material_diff}")
+        print(f"  Bundle (Q-side removed): {pos.bundle_vector}")
         print()
 
     if args.output:

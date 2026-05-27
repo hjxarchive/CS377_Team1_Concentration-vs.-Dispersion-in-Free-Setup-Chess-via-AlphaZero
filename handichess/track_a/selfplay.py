@@ -2,7 +2,8 @@
 Self-play pipeline for AlphaZero training.
 
 Generates training data by having the neural network play against itself.
-Games are initialized from handicap positions (sampled from configured patterns).
+Supports Batched MCTS evaluations to run hundreds of games concurrently
+and saturate multi-GPU setups.
 """
 
 from __future__ import annotations
@@ -17,7 +18,7 @@ import torch
 
 from .game.base import Game
 from .net import AlphaZeroNet
-from .mcts import MCTS
+from .mcts import MCTS, MCTSNode
 
 
 @dataclass
@@ -47,12 +48,24 @@ class ReplayBuffer:
         self.buffer.clear()
 
 
+class ActiveGame:
+    """State wrapper for a concurrently running self-play game."""
+    def __init__(self, game: Game, mcts: MCTS, start_state: np.ndarray):
+        self.game = game
+        self.mcts = mcts
+        self.state = start_state
+        self.player = 1
+        self.move_count = 0
+        self.root = MCTSNode(game, start_state, 1)
+        self.trajectory: list[tuple[np.ndarray, np.ndarray, int]] = []
+
+
 class SelfPlay:
     """
-    Self-play game generator.
+    Batched Self-play game generator.
 
-    Plays games using MCTS + neural network, collecting (state, policy, value)
-    training examples. Games start from handicap positions.
+    Plays games concurrently to batch leaf evaluations together, dramatically
+    increasing GPU utilization.
     """
 
     def __init__(
@@ -77,100 +90,22 @@ class SelfPlay:
         # Self-play config
         sc = selfplay_config or {}
         self.max_moves = sc.get("max_moves", 512)
-        self.temperature_threshold = mc.get("temperature_threshold", 30)
         self.exploration_plies = sc.get("exploration_plies", 16)
 
-    def play_game(
-        self,
-        start_state: Optional[np.ndarray] = None,
-    ) -> list[TrainingExample]:
-        """
-        Play one complete self-play game.
+        # Multi-GPU Support
+        if self.device == "cuda" and torch.cuda.device_count() > 1:
+            self.model = torch.nn.DataParallel(self.net)
+        else:
+            self.model = self.net
 
-        Args:
-            start_state: Optional starting state. If None, uses game default.
-
-        Returns:
-            List of training examples from the game.
-        """
-        mcts = MCTS(
-            game=self.game,
-            net=self.net,
-            num_simulations=self.num_simulations,
-            c_puct=self.c_puct,
-            dirichlet_alpha=self.dirichlet_alpha,
-            dirichlet_epsilon=self.dirichlet_epsilon,
-            device=self.device,
-        )
-
-        state = start_state if start_state is not None else self.game.get_init_board()
-        player = 1
-        move_count = 0
-
-        # Collect (state, policy, player) during game
-        trajectory: list[tuple[np.ndarray, np.ndarray, int]] = []
-
-        while move_count < self.max_moves:
-            # Check if game is over
-            result = self.game.get_game_ended(state, player)
-            if result != 0:
-                break
-
-            # Temperature schedule
-            if move_count < self.exploration_plies:
-                temperature = 1.0
-            else:
-                temperature = 0.1  # Near-deterministic
-
-            # MCTS search
-            action_probs = mcts.search(
-                state, player,
-                temperature=temperature,
-                add_noise=(move_count < self.exploration_plies),
-            )
-
-            # Store canonical state + policy
-            canonical = self.game.get_canonical_form(state, player)
-            encoded = self.game.get_encoded_state(canonical)
-
-            # Apply symmetries for data augmentation
-            symmetries = self.game.get_symmetries(canonical, action_probs)
-            for sym_board, sym_pi in symmetries:
-                sym_encoded = self.game.get_encoded_state(sym_board)
-                trajectory.append((sym_encoded, sym_pi, player))
-
-            # Select action
-            action = np.random.choice(len(action_probs), p=action_probs)
-
-            # Apply action
-            state, player = self.game.get_next_state(state, player, action)
-            move_count += 1
-
-        # Determine game result
-        result = self.game.get_game_ended(state, player)
-        if result == 0:
-            # Max moves reached → draw
-            result = 1e-4
-
-        # Create training examples with final outcome
-        examples = []
-        for encoded, policy, p in trajectory:
-            # Value target from this player's perspective
-            if abs(result) < 0.01:  # Draw
-                value = 0.0
-            elif p == player:
-                # Same player as the one who ended the game
-                value = result
-            else:
-                value = -result
-
-            examples.append(TrainingExample(
-                encoded_state=encoded,
-                policy_target=policy,
-                value_target=value,
-            ))
-
-        return examples
+    def _predict_batch(self, enc_batch: torch.Tensor, val_batch: torch.Tensor):
+        """Runs batched inference, utilizing DataParallel if available."""
+        self.model.eval()
+        with torch.no_grad():
+            policy_logits, value = self.model(enc_batch)
+            policy_logits = policy_logits.masked_fill(val_batch == 0, float("-inf"))
+            policy_probs = torch.nn.functional.softmax(policy_logits, dim=1)
+            return policy_probs, value
 
     def generate_games(
         self,
@@ -178,50 +113,141 @@ class SelfPlay:
         start_states: Optional[list[np.ndarray]] = None,
     ) -> list[TrainingExample]:
         """
-        Generate multiple self-play games and collect all training examples.
-
-        Args:
-            num_games: Number of games to play.
-            start_states: Optional list of starting states to sample from.
-                          If provided, each game randomly picks one.
-
-        Returns:
-            Combined list of training examples from all games.
+        Play N games concurrently and collect all training examples.
         """
         all_examples = []
+        active_games = []
 
-        for i in range(num_games):
+        # Initialize games
+        for _ in range(num_games):
             if start_states:
                 start = random.choice(start_states)
             else:
-                start = None
+                start = self.game.get_init_board()
 
-            examples = self.play_game(start_state=start)
-            all_examples.extend(examples)
+            # Each game needs its own MCTS instance for configuration parameters, 
+            # although they share the same neural net.
+            mcts = MCTS(
+                game=self.game,
+                net=self.net,
+                num_simulations=self.num_simulations,
+                c_puct=self.c_puct,
+                dirichlet_alpha=self.dirichlet_alpha,
+                dirichlet_epsilon=self.dirichlet_epsilon,
+                device=self.device,
+            )
+            active_games.append(ActiveGame(self.game, mcts, start))
+
+        # Main self-play loop
+        while active_games:
+            # 1. Expand all roots
+            batch_data = []
+            for g in active_games:
+                res = g.mcts.find_leaf(g.root)
+                if res is not None:
+                    batch_data.append((g, res))
+
+            if batch_data:
+                enc_batch = torch.FloatTensor(np.array([item[1][2] for item in batch_data])).to(self.device)
+                val_batch = torch.FloatTensor(np.array([item[1][3] for item in batch_data])).to(self.device)
+                
+                # Inference
+                p_batch, v_batch = self._predict_batch(enc_batch, val_batch)
+                p_batch = p_batch.cpu().numpy()
+                v_batch = v_batch.cpu().numpy()
+
+                for i, (g, res) in enumerate(batch_data):
+                    search_path, node, _, _ = res
+                    g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]))
+
+            # 2. Add Dirichlet Noise
+            for g in active_games:
+                g.mcts.add_dirichlet_noise(g.root)
+
+            # 3. Run MCTS Simulations concurrently
+            for _ in range(self.num_simulations):
+                batch_data = []
+                for g in active_games:
+                    res = g.mcts.find_leaf(g.root)
+                    if res is not None:
+                        batch_data.append((g, res))
+
+                if batch_data:
+                    enc_batch = torch.FloatTensor(np.array([item[1][2] for item in batch_data])).to(self.device)
+                    val_batch = torch.FloatTensor(np.array([item[1][3] for item in batch_data])).to(self.device)
+                    
+                    p_batch, v_batch = self._predict_batch(enc_batch, val_batch)
+                    p_batch = p_batch.cpu().numpy()
+                    v_batch = v_batch.cpu().numpy()
+
+                    for i, (g, res) in enumerate(batch_data):
+                        search_path, node, _, _ = res
+                        g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]))
+
+            # 4. Advance states and check for termination
+            next_active = []
+            for g in active_games:
+                if g.move_count < self.exploration_plies:
+                    temperature = 1.0
+                else:
+                    temperature = 0.1
+
+                action_probs = g.mcts.get_action_probs(g.root, temperature)
+
+                # Store trajectory
+                canonical = self.game.get_canonical_form(g.state, g.player)
+                encoded = self.game.get_encoded_state(canonical)
+                symmetries = self.game.get_symmetries(canonical, action_probs)
+                for sym_board, sym_pi in symmetries:
+                    sym_encoded = self.game.get_encoded_state(sym_board)
+                    g.trajectory.append((sym_encoded, sym_pi, g.player))
+
+                # Play move
+                action = np.random.choice(len(action_probs), p=action_probs)
+                g.state, g.player = self.game.get_next_state(g.state, g.player, action)
+                g.move_count += 1
+
+                # Check game end
+                result = self.game.get_game_ended(g.state, g.player)
+                if result == 0 and g.move_count >= self.max_moves:
+                    result = 1e-4  # Draw by max moves limit
+
+                if result != 0:
+                    # Game finished! Process examples
+                    for encoded, policy, p in g.trajectory:
+                        if abs(result) < 0.01:
+                            value = 0.0
+                        elif p == g.player:
+                            value = result
+                        else:
+                            value = -result
+                        
+                        all_examples.append(TrainingExample(
+                            encoded_state=encoded,
+                            policy_target=policy,
+                            value_target=value,
+                        ))
+                else:
+                    # Game continues
+                    g.root = MCTSNode(self.game, g.state, g.player)
+                    next_active.append(g)
+
+            active_games = next_active
 
         return all_examples
 
 
-def create_handicap_start_states(
+def create_matchup_start_states(
     game_class,
     pattern_ids: list[str],
     max_moves: int = 512,
 ) -> list[np.ndarray]:
     """
-    Create a list of starting states from handicap positions.
-    Both white-handicap and black-handicap positions are included.
-
-    Args:
-        game_class: The ChessGame class.
-        pattern_ids: List of pattern IDs to use.
-        max_moves: Max moves per game.
-
-    Returns:
-        List of numpy starting states.
+    Create a list of starting states from match-up positions.
     """
     states = []
     for pid in pattern_ids:
-        for side in ["white", "black"]:
-            g = game_class.from_handicap(pid, side, max_moves)
+        for noq_color in ["white", "black"]:
+            g = game_class.from_matchup(pid, noq_color, max_moves)
             states.append(g.get_init_board())
     return states

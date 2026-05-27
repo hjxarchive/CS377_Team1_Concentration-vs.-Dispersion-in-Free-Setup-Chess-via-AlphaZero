@@ -56,10 +56,16 @@ def main():
         net_config = {"num_res_blocks": 4, "num_channels": 64}
     else:
         from handichess.track_a.game.chess_std import ChessGame
+        from handichess.track_a.selfplay import create_matchup_start_states
+        game = ChessGame()
         if args.pattern:
-            game = ChessGame.from_handicap(args.pattern)
+            # 특정한 패턴만 집중 학습
+            start_states = create_matchup_start_states(ChessGame, [args.pattern])
         else:
-            game = ChessGame()
+            # 전체 7개 패턴 모두 섞어서 학습
+            from handichess.common.handicap import get_patterns
+            all_patterns = [p.pattern_id for p in get_patterns()]
+            start_states = create_matchup_start_states(ChessGame, all_patterns)
         default_sims = 800
         mcts_config = {"dirichlet_alpha": 0.3, "temperature_threshold": 30}
         net_config = {"num_res_blocks": 10, "num_channels": 128}
@@ -100,7 +106,9 @@ def main():
 
         # Self-play
         logger.info(f"Self-play: {args.games_per_iter} games...")
-        examples = selfplay.generate_games(args.games_per_iter)
+        
+        # start_states를 넘겨주면, 그 중 랜덤하게 뽑아 게임을 시작함
+        examples = selfplay.generate_games(args.games_per_iter, start_states=start_states if args.game == "chess" else None)
         buffer.add(examples)
         logger.info(f"  Generated {len(examples)} examples (buffer: {len(buffer)})")
 

@@ -169,7 +169,7 @@ class Arena:
         return stats
 
 
-def evaluate_handicap_patterns(
+def evaluate_matchup_patterns(
     game_class,
     net: AlphaZeroNet,
     pattern_ids: list[str],
@@ -179,8 +179,8 @@ def evaluate_handicap_patterns(
     log_path: Optional[str] = None,
 ) -> dict:
     """
-    Evaluate a trained net across multiple handicap patterns.
-    Net plays both sides; results recorded from handicap side's perspective.
+    Evaluate a trained net across multiple match-up patterns.
+    Net plays both sides; results recorded from the Q side's perspective.
 
     Args:
         game_class: ChessGame class.
@@ -192,7 +192,7 @@ def evaluate_handicap_patterns(
         log_path: Optional path to save game log.
 
     Returns:
-        Dict mapping pattern_id → {wins, draws, losses, score} for handicap side.
+        Dict mapping pattern_id → {wins, draws, losses, score} for Q side.
     """
     mc = mcts_config or {}
     game_log = GameLog(log_path) if log_path else None
@@ -201,8 +201,8 @@ def evaluate_handicap_patterns(
     for pid in pattern_ids:
         wins = draws = losses = 0
 
-        for side in ["white", "black"]:
-            game = game_class.from_handicap(pid, side)
+        for noq_color in ["white", "black"]:
+            game = game_class.from_matchup(pid, noq_color)
             mcts = MCTS(
                 game, net,
                 num_simulations=mc.get("num_simulations", 400),
@@ -211,6 +211,7 @@ def evaluate_handicap_patterns(
             )
 
             games_per_side = num_games_per_pattern // 2
+            q_side = "black" if noq_color == "white" else "white"
 
             for g in range(games_per_side):
                 state = game.get_init_board()
@@ -227,25 +228,25 @@ def evaluate_handicap_patterns(
                     state, player = game.get_next_state(state, player, action)
                     move_count += 1
 
-                # Determine handicap side result
+                # Determine Q side result
                 game_result = game.get_game_ended(state, player)
                 if abs(game_result) < 0.01:
                     draws += 1
-                    hresult, hscore = "draw", 0.5
-                elif (game_result > 0 and player == 1 and side == "white") or \
-                     (game_result > 0 and player == -1 and side == "black"):
+                    q_result, q_score = "draw", 0.5
+                elif (game_result > 0 and player == 1 and q_side == "white") or \
+                     (game_result > 0 and player == -1 and q_side == "black"):
                     wins += 1
-                    hresult, hscore = "win", 1.0
+                    q_result, q_score = "win", 1.0
                 else:
                     losses += 1
-                    hresult, hscore = "loss", 0.0
+                    q_result, q_score = "loss", 0.0
 
                 if game_log:
                     game_log.write(GameRecord(
                         pattern_id=pid,
-                        handicap_side=side,
-                        result=hresult,
-                        result_score=hscore,
+                        q_side=q_side,
+                        result=q_result,
+                        result_score=q_score,
                         ply=move_count,
                         start_fen=game.start_fen,
                         termination="completed",

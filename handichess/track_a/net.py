@@ -104,7 +104,7 @@ class AlphaZeroNet(nn.Module):
         # Value head
         v = F.relu(self.value_bn(self.value_conv(out)))
         v = v.view(v.size(0), -1)
-        v = self.value_dropout(F.relu(self.value_fc1(v)))
+        v = F.relu(self.value_fc1(v))
         v = torch.tanh(self.value_fc2(v))
 
         return p, v
@@ -113,31 +113,37 @@ class AlphaZeroNet(nn.Module):
         self,
         encoded_state: torch.Tensor,
         valid_moves: Optional[torch.Tensor] = None,
-    ) -> tuple[torch.Tensor, float]:
+    ):
         """
-        Convenience method for single-state prediction.
+        Convenience method for single-state or batched prediction.
 
         Args:
-            encoded_state: (planes, h, w) tensor.
-            valid_moves: Optional (action_size,) binary mask.
+            encoded_state: (planes, h, w) or (batch, planes, h, w) tensor.
+            valid_moves: Optional (action_size,) or (batch, action_size) binary mask.
 
         Returns:
             (policy_probs, value) — policy as probabilities (after masking + softmax).
         """
         self.eval()
         with torch.no_grad():
-            x = encoded_state.unsqueeze(0)
+            is_batched = encoded_state.dim() == 4
+            x = encoded_state if is_batched else encoded_state.unsqueeze(0)
+            
             policy_logits, value = self(x)
-            policy_logits = policy_logits.squeeze(0)
 
             if valid_moves is not None:
+                v_mask = valid_moves if is_batched else valid_moves.unsqueeze(0)
                 # Mask illegal moves with large negative
                 policy_logits = policy_logits.masked_fill(
-                    valid_moves == 0, float("-inf")
+                    v_mask == 0, float("-inf")
                 )
 
-            policy_probs = F.softmax(policy_logits, dim=0)
-            return policy_probs, value.item()
+            policy_probs = F.softmax(policy_logits, dim=1)
+            
+            if is_batched:
+                return policy_probs, value
+            else:
+                return policy_probs[0], value[0]
 
 
 def create_net_for_game(game, config: Optional[dict] = None) -> AlphaZeroNet:

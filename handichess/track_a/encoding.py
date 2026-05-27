@@ -173,6 +173,11 @@ def decode_action(action: int, board: chess.Board) -> chess.Move:
 
     d_file, d_rank, promotion = _decode_move_plane(plane)
 
+    # Handle direction for black pawn underpromotion (planes 64-72)
+    piece = board.piece_at(from_sq)
+    if piece is not None and piece.color == chess.BLACK and plane >= 64:
+        d_rank = -d_rank
+
     to_file = from_file + d_file
     to_rank = from_rank + d_rank
     to_sq = chess.square(to_file, to_rank)

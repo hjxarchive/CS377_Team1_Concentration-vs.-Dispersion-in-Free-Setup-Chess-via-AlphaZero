@@ -44,6 +44,11 @@ class Trainer:
         self.device = device
         self.net.to(device)
 
+        if self.device == "cuda" and torch.cuda.device_count() > 1:
+            self.model = nn.DataParallel(self.net)
+        else:
+            self.model = self.net
+
         # Config
         c = config or {}
         self.epochs = c.get("epochs_per_iteration", 10)
@@ -76,7 +81,6 @@ class Trainer:
         self.scaler = GradScaler(enabled=self.use_amp)
 
         # Loss functions
-        self.policy_loss_fn = nn.CrossEntropyLoss()
         self.value_loss_fn = nn.MSELoss()
 
         # Tracking
@@ -119,7 +123,7 @@ class Trainer:
             drop_last=False,
         )
 
-        self.net.train()
+        self.model.train()
         total_loss = 0.0
         total_pi_loss = 0.0
         total_v_loss = 0.0
@@ -130,7 +134,7 @@ class Trainer:
                 self.optimizer.zero_grad()
 
                 with autocast(enabled=self.use_amp):
-                    policy_logits, value_pred = self.net(batch_states)
+                    policy_logits, value_pred = self.model(batch_states)
 
                     # Policy loss: cross-entropy with MCTS visit distribution
                     pi_loss = -torch.mean(
