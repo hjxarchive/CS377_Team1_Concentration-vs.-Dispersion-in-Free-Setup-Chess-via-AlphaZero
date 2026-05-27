@@ -16,7 +16,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.cuda.amp import GradScaler, autocast
+from torch.amp import GradScaler, autocast
 from torch.utils.data import DataLoader, TensorDataset
 
 from .net import AlphaZeroNet
@@ -78,7 +78,7 @@ class Trainer:
             )
 
         # AMP scaler
-        self.scaler = GradScaler(enabled=self.use_amp)
+        self.scaler = GradScaler("cuda" if self.device == "cuda" else "cpu", enabled=self.use_amp)
 
         # Loss functions
         self.value_loss_fn = nn.MSELoss()
@@ -133,7 +133,7 @@ class Trainer:
             for batch_states, batch_policies, batch_values in dataloader:
                 self.optimizer.zero_grad()
 
-                with autocast(enabled=self.use_amp):
+                with autocast(device_type="cuda" if self.device == "cuda" else "cpu", enabled=self.use_amp):
                     policy_logits, value_pred = self.model(batch_states)
 
                     # Policy loss: cross-entropy with MCTS visit distribution
