@@ -40,11 +40,13 @@ class Arena:
         net2: AlphaZeroNet,
         mcts_config: Optional[dict] = None,
         device: str = "cpu",
+        seed: int = 42,
     ):
         self.game = game
         self.net1 = net1
         self.net2 = net2
         self.device = device
+        self.seed = seed
 
         mc = mcts_config or {}
         self.num_simulations = mc.get("num_simulations", 800)
@@ -64,6 +66,10 @@ class Arena:
             (result_for_player1, num_moves)
             result: +1 win, -1 loss, 0 draw (from player1's perspective).
         """
+        import torch
+        np.random.seed(self.seed)
+        torch.manual_seed(self.seed)
+        
         mcts1 = MCTS(
             self.game, self.net1,
             num_simulations=self.num_simulations,
@@ -245,6 +251,7 @@ def evaluate_matchup_patterns(
                     game_log.write(GameRecord(
                         pattern_id=pid,
                         q_side=q_side,
+                        noq_side=noq_color,
                         result=q_result,
                         result_score=q_score,
                         ply=move_count,

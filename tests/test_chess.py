@@ -86,30 +86,33 @@ class TestChessGameMoves:
 
 
 class TestChessHandicap:
-    """Test handicap starting positions."""
+    def test_from_matchup_queen(self):
+        # By default, white loses Queen -> noq_color="white"
+        game = ChessGame.from_matchup("rook_bishop_pawn", "white")
+        b = game._state_to_board(game.get_init_board())
+        
+        # White should have 0 queens, Black should have 1
+        assert len(b.pieces(chess.QUEEN, chess.WHITE)) == 0
+        assert len(b.pieces(chess.QUEEN, chess.BLACK)) == 1
+        
+        # In this pattern, black loses rook, bishop, pawn
+        # So black shouldn't have full 16 pieces
+        assert len(b.piece_map()) < 32
 
-    def test_from_handicap_queen(self):
-        game = ChessGame.from_handicap("queen", "white")
-        board = game.get_init_board()
+    def test_from_matchup_black(self):
+        # Black is NoQ -> noq_color="black"
+        game = ChessGame.from_matchup("rook_bishop_pawn", "black")
+        b = game._state_to_board(game.get_init_board())
+        
+        # Black should have 0 queens, White should have 1
+        assert len(b.pieces(chess.QUEEN, chess.WHITE)) == 1
+        assert len(b.pieces(chess.QUEEN, chess.BLACK)) == 0
 
-        # Should be valid and game not over
-        result = game.get_game_ended(board, 1)
-        assert result == 0.0
-
-        # Should have valid moves
-        valid = game.get_valid_moves(board, 1)
-        assert valid.sum() > 0
-
-    def test_from_handicap_black(self):
-        game = ChessGame.from_handicap("queen", "black")
-        board = game.get_init_board()
-        result = game.get_game_ended(board, 1)
-        assert result == 0.0
-
-    def test_handicap_different_from_standard(self):
+    def test_matchup_different_from_standard(self):
         standard = ChessGame()
-        handicap = ChessGame.from_handicap("queen", "white")
-
+        handicap = ChessGame.from_matchup("rook_bishop_pawn", "white")
+        
+        assert standard.get_init_board().tobytes() != handicap.get_init_board().tobytes()
         s1 = standard.string_representation(standard.get_init_board())
         s2 = handicap.string_representation(handicap.get_init_board())
         assert s1 != s2, "Handicap position should differ from standard"
@@ -149,16 +152,17 @@ class TestPerft:
         board = chess.Board()
         assert self._perft(board, 3) == 8902
 
-    def test_perft_handicap_depth1(self):
-        """Handicap positions should have valid move counts."""
-        from handichess.common.handicap import get_pattern_by_id, make_handicap_board
-
-        pattern = get_pattern_by_id("queen")
-        board = make_handicap_board(pattern, chess.WHITE)
-
+    def test_perft_matchup_depth1(self):
+        """Matchup positions should have valid move counts."""
+        from handichess.common.handicap import get_pattern_by_id, make_matchup_board
+        
+        pattern = get_pattern_by_id("rook_bishop_pawn")
+        # White is NoQ
+        board = make_matchup_board(pattern, chess.WHITE)
+        
+        # From matchup start, we shouldn't have standard 20 moves because pieces are missing
+        moves = list(board.legal_moves)
+        assert len(moves) > 0, "Should have legal moves"
         nodes = self._perft(board, 1)
-        # Without queen, white has different move count than standard
-        assert nodes > 0
-        # Just verify it's a valid count (queen removal opens d1 for king)
         standard_nodes = self._perft(chess.Board(), 1)
         assert nodes != standard_nodes, "Handicap should differ from standard"

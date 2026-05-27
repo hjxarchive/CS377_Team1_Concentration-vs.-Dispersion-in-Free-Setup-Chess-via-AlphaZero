@@ -56,6 +56,7 @@ class Lc0Runner:
         self.backend = backend
         self.exploration_plies = exploration_plies
         self.temperature = temperature
+        self.seed = 42
 
     def _start_engine(self) -> chess.engine.SimpleEngine:
         """Start an lc0 UCI engine instance."""
@@ -96,6 +97,9 @@ class Lc0Runner:
         Returns:
             GameRecord with the game result.
         """
+        import numpy as np
+        np.random.seed(self.seed)
+        
         engine = self._start_engine()
 
         try:
@@ -137,6 +141,7 @@ class Lc0Runner:
             return GameRecord(
                 pattern_id=pattern_id,
                 q_side=q_side,
+                noq_side="black" if q_side == "white" else "white",
                 result=result_str,
                 result_score=result_score,
                 ply=ply,

@@ -2,6 +2,7 @@ import pytest
 import chess
 from handichess.common.handicap import (
     get_patterns,
+    get_pattern_by_id,
     make_matchup_board,
     count_material,
     _PIECE_CODE_MAP,
@@ -65,6 +66,30 @@ def test_matchup_isolation_invariants():
             
             # Invariant 4: Board validity
             assert board.is_valid(), f"Board for {pattern.pattern_id} ({noq_color}) is invalid"
+
+def test_castling_rights_updated():
+    """When a rook is removed, castling rights should be updated."""
+    pattern = get_pattern_by_id("rook_bishop_pawn")
+    
+    # White is NoQ -> White loses Queen, Black loses a8 Rook, c8 Bishop, a7 Pawn
+    board_w_noq = make_matchup_board(pattern, chess.WHITE)
+    
+    # White lost Queen, rooks are untouched -> both castling rights remain
+    assert board_w_noq.has_queenside_castling_rights(chess.WHITE)
+    assert board_w_noq.has_kingside_castling_rights(chess.WHITE)
+    # Black lost a8 rook -> no queenside castling for black
+    assert not board_w_noq.has_queenside_castling_rights(chess.BLACK)
+    assert board_w_noq.has_kingside_castling_rights(chess.BLACK)
+    
+    # Black is NoQ -> Black loses Queen, White loses a1 Rook, c1 Bishop, a2 Pawn
+    board_b_noq = make_matchup_board(pattern, chess.BLACK)
+    
+    # White lost a1 rook -> no queenside castling for white
+    assert not board_b_noq.has_queenside_castling_rights(chess.WHITE)
+    assert board_b_noq.has_kingside_castling_rights(chess.WHITE)
+    # Black lost Queen, rooks are untouched -> both castling rights remain
+    assert board_b_noq.has_queenside_castling_rights(chess.BLACK)
+    assert board_b_noq.has_kingside_castling_rights(chess.BLACK)
 
 if __name__ == "__main__":
     pytest.main([__file__])

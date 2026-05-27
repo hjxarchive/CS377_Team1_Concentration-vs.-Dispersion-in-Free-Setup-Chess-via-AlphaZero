@@ -40,6 +40,7 @@ class GameRecord:
     """
     pattern_id: str
     q_side: str                 # "white" | "black"
+    noq_side: str               # "white" | "black"
     result: str                 # "win" | "draw" | "loss"
     result_score: float         # 1.0 | 0.5 | 0.0
     ply: int
@@ -56,6 +57,9 @@ class GameRecord:
         # Validate
         assert self.q_side in ("white", "black"), (
             f"Invalid q_side: {self.q_side}"
+        )
+        assert self.noq_side in ("white", "black"), (
+            f"Invalid noq_side: {self.noq_side}"
         )
         assert self.result in ("win", "draw", "loss"), (
             f"Invalid result: {self.result}"

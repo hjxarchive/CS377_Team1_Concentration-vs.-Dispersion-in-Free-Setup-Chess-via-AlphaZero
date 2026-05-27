@@ -6,6 +6,7 @@ import chess
 from handichess.track_a.game.chess_std import ChessGame
 from handichess.track_a.net import create_net_for_game
 from handichess.track_a.mcts import MCTS
+from handichess.track_a.encoding import get_legal_move_mask
 
 def test_chess_canonical_mirror_invariant():
     """
@@ -62,6 +63,42 @@ def test_chess_canonical_mirror_invariant():
     
     # Make sure we only assigned probability to valid moves
     assert np.all(probs[valid_moves_b == 0] == 0)
+
+def test_canonical_is_noop_actual_frame():
+    """
+    Test that get_canonical_form is strictly a no-op (preserves the actual frame).
+    This guards against regressions where someone accidentally re-adds .mirror() 
+    for Black, which would destroy the policy's coordinate space mapping.
+    """
+    game = ChessGame()
+    state = game.get_init_board()
+    
+    # 1. White frame
+    canonical_w = game.get_canonical_form(state, 1)
+    b_w = game._state_to_board(canonical_w)
+    
+    # Legal move mask from canonical white MUST match actual white valid moves
+    mask_w = get_legal_move_mask(b_w)
+    valid_w = game.get_valid_moves(state, 1)
+    np.testing.assert_array_equal(mask_w, valid_w, "White move masks mismatch")
+    
+    # Play e2e4 to get a black state
+    action_e4 = np.argmax(valid_w)
+    state, player = game.get_next_state(state, 1, action_e4)
+    assert player == -1
+    
+    # 2. Black frame
+    canonical_b = game.get_canonical_form(state, -1)
+    b_b = game._state_to_board(canonical_b)
+    
+    # The crucial part: the canonical board MUST exactly equal the actual board
+    b_actual = game._state_to_board(state)
+    assert b_b.fen() == b_actual.fen(), "Canonical form altered the actual board state!"
+    
+    # Legal move mask from canonical black MUST match actual black valid moves in exact coordinate space
+    mask_b = get_legal_move_mask(b_b)
+    valid_b = game.get_valid_moves(state, -1)
+    np.testing.assert_array_equal(mask_b, valid_b, "Black move masks mismatch (Mirror bug regression?)")
 
 if __name__ == "__main__":
     pytest.main([__file__])
