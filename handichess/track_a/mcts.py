@@ -129,6 +129,14 @@ class MCTS:
             _, node = self._select_child(node)
             search_path.append(node)
 
+        # Populate state lazily if it hasn't been evaluated yet
+        if node.state is None:
+            parent = node.parent
+            assert parent is not None and node.action is not None
+            node.state, node.player = self.game.get_next_state(
+                parent.state, parent.player, node.action
+            )
+
         if node.is_terminal:
             self.backup(search_path, node.terminal_value)
             return None
@@ -164,13 +172,12 @@ class MCTS:
 
         legal_actions = np.nonzero(valid_moves)[0]
         for action in legal_actions:
-            next_state, next_player = self.game.get_next_state(
-                node.state, node.player, action
-            )
+            # Lazy state initialization: state is set to None.
+            # It will be evaluated on demand when the node is visited.
             child = MCTSNode(
                 game=self.game,
-                state=next_state,
-                player=next_player,
+                state=None,
+                player=-node.player,
                 parent=node,
                 action=action,
                 prior=policy_probs[action],
