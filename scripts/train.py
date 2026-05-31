@@ -22,7 +22,7 @@ def main():
                         help="Game to train on")
     parser.add_argument("--iterations", type=int, default=100,
                         help="Number of training iterations")
-    parser.add_argument("--games-per-iter", type=int, default=100,
+    parser.add_argument("--games-per-iter", type=int, default=256,
                         help="Self-play games per iteration")
     parser.add_argument("--simulations", type=int, default=None,
                         help="MCTS simulations per move")
@@ -80,10 +80,16 @@ def main():
 
     # Create trainer
     from handichess.track_a.trainer import Trainer
+    # Training config — chess needs larger batches for GPU saturation
+    if args.game == "chess":
+        train_config = {"epochs_per_iteration": 10, "batch_size": 512}
+    else:
+        train_config = {"epochs_per_iteration": 10, "batch_size": 64}
+
     trainer = Trainer(
         net, device=device,
         checkpoint_dir=args.checkpoint_dir,
-        config={"epochs_per_iteration": 10, "batch_size": 64},
+        config=train_config,
     )
 
     if args.resume:
@@ -96,7 +102,7 @@ def main():
         mcts_config=mcts_config,
         device=device,
     )
-    buffer = ReplayBuffer(max_size=50_000)
+    buffer = ReplayBuffer(max_size=200_000)
 
     # Training loop
     for iteration in range(trainer.iteration, args.iterations):
@@ -113,7 +119,7 @@ def main():
         logger.info(f"  Generated {len(examples)} examples (buffer: {len(buffer)})")
 
         # Train
-        train_data = buffer.sample(min(len(buffer), 2048))
+        train_data = buffer.sample(min(len(buffer), 8192))
         stats = trainer.train(train_data, iteration=iteration)
 
         # Checkpoint

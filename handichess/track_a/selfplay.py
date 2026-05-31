@@ -157,8 +157,8 @@ class SelfPlay:
                 v_batch = v_batch.cpu().numpy()
 
                 for i, (g, res) in enumerate(batch_data):
-                    search_path, node, _, _ = res
-                    g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]))
+                    search_path, node, _, valid = res
+                    g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]), valid)
 
             # 2. Add Dirichlet Noise
             for g in active_games:
@@ -181,8 +181,8 @@ class SelfPlay:
                     v_batch = v_batch.cpu().numpy()
 
                     for i, (g, res) in enumerate(batch_data):
-                        search_path, node, _, _ = res
-                        g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]))
+                        search_path, node, _, valid = res
+                        g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]), valid)
 
             # 4. Advance states and check for termination
             next_active = []

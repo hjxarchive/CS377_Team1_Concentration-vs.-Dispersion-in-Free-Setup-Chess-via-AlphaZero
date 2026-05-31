@@ -99,7 +99,7 @@ class MCTS:
             enc_t = torch.FloatTensor(encoded).unsqueeze(0).to(self.device)
             val_t = torch.FloatTensor(valid).unsqueeze(0).to(self.device)
             p, v = self.net.predict(enc_t, val_t)
-            self.expand_and_backup(search_path, node, p[0].cpu().numpy(), v[0].item())
+            self.expand_and_backup(search_path, node, p[0].cpu().numpy(), v[0].item(), valid)
 
         if add_noise:
             self.add_dirichlet_noise(root)
@@ -111,7 +111,7 @@ class MCTS:
                 enc_t = torch.FloatTensor(encoded).unsqueeze(0).to(self.device)
                 val_t = torch.FloatTensor(valid).unsqueeze(0).to(self.device)
                 p, v = self.net.predict(enc_t, val_t)
-                self.expand_and_backup(search_path, node, p[0].cpu().numpy(), v[0].item())
+                self.expand_and_backup(search_path, node, p[0].cpu().numpy(), v[0].item(), valid)
 
         return self.get_action_probs(root, temperature)
 
@@ -149,27 +149,33 @@ class MCTS:
         return search_path, node, encoded, valid_moves
 
     def expand_and_backup(
-        self, search_path: list[MCTSNode], node: MCTSNode, policy_probs: np.ndarray, value: float
+        self, search_path: list[MCTSNode], node: MCTSNode, policy_probs: np.ndarray, value: float,
+        valid_moves: Optional[np.ndarray] = None,
     ):
         """
         Create children from neural net policy and backpropagate value.
-        """
-        valid_moves = self.game.get_valid_moves(node.state, node.player)
 
-        for action in range(self.game.get_action_size()):
-            if valid_moves[action] > 0:
-                next_state, next_player = self.game.get_next_state(
-                    node.state, node.player, action
-                )
-                child = MCTSNode(
-                    game=self.game,
-                    state=next_state,
-                    player=next_player,
-                    parent=node,
-                    action=action,
-                    prior=policy_probs[action],
-                )
-                node.children[action] = child
+        Args:
+            valid_moves: Pre-computed legal move mask from find_leaf.
+                         If None, recomputes (for backward compat).
+        """
+        if valid_moves is None:
+            valid_moves = self.game.get_valid_moves(node.state, node.player)
+
+        legal_actions = np.nonzero(valid_moves)[0]
+        for action in legal_actions:
+            next_state, next_player = self.game.get_next_state(
+                node.state, node.player, action
+            )
+            child = MCTSNode(
+                game=self.game,
+                state=next_state,
+                player=next_player,
+                parent=node,
+                action=action,
+                prior=policy_probs[action],
+            )
+            node.children[action] = child
 
         node.is_expanded = True
         self.backup(search_path, value)
@@ -255,7 +261,7 @@ class MCTS:
                 torch.FloatTensor(enc).unsqueeze(0).to(self.device),
                 torch.FloatTensor(val).unsqueeze(0).to(self.device)
             )
-            self.expand_and_backup([root], node, p[0].cpu().numpy(), v[0].item())
+            self.expand_and_backup([root], node, p[0].cpu().numpy(), v[0].item(), val)
             
         for _ in range(self.num_simulations):
             leaf = self.find_leaf(root)
@@ -265,6 +271,6 @@ class MCTS:
                     torch.FloatTensor(enc).unsqueeze(0).to(self.device),
                     torch.FloatTensor(val).unsqueeze(0).to(self.device)
                 )
-                self.expand_and_backup(search_path, node, p[0].cpu().numpy(), v[0].item())
+                self.expand_and_backup(search_path, node, p[0].cpu().numpy(), v[0].item(), val)
 
         return root.q_value
