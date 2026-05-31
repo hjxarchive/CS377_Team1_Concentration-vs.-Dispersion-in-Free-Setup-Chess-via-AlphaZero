@@ -46,7 +46,7 @@ class ChessGame(Game):
     def __init__(
         self,
         start_fen: Optional[str] = None,
-        max_moves: int = 512,
+        max_moves: int = 180,
     ):
         """
         Args:
@@ -205,7 +205,7 @@ class ChessGame(Game):
         cls,
         pattern_id: str,
         noq_color: str = "white",
-        max_moves: int = 512,
+        max_moves: int = 180,
     ) -> "ChessGame":
         """
         Create a ChessGame with a match-up starting position.

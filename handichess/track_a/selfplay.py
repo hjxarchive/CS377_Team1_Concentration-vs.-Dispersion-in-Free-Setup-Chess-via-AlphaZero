@@ -240,7 +240,7 @@ class SelfPlay:
 def create_matchup_start_states(
     game_class,
     pattern_ids: list[str],
-    max_moves: int = 512,
+    max_moves: int = 180,
 ) -> list[np.ndarray]:
     """
     Create a list of starting states from match-up positions.

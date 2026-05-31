@@ -34,6 +34,8 @@ def main():
                         help="Torch device (auto-detect if not given)")
     parser.add_argument("--resume", type=str, default=None,
                         help="Resume from checkpoint path")
+    parser.add_argument("--max-moves", type=int, default=180,
+                        help="Maximum half-moves per game (chess only)")
     args = parser.parse_args()
 
     # Device
@@ -57,15 +59,15 @@ def main():
     else:
         from handichess.track_a.game.chess_std import ChessGame
         from handichess.track_a.selfplay import create_matchup_start_states
-        game = ChessGame()
+        game = ChessGame(max_moves=args.max_moves)
         if args.pattern:
             # 특정한 패턴만 집중 학습
-            start_states = create_matchup_start_states(ChessGame, [args.pattern])
+            start_states = create_matchup_start_states(ChessGame, [args.pattern], max_moves=args.max_moves)
         else:
             # 전체 7개 패턴 모두 섞어서 학습
             from handichess.common.handicap import get_patterns
             all_patterns = [p.pattern_id for p in get_patterns()]
-            start_states = create_matchup_start_states(ChessGame, all_patterns)
+            start_states = create_matchup_start_states(ChessGame, all_patterns, max_moves=args.max_moves)
         default_sims = 800
         mcts_config = {"dirichlet_alpha": 0.3, "temperature_threshold": 30}
         net_config = {"num_res_blocks": 10, "num_channels": 128}
@@ -100,6 +102,7 @@ def main():
     selfplay = SelfPlay(
         game, net,
         mcts_config=mcts_config,
+        selfplay_config={"max_moves": args.max_moves},
         device=device,
     )
     buffer = ReplayBuffer(max_size=200_000)
