@@ -8,7 +8,9 @@ and saturate multi-GPU setups.
 
 from __future__ import annotations
 
+import logging
 import random
+import time
 from collections import deque
 from dataclasses import dataclass
 from typing import Optional
@@ -19,6 +21,8 @@ import torch
 from .game.base import Game
 from .net import AlphaZeroNet
 from .mcts import MCTS, MCTSNode
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -138,16 +142,33 @@ class SelfPlay:
             )
             active_games.append(ActiveGame(self.game, mcts, start))
 
+        # Set eval mode once (avoid redundant calls per batch)
+        self.model.eval()
+
+        move_step = 0
+        total_gpu_time = 0.0
+        total_cpu_time = 0.0
+        total_gpu_calls = 0
+        finished_games = 0
+        selfplay_start = time.time()
+
+        logger.info(f"  [selfplay] Starting {num_games} games | sims={self.num_simulations} | max_moves={self.max_moves} | device={self.device}")
+
         # Main self-play loop
         while active_games:
+            move_step_start = time.time()
+
             # 1. Expand all roots
+            t0 = time.time()
             batch_data = []
             for g in active_games:
                 res = g.mcts.find_leaf(g.root)
                 if res is not None:
                     batch_data.append((g, res))
+            cpu_find_time = time.time() - t0
 
             if batch_data:
+                t0 = time.time()
                 enc_batch = torch.FloatTensor(np.array([item[1][2] for item in batch_data])).to(self.device)
                 val_batch = torch.FloatTensor(np.array([item[1][3] for item in batch_data])).to(self.device)
                 
@@ -155,6 +176,9 @@ class SelfPlay:
                 p_batch, v_batch = self._predict_batch(enc_batch, val_batch)
                 p_batch = p_batch.cpu().numpy()
                 v_batch = v_batch.cpu().numpy()
+                gpu_time = time.time() - t0
+                total_gpu_time += gpu_time
+                total_gpu_calls += 1
 
                 for i, (g, res) in enumerate(batch_data):
                     search_path, node, _, valid = res
@@ -165,27 +189,44 @@ class SelfPlay:
                 g.mcts.add_dirichlet_noise(g.root)
 
             # 3. Run MCTS Simulations concurrently
+            sim_cpu_time = 0.0
+            sim_gpu_time = 0.0
+            sim_gpu_calls = 0
+            sim_total_batch = 0
+
             for _ in range(self.num_simulations):
+                t0 = time.time()
                 batch_data = []
                 for g in active_games:
                     res = g.mcts.find_leaf(g.root)
                     if res is not None:
                         batch_data.append((g, res))
+                sim_cpu_time += time.time() - t0
 
                 if batch_data:
+                    t0 = time.time()
                     enc_batch = torch.FloatTensor(np.array([item[1][2] for item in batch_data])).to(self.device)
                     val_batch = torch.FloatTensor(np.array([item[1][3] for item in batch_data])).to(self.device)
                     
                     p_batch, v_batch = self._predict_batch(enc_batch, val_batch)
                     p_batch = p_batch.cpu().numpy()
                     v_batch = v_batch.cpu().numpy()
+                    dt = time.time() - t0
+                    sim_gpu_time += dt
+                    sim_gpu_calls += 1
+                    sim_total_batch += len(batch_data)
 
                     for i, (g, res) in enumerate(batch_data):
                         search_path, node, _, valid = res
                         g.mcts.expand_and_backup(search_path, node, p_batch[i], float(v_batch[i][0]), valid)
 
+            total_gpu_time += sim_gpu_time
+            total_cpu_time += sim_cpu_time
+            total_gpu_calls += sim_gpu_calls
+
             # 4. Advance states and check for termination
             next_active = []
+            step_finished = 0
             for g in active_games:
                 if g.move_count < self.exploration_plies:
                     temperature = 1.0
@@ -213,6 +254,8 @@ class SelfPlay:
                     result = 1e-4  # Draw by max moves limit
 
                 if result != 0:
+                    step_finished += 1
+                    finished_games += 1
                     # Game finished! Process examples
                     for encoded, policy, p in g.trajectory:
                         if abs(result) < 0.01:
@@ -233,6 +276,29 @@ class SelfPlay:
                     next_active.append(g)
 
             active_games = next_active
+            move_step += 1
+            move_step_elapsed = time.time() - move_step_start
+
+            # Log every 10 move steps
+            if move_step % 10 == 0 or not active_games:
+                avg_batch = sim_total_batch / max(1, sim_gpu_calls)
+                gpu_pct = sim_gpu_time / max(1e-9, sim_cpu_time + sim_gpu_time) * 100
+                elapsed = time.time() - selfplay_start
+                logger.info(
+                    f"  [selfplay] step={move_step:3d} | "
+                    f"active={len(active_games):3d} finished={finished_games:3d} | "
+                    f"step_time={move_step_elapsed:.1f}s | "
+                    f"sim: cpu={sim_cpu_time:.2f}s gpu={sim_gpu_time:.3f}s batch={avg_batch:.0f} gpu%={gpu_pct:.1f}% | "
+                    f"elapsed={elapsed:.0f}s"
+                )
+
+        total_elapsed = time.time() - selfplay_start
+        gpu_pct_total = total_gpu_time / max(1e-9, total_cpu_time + total_gpu_time) * 100
+        logger.info(
+            f"  [selfplay] DONE | {finished_games} games in {total_elapsed:.1f}s | "
+            f"examples={len(all_examples)} | "
+            f"gpu_calls={total_gpu_calls} total_gpu={total_gpu_time:.2f}s total_cpu={total_cpu_time:.2f}s gpu%={gpu_pct_total:.1f}%"
+        )
 
         return all_examples
 
