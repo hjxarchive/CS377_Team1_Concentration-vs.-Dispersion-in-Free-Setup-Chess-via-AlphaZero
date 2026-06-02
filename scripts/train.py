@@ -50,6 +50,10 @@ def main():
                         help="Resume from checkpoint path")
     parser.add_argument("--max-moves", type=int, default=180,
                         help="Maximum half-moves per game (chess only)")
+    parser.add_argument("--num-workers", type=int, default=1,
+                        help="Number of parallel worker processes for self-play")
+    parser.add_argument("--devices", type=str, default=None,
+                        help="Comma-separated list of devices to distribute workers across (e.g. cuda:5,cuda:7)")
     args = parser.parse_args()
 
     # Device
@@ -115,13 +119,28 @@ def main():
         trainer.load_checkpoint(args.resume)
 
     # Create self-play
-    from handichess.track_a.selfplay import SelfPlay, ReplayBuffer
-    selfplay = SelfPlay(
-        game, net,
-        mcts_config=mcts_config,
-        selfplay_config={"max_moves": args.max_moves},
-        device=device,
-    )
+    from handichess.track_a.selfplay import ReplayBuffer
+    
+    if args.num_workers > 1:
+        from handichess.track_a.selfplay import MultiProcessSelfPlay
+        devices_list = args.devices.split(",") if args.devices else [device]
+        game_class = TicTacToeGame if args.game == "tictactoe" else ChessGame
+        selfplay = MultiProcessSelfPlay(
+            game_class=game_class,
+            net_config=net_config,
+            mcts_config=mcts_config,
+            selfplay_config={"max_moves": args.max_moves},
+            devices=devices_list,
+            num_workers=args.num_workers,
+        )
+    else:
+        from handichess.track_a.selfplay import SelfPlay
+        selfplay = SelfPlay(
+            game, net,
+            mcts_config=mcts_config,
+            selfplay_config={"max_moves": args.max_moves},
+            device=device,
+        )
     buffer = ReplayBuffer(max_size=200_000)
 
     # Timing accumulators
@@ -147,7 +166,10 @@ def main():
         t0 = time.time()
         
         # start_states를 넘겨주면, 그 중 랜덤하게 뽑아 게임을 시작함
-        examples = selfplay.generate_games(args.games_per_iter, start_states=start_states if args.game == "chess" else None)
+        if args.num_workers > 1:
+            examples = selfplay.generate_games(args.games_per_iter, net, start_states=start_states if args.game == "chess" else None)
+        else:
+            examples = selfplay.generate_games(args.games_per_iter, start_states=start_states if args.game == "chess" else None)
         selfplay_elapsed = time.time() - t0
         selfplay_times.append(selfplay_elapsed)
 

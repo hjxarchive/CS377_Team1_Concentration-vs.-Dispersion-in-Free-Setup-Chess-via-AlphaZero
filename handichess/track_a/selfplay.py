@@ -17,6 +17,7 @@ from typing import Optional
 
 import numpy as np
 import torch
+import torch.multiprocessing as mp
 
 from .game.base import Game
 from .net import AlphaZeroNet
@@ -317,3 +318,172 @@ def create_matchup_start_states(
             g = game_class.from_matchup(pid, noq_color, max_moves)
             states.append(g.get_init_board())
     return states
+
+
+def _selfplay_worker(
+    worker_id: int,
+    game_class,
+    net_config: dict,
+    state_dict: dict,
+    mcts_config: dict,
+    selfplay_config: dict,
+    num_games: int,
+    start_states: Optional[list[np.ndarray]],
+    device: str,
+) -> list[TrainingExample]:
+    """Worker function executed in spawned subprocess."""
+    # Ensure CPU/GPU environment is set for PyTorch in this child process
+    if "cuda" in device:
+        # PyTorch needs the device index set correctly inside spawned processes
+        try:
+            device_idx = int(device.split(":")[-1])
+            torch.cuda.set_device(device_idx)
+        except Exception:
+            pass
+
+    # Instantiate game
+    game = game_class()
+    if hasattr(game, "max_moves") and "max_moves" in selfplay_config:
+        game.max_moves = selfplay_config["max_moves"]
+
+    # Create network and load weights
+    from .net import create_net_for_game
+    net = create_net_for_game(game, net_config)
+    net.load_state_dict(state_dict)
+    net.to(device)
+
+    # Instantiate SelfPlay and generate games
+    selfplay = SelfPlay(
+        game=game,
+        net=net,
+        mcts_config=mcts_config,
+        selfplay_config=selfplay_config,
+        device=device,
+    )
+    return selfplay.generate_games(num_games, start_states=start_states)
+
+
+def _run_and_queue(
+    worker_id: int,
+    games: int,
+    device: str,
+    results_queue: mp.Queue,
+    game_class,
+    net_config: dict,
+    state_dict: dict,
+    mcts_config: dict,
+    selfplay_config: dict,
+    start_states: Optional[list[np.ndarray]],
+):
+    """Module-level target function for multiprocessing safety."""
+    try:
+        examples = _selfplay_worker(
+            worker_id=worker_id,
+            game_class=game_class,
+            net_config=net_config,
+            state_dict=state_dict,
+            mcts_config=mcts_config,
+            selfplay_config=selfplay_config,
+            num_games=games,
+            start_states=start_states,
+            device=device,
+        )
+        results_queue.put((worker_id, examples, None))
+    except Exception as e:
+        import traceback
+        results_queue.put((worker_id, None, f"{e}\n{traceback.format_exc()}"))
+
+
+class MultiProcessSelfPlay:
+    """
+    CPU Multiprocessing & Multi-GPU Load Balancing wrapper for AlphaZero Self-Play.
+    Spawns multiple parallel workers, allocating them across specified GPU devices.
+    """
+
+    def __init__(
+        self,
+        game_class,
+        net_config: dict,
+        mcts_config: Optional[dict] = None,
+        selfplay_config: Optional[dict] = None,
+        devices: list[str] = ["cuda"],
+        num_workers: int = 4,
+    ):
+        self.game_class = game_class
+        self.net_config = net_config
+        self.mcts_config = mcts_config or {}
+        self.selfplay_config = selfplay_config or {}
+        self.devices = devices
+        self.num_workers = num_workers
+
+    def generate_games(
+        self,
+        num_games: int,
+        net: AlphaZeroNet,
+        start_states: Optional[list[np.ndarray]] = None,
+    ) -> list[TrainingExample]:
+        """
+        Spawns worker subprocesses to generate selfplay games concurrently.
+        """
+        # Divide games among workers
+        games_per_worker = num_games // self.num_workers
+        remainder = num_games % self.num_workers
+
+        worker_games = [games_per_worker + (1 if i < remainder else 0) for i in range(self.num_workers)]
+        # Filter out workers with 0 games
+        worker_games = [g for g in worker_games if g > 0]
+        actual_workers = len(worker_games)
+
+        if actual_workers == 0:
+            return []
+
+        # Send network weights to CPU to share safely with spawned workers
+        state_dict = {k: v.cpu() for k, v in net.state_dict().items()}
+
+        # Use 'spawn' start method for PyTorch multiprocessing safety with CUDA
+        ctx = mp.get_context("spawn")
+        results_queue = ctx.Queue()
+
+        processes = []
+        for i, games in enumerate(worker_games):
+            device = self.devices[i % len(self.devices)]
+            p = ctx.Process(
+                target=_run_and_queue,
+                args=(
+                    i,
+                    games,
+                    device,
+                    results_queue,
+                    self.game_class,
+                    self.net_config,
+                    state_dict,
+                    self.mcts_config,
+                    self.selfplay_config,
+                    start_states,
+                ),
+            )
+            p.start()
+            processes.append(p)
+            logger.info(f"Spawned self-play worker {i} on device {device} generating {games} games")
+
+        # Collect results
+        all_examples = []
+        errors = []
+        for _ in range(actual_workers):
+            worker_id, examples, err = results_queue.get()
+            if err:
+                errors.append((worker_id, err))
+            else:
+                all_examples.extend(examples)
+
+        # Wait for processes
+        for p in processes:
+            p.join()
+
+        if errors:
+            for wid, err in errors:
+                logger.error(f"Self-play worker {wid} crashed with error:\n{err}")
+            raise RuntimeError("One or more self-play worker processes crashed. See logs above.")
+
+        logger.info(f"Successfully collected {len(all_examples)} training examples from {actual_workers} parallel workers.")
+        return all_examples
