@@ -21,6 +21,10 @@ def main():
                         help="Path to lc0 binary")
     parser.add_argument("--weights", type=str, default="",
                         help="Path to lc0 weights file")
+    parser.add_argument("--backend", type=str, default="cuda-auto",
+                        help="Lc0 neural network backend")
+    parser.add_argument("--threads", type=int, default=1,
+                        help="Lc0 CPU worker threads")
     parser.add_argument("--output", type=str, default="runs/lc0_games.jsonl",
                         help="Output log file")
     parser.add_argument("--phase", type=int, default=1,
@@ -31,6 +35,8 @@ def main():
         engine_path=args.engine,
         weights_path=args.weights,
         nodes=args.nodes,
+        threads=args.threads,
+        backend=args.backend,
     )
 
     if args.pattern:

@@ -9,7 +9,7 @@ outside the 0.3~0.7 threshold.
 import sys
 import logging
 from collections import defaultdict
-from handichess.track_b.lc0_runner import LC0Runner
+from handichess.track_b.lc0_runner import Lc0Runner
 from handichess.common.gamelog import GameLog
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -24,7 +24,7 @@ def main():
     
     # Try to init LC0 Runner
     try:
-        runner = LC0Runner(engine_path="lc0", nodes=nodes)
+        runner = Lc0Runner(engine_path="lc0", nodes=nodes)
     except Exception as e:
         logger.error(f"Could not initialize LC0 (ensure 'lc0' is in PATH). Error: {e}")
         logger.info("Skipping floor pilot execution. Please run this on the main cluster.")
