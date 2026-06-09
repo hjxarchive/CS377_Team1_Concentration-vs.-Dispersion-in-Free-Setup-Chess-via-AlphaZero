@@ -1,0 +1,1 @@
+{"game": "chess", "checkpoint": "runs/checkpoints/final.pt", "baseline": "greedy", "games": 2, "pattern": "rook_bishop_pawn", "device": "cuda:5", "num_simulations": 200, "seed": 42, "wins": 2, "draws": 0, "losses": 0, "win_rate": 1.0, "total": 2}

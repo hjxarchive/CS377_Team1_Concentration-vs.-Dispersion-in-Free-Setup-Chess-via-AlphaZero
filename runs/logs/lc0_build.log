@@ -1,0 +1,377 @@
+The Meson build system
+Version: 1.11.1
+Source dir: /home/intern/youngseo/CS377_Team1_Concentration-vs.-Dispersion-in-Free-Setup-Chess-via-AlphaZero/external/lc0
+Build dir: /home/intern/youngseo/CS377_Team1_Concentration-vs.-Dispersion-in-Free-Setup-Chess-via-AlphaZero/external/lc0/build/release
+Build type: native build
+DEPRECATION: WrapDB v1 is deprecated, updated using `meson wrap update zlib`
+Project name: lc0
+Project version: undefined
+C++ compiler for the host machine: g++-10 (gcc 10.5.0 "g++-10 (Ubuntu 10.5.0-1ubuntu1~20.04) 10.5.0")
+C++ linker for the host machine: g++-10 ld.bfd 2.34
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Compiler for C++ supports arguments -march=native: YES 
+Program scripts/compile_proto.py found: YES (/home/intern/youngseo/CS377_Team1_Concentration-vs.-Dispersion-in-Free-Setup-Chess-via-AlphaZero/external/lc0/scripts/compile_proto.py)
+Program git found: YES (/usr/bin/git)
+Configuring build_id.h using configuration
+Downloading abseil-cpp source from https://github.com/abseil/abseil-cpp/releases/download/20240722.0/abseil-cpp-20240722.0.tar.gz
+
+Executing subproject abseil-cpp 
+
+abseil-cpp| Project name: abseil-cpp
+abseil-cpp| Project version: 20240722.0
+abseil-cpp| C++ compiler for the host machine: g++-10 (gcc 10.5.0 "g++-10 (Ubuntu 10.5.0-1ubuntu1~20.04) 10.5.0")
+abseil-cpp| C++ linker for the host machine: g++-10 ld.bfd 2.34
+abseil-cpp| Compiler for C++ supports arguments /DNOMINMAX: NO
+abseil-cpp| Compiler for C++ supports arguments -Wno-sign-compare: YES
+abseil-cpp| Compiler for C++ supports arguments -Wno-gcc-compat: NO
+abseil-cpp| Compiler for C++ supports arguments -maes: YES
+abseil-cpp| Compiler for C++ supports arguments -msse4.1: YES
+abseil-cpp| Checking if "atomic builtins" links: YES
+abseil-cpp| Run-time dependency threads found: YES
+abseil-cpp| Run-time dependency appleframeworks found: NO  (tried framework)
+abseil-cpp| Build targets in project: 15
+abseil-cpp| Subproject abseil-cpp finished.
+
+Dependency threads for host machine found: YES unknown (cached)
+Library dl found: YES
+Found pkg-config: YES (/usr/bin/pkg-config) 0.29.1
+Found CMake: /usr/local/bin/cmake (3.28.1)
+Run-time dependency tensorflow_cc found: NO  (tried pkg-config and cmake)
+Run-time dependency accelerate found: NO  (tried pkg-config and cmake)
+Library mkl_rt found: NO
+Library mklml found: NO
+Library dnnl found: NO
+Library openblas.dll found: NO
+Library openblas found: NO
+Run-time dependency eigen3 found: YES 3.3.7
+Has header "Eigen/Core" : NO 
+Downloading eigen source from https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2
+Downloading file of unknown size.
+Downloading eigen patch from https://wrapdb.mesonbuild.com/v2/eigen_3.4.0-2/get_patch
+
+Executing subproject eigen 
+
+eigen| Project name: eigen
+eigen| Project version: 3.4.0
+eigen| C++ compiler for the host machine: g++-10 (gcc 10.5.0 "g++-10 (Ubuntu 10.5.0-1ubuntu1~20.04) 10.5.0")
+eigen| C++ linker for the host machine: g++-10 ld.bfd 2.34
+eigen| Found pkg-config: YES (/usr/bin/pkg-config) 0.29.1
+eigen| Build targets in project: 15
+eigen| Subproject eigen finished.
+
+Program ispc found: NO
+Library OpenCL found: YES
+Run-time dependency opencl found: NO 
+Has header "CL/opencl.h" : NO 
+Library cublas found: YES
+Library cudnn found: YES
+Library cudart found: YES
+Program nvcc found: YES (/usr/local/cuda-11.7/bin/nvcc)
+Library onnxruntime found: NO
+Run-time dependency appleframeworks found: NO  (tried framework)
+Run-time dependency zlib found: YES 1.2.11
+Library libatomic found: YES
+Checking for type "_Float16" : NO 
+Configuring default_search.h using configuration
+Configuring default_backend.h using configuration
+Build targets in project: 18
+
+lc0 undefined
+
+  Subprojects
+    abseil-cpp: YES
+    eigen     : YES
+
+  User defined options
+    buildtype : release
+    gtest     : false
+    prefix    : /usr/local
+
+Found ninja-1.10.0 at /usr/bin/ninja
+Generating targets:   0%|          | 0/18 eta ?                                               Writing build.ninja:   0%|          | 0/289 eta ?                                                 WARNING: Running the setup command as `meson [options]` instead of `meson setup [options]` is ambiguous and deprecated.
+NOTICE: You are using Python 3.9 which is EOL. Starting with v1.12.0, Meson will require Python 3.10 or newer
+ninja: Entering directory `/home/intern/youngseo/CS377_Team1_Concentration-vs.-Dispersion-in-Free-Setup-Chess-via-AlphaZero/external/lc0/build/release'
+[1/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_poison.cc.o
+[2/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_utf8.cc.o
+[3/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_utf8_for_code_point.cc.o
+[4/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_leak_check.cc.o
+[5/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_randen_detect.cc.o
+[6/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_randen_round_keys.cc.o
+[7/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_win32_waiter.cc.o
+[8/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_internal_commandlineflag.cc.o
+[9/263] Generating 'lc0.p/neural/onnx/onnx.pb.h'
+[10/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_spinlock_wait.cc.o
+[11/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_unscaledcycleclock.cc.o
+[12/263] Generating 'lc0.p/neural/xla/hlo.pb.h'
+[13/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_profiling.a.p/absl_profiling_internal_periodic_sampler.cc.o
+[14/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_cycleclock.cc.o
+[15/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_conditions.cc.o
+[16/263] Generating 'lc0.p/proto/net.pb.h'
+[17/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_stacktrace.cc.o
+[18/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_types.a.p/absl_types_bad_any_cast.cc.o
+[19/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_nullguard.cc.o
+[20/263] Compiling C++ object lc0.p/src_utils_esc_codes.cc.o
+[21/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_pow10_helper.cc.o
+[22/263] Compiling C++ object lc0.p/src_neural_backends_shared_winograd_filter.cc.o
+[23/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_seed_gen_exception.cc.o
+[24/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_types.a.p/absl_types_bad_optional_access.cc.o
+[25/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_posix.cc.o
+[26/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_types.a.p/absl_types_bad_variant_access.cc.o
+[27/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_cpu_detect.cc.o
+[28/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_types.a
+[29/263] Compiling C++ object lc0.p/src_neural_backends_blas_se_unit.cc.o
+[30/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_strerror.cc.o
+[31/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_log_severity.cc.o
+[32/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_stack_consumption.cc.o
+[33/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_ostringstream.cc.o
+[34/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_randen.cc.o
+[35/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_address_is_readable.cc.o
+[36/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_scoped_set_env.cc.o
+[37/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_vdso_support.cc.o
+[38/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_raw_logging.cc.o
+[39/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_elf_mem_image.cc.o
+[40/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cordz_functions.cc.o
+[41/263] Compiling C++ object lc0.p/src_version.cc.o
+[42/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_civil_time_detail.cc.o
+[43/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_demangle.cc.o
+[44/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_throw_delegate.cc.o
+[45/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_fnmatch.cc.o
+[46/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_fixed.cc.o
+[47/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_libc.cc.o
+[48/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_match.cc.o
+[49/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_spinlock.cc.o
+[50/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_stringify_sink.cc.o
+[51/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_discrete_distribution.cc.o
+[52/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_gaussian_distribution.cc.o
+[53/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_charconv_parse.cc.o
+[54/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_sysinfo.cc.o
+[55/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_graphcycles.cc.o
+[56/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_cord_buffer.cc.o
+[57/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_demangle_rust.cc.o
+[58/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_damerau_levenshtein_distance.cc.o
+[59/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_zone_info_source.cc.o
+[60/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_pthread_waiter.cc.o
+[61/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_internal_private_handle_accessor.cc.o
+[62/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_decode_rust_punycode.cc.o
+[63/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_randen_slow.cc.o
+[64/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_string_view.cc.o
+[65/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_commandlineflag.cc.o
+[66/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_chi_square.cc.o
+[67/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_failure_signal_handler.cc.o
+[68/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_profiling.a.p/absl_profiling_internal_exponential_biased.cc.o
+[69/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_internal_examine_stack.cc.o
+[70/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_profiling.a
+[71/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_waiter_base.cc.o
+[72/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_hash.a.p/absl_hash_internal_city.cc.o
+[73/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_memutil.cc.o
+[74/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_proto.cc.o
+[75/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_if.cc.o
+[76/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_str_format_extension.cc.o
+[77/263] Compiling C++ object lc0.p/src_utils_files.cc.o
+[78/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_crc_x86_arm_combined.cc.o
+[79/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_hash.a.p/absl_hash_internal_low_level_hash.cc.o
+[80/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cord_rep_btree_navigator.cc.o
+[81/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_thread_identity.cc.o
+[82/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_format.cc.o
+[83/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_numeric.a.p/absl_numeric_int128.cc.o
+[84/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_numeric.a
+[85/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_lookup.cc.o
+[86/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_str_format_output.cc.o
+[87/263] Compiling C++ object lc0.p/src_utils_histogram.cc.o
+[88/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cord_rep_consume.cc.o
+[89/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_futex_waiter.cc.o
+[90/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_barrier.cc.o
+[91/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_escaping.cc.o
+[92/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_crc.cc.o
+[93/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_ascii.cc.o
+[94/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_base.a.p/absl_base_internal_low_level_alloc.cc.o
+[95/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cord_rep_btree_reader.cc.o
+[96/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_crc32c.cc.o
+[97/263] Compiling C++ object lc0.p/src_chess_gamestate.cc.o
+[98/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_base.a
+[99/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cordz_handle.cc.o
+[100/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_debugging.a.p/absl_debugging_symbolize.cc.o
+[101/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_str_replace.cc.o
+[102/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_debugging.a
+[103/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_numbers.cc.o
+[104/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_blocking_counter.cc.o
+[105/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_initialize.cc.o
+[106/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_charconv_bigint.cc.o
+[107/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_log_entry.cc.o
+[108/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_sem_waiter.cc.o
+[109/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_per_thread_sem.cc.o
+[110/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_seed_material.cc.o
+[111/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_log_sink.cc.o
+[112/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_crc_memcpy_fallback.cc.o
+[113/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_time.cc.o
+[114/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_str_format_parser.cc.o
+[115/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_container.a.p/absl_container_internal_hashtablez_sampler_force_weak_definition.cc.o
+[116/263] Compiling C++ object lc0.p/src_utils_numa.cc.o
+[117/263] Compiling C++ object lc0.p/src_utils_string.cc.o
+[118/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_seed_sequences.cc.o
+[119/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_crc_memcpy_x86_arm_combined.cc.o
+[120/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_log_format.cc.o
+[121/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_internal_program_name.cc.o
+[122/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_str_split.cc.o
+[123/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_pool_urbg.cc.o
+[124/263] Compiling C++ object lc0.p/src_chess_position.cc.o
+[125/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_globals.cc.o
+[126/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_substitute.cc.o
+[127/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_kernel_timeout.cc.o
+[128/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_notification.cc.o
+[129/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cordz_sample_token.cc.o
+[130/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_clock.cc.o
+[131/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_format.cc.o
+[132/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_log_sink_set.cc.o
+[133/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_str_cat.cc.o
+[134/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_usage.cc.o
+[135/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_civil_time.cc.o
+[136/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_impl.cc.o
+[137/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_str_format_arg.cc.o
+[138/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_stdcpp_waiter.cc.o
+[139/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_die_if_null.cc.o
+[140/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_duration.cc.o
+[141/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_globals.cc.o
+[142/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cord_internal.cc.o
+[143/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_internal_create_thread_identity.cc.o
+[144/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_charconv.cc.o
+[145/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_container.a.p/absl_container_internal_hashtablez_sampler.cc.o
+[146/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_random.a.p/absl_random_internal_randen_hwaes.cc.o
+[147/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_hash.a.p/absl_hash_internal_hash.cc.o
+[148/263] Compiling C++ object lc0.p/src_utils_filesystem.posix.cc.o
+[149/263] Compiling C++ object lc0.p/src_utils_logging.cc.o
+[150/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_random.a
+[151/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_hash.a
+[152/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_str_format_float_conversion.cc.o
+[153/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_usage_config.cc.o
+[154/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_check_op.cc.o
+[155/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a.p/absl_synchronization_mutex.cc.o
+[156/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cordz_info.cc.o
+[157/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_flags.cc.o
+[158/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_synchronization.a
+[159/263] Compiling C++ object lc0.p/src_utils_commandline.cc.o
+[160/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cord_rep_crc.cc.o
+[161/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_escaping.cc.o
+[162/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_internal_flag.cc.o
+[163/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_internal_usage.cc.o
+[164/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_log_message.cc.o
+[165/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_str_format_bind.cc.o
+[166/263] Compiling C++ object lc0.p/src_utils_random.cc.o
+[167/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_marshalling.cc.o
+[168/263] Compiling C++ object lc0.p/src_utils_protomessage.cc.o
+[169/263] Compiling C++ object lc0.p/src_search_register.cc.o
+[170/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_status.a.p/absl_status_status_payload_printer.cc.o
+[171/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_crc_cord_state.cc.o
+[172/263] Compiling C++ object lc0.p/src_neural_backends_shared_activation.cc.o
+[173/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_container.a.p/absl_container_internal_raw_hash_set.cc.o
+[174/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_cord_analysis.cc.o
+[175/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_container.a
+[176/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_log.a.p/absl_log_internal_vlog_config.cc.o
+[177/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_time.a.p/absl_time_internal_cctz_src_time_zone_info.cc.o
+[178/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_log.a
+[179/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_time.a
+[180/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_crc.a.p/absl_crc_internal_crc_non_temporal_memcpy.cc.o
+[181/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_crc.a
+[182/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_internal_cord_rep_btree.cc.o
+[183/263] Compiling C++ object lc0.p/src_utils_weights_adapter.cc.o
+[184/263] Compiling C++ object lc0.p/src_search_classic_stoppers_timemgr.cc.o
+[185/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_status.a.p/absl_status_status.cc.o
+[186/263] Compiling C++ object lc0.p/src_utils_configfile.cc.o
+[187/263] Compiling C++ object lc0.p/src_search_classic_stoppers_legacy.cc.o
+[188/263] Compiling C++ object lc0.p/src_search_classic_stoppers_stoppers.cc.o
+[189/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_status.a.p/absl_status_internal_status_internal.cc.o
+[190/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_status.a.p/absl_status_statusor.cc.o
+[191/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_status.a
+[192/263] Compiling C++ object lc0.p/src_utils_optionsdict.cc.o
+[193/263] Compiling C++ object lc0.p/src_chess_board.cc.o
+[194/263] Compiling C++ object lc0.p/src_search_classic_stoppers_simple.cc.o
+[195/263] Compiling C++ object lc0.p/src_search_classic_stoppers_alphazero.cc.o
+[196/263] Compiling C++ object lc0.p/src_search_classic_stoppers_smooth.cc.o
+[197/263] Compiling C++ object lc0.p/src_syzygy_syzygy.cc.o
+[198/263] Compiling C++ object lc0.p/src_neural_xla_print_hlo.cc.o
+[199/263] Compiling C++ object lc0.p/src_utils_optionsparser.cc.o
+[200/263] Compiling C++ object lc0.p/src_search_classic_stoppers_factory.cc.o
+[201/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_strings.a.p/absl_strings_cord.cc.o
+[202/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_strings.a
+[203/263] Compiling C++ object lc0.p/src_search_classic_stoppers_common.cc.o
+[204/263] Compiling C++ object lc0.p/src_neural_decoder.cc.o
+[205/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_reflection.cc.o
+[206/263] Compiling C++ object lc0.p/src_chess_uciloop.cc.o
+[207/263] Compiling C++ object lc0.p/src_neural_encoder.cc.o
+[208/263] Compiling C++ object lc0.p/src_neural_network_legacy.cc.o
+[209/263] Compiling C++ object lc0.p/src_neural_batchsplit.cc.o
+[210/263] Compiling C++ object lc0.p/src_neural_loader.cc.o
+[211/263] Compiling C++ object lc0.p/src_neural_xla_xla_tensor.cc.o
+[212/263] Compiling C++ object lc0.p/src_trainingdata_reader.cc.o
+[213/263] Compiling C++ object subprojects/abseil-cpp-20240722.0/libabsl_flags.a.p/absl_flags_parse.cc.o
+[214/263] Linking static target subprojects/abseil-cpp-20240722.0/libabsl_flags.a
+[215/263] Compiling C++ object lc0.p/src_trainingdata_writer.cc.o
+[216/263] Compiling C++ object lc0.p/src_neural_onnx_builder.cc.o
+[217/263] Compiling C++ object lc0.p/src_neural_backends_network_rr.cc.o
+[218/263] Compiling C++ object lc0.p/src_search_classic_node.cc.o
+[219/263] Compiling C++ object lc0.p/src_neural_register.cc.o
+[220/263] Compiling C++ object lc0.p/src_trainingdata_trainingdata.cc.o
+[221/263] Compiling C++ object lc0.p/src_neural_backends_network_random.cc.o
+[222/263] Compiling C++ object lc0.p/src_neural_backends_blas_winograd_convolution3.cc.o
+[223/263] Compiling C++ object lc0.p/src_neural_shared_params.cc.o
+[224/263] Compiling C++ object lc0.p/src_search_classic_params.cc.o
+[225/263] Compiling C++ object lc0.p/src_neural_backends_blas_convolution1.cc.o
+[226/263] Compiling C++ object lc0.p/src_neural_backend.cc.o
+[227/263] Compiling C++ object lc0.p/src_neural_backends_network_trivial.cc.o
+[228/263] Compiling C++ object lc0.p/src_neural_wrapper.cc.o
+[229/263] Compiling C++ object lc0.p/src_neural_memcache.cc.o
+[230/263] Compiling C++ object lc0.p/src_neural_backends_network_demux.cc.o
+[231/263] Compiling C++ object lc0.p/src_neural_onnx_adapters.cc.o
+[232/263] Compiling C++ object lc0.p/src_neural_backends_network_record.cc.o
+[233/263] Compiling C++ object lc0.p/src_neural_factory.cc.o
+[234/263] Compiling C++ object lc0.p/src_neural_xla_hlo_builder.cc.o
+[235/263] Compiling C++ object lc0.p/src_tools_backendbench.cc.o
+[236/263] Compiling C++ object lc0.p/src_neural_backends_network_mux.cc.o
+[237/263] Compiling C++ object lc0.p/src_search_instamove_instamove.cc.o
+[238/263] Compiling C++ object lc0.p/src_neural_backends_blas_fully_connected_layer.cc.o
+[239/263] Compiling C++ object lc0.p/src_engine_loop.cc.o
+[240/263] Compiling C++ object lc0.p/src_engine.cc.o
+[241/263] Compiling C++ object lc0.p/src_main.cc.o
+[242/263] Compiling C++ object lc0.p/src_neural_backends_network_check.cc.o
+[243/263] Compiling C++ object lc0.p/src_tools_describenet.cc.o
+[244/263] Compiling C++ object lc0.p/src_neural_backends_cuda_layers.cc.o
+[245/263] Compiling C++ object lc0.p/src_selfplay_multigame.cc.o
+[246/263] Compiling C++ object lc0.p/src_selfplay_loop.cc.o
+[247/263] Compiling C++ object lc0.p/src_search_classic_wrapper.cc.o
+../../src/search/classic/wrapper.cc:155:38: warning: extra ‘;’ [-Wpedantic]
+  155 | REGISTER_SEARCH(ClassicSearchFactory);
+      |                                      ^
+[248/263] Compiling C++ object lc0.p/src_tools_onnx2leela.cc.o
+[249/263] Compiling C++ object lc0.p/src_neural_backends_cuda_network_cuda.cc.o
+../../src/neural/backends/cuda/network_cuda.cc: In instantiation of ‘void lczero::CudaNetwork<DataType>::showDeviceInfo(const cudaDeviceProp&, int) const [with DataType = __half]’:
+../../src/neural/backends/cuda/network_cuda.cc:221:5:   required from ‘lczero::CudaNetwork<DataType>::CudaNetwork(const WeightsFile&, const lczero::OptionsDict&) [with DataType = __half; lczero::WeightsFile = pblczero::Net]’
+/usr/include/c++/10/bits/unique_ptr.h:962:30:   required from ‘typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = lczero::CudaNetwork<__half>; _Args = {const pblczero::Net&, const lczero::OptionsDict&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<lczero::CudaNetwork<__half>, std::default_delete<lczero::CudaNetwork<__half> > >]’
+../../src/neural/backends/cuda/network_cuda.cc:1133:49:   required from ‘std::unique_ptr<lczero::Network> lczero::MakeCudaNetwork(const std::optional<pblczero::Net>&, const lczero::OptionsDict&) [with DataType = __half]’
+../../src/neural/backends/cuda/network_cuda.cc:1148:50:   required from here
+../../src/neural/backends/cuda/network_cuda.cc:1018:61: warning: unused parameter ‘deviceId’ [-Wunused-parameter]
+ 1018 |   void showDeviceInfo(const cudaDeviceProp& deviceProp, int deviceId) const {
+      |                                                         ~~~~^~~~~~~~
+../../src/neural/backends/cuda/network_cuda.cc: In instantiation of ‘void lczero::CudaNetwork<DataType>::showDeviceInfo(const cudaDeviceProp&, int) const [with DataType = float]’:
+../../src/neural/backends/cuda/network_cuda.cc:221:5:   required from ‘lczero::CudaNetwork<DataType>::CudaNetwork(const WeightsFile&, const lczero::OptionsDict&) [with DataType = float; lczero::WeightsFile = pblczero::Net]’
+/usr/include/c++/10/bits/unique_ptr.h:962:30:   required from ‘typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = lczero::CudaNetwork<float>; _Args = {const pblczero::Net&, const lczero::OptionsDict&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<lczero::CudaNetwork<float>, std::default_delete<lczero::CudaNetwork<float> > >]’
+../../src/neural/backends/cuda/network_cuda.cc:1133:49:   required from ‘std::unique_ptr<lczero::Network> lczero::MakeCudaNetwork(const std::optional<pblczero::Net>&, const lczero::OptionsDict&) [with DataType = float]’
+../../src/neural/backends/cuda/network_cuda.cc:1151:49:   required from here
+../../src/neural/backends/cuda/network_cuda.cc:1018:61: warning: unused parameter ‘deviceId’ [-Wunused-parameter]
+[250/263] Compiling C++ object lc0.p/src_tools_benchmark.cc.o
+[251/263] Compiling C++ object lc0.p/src_selfplay_game.cc.o
+[252/263] Compiling C++ object lc0.p/src_neural_onnx_converter.cc.o
+[253/263] Compiling C++ object lc0.p/src_tools_leela2onnx.cc.o
+[254/263] Compiling C++ object lc0.p/src_search_dag_classic_node.cc.o
+[255/263] Compiling C++ object lc0.p/src_search_classic_search.cc.o
+[256/263] Compiling C++ object lc0.p/src_selfplay_tournament.cc.o
+[257/263] Compiling C++ object lc0.p/src_search_dag_classic_wrapper.cc.o
+[258/263] Compiling C++ object lc0.p/src_neural_xla_onnx2hlo.cc.o
+[259/263] Compiling C++ object lc0.p/src_search_dag_classic_search.cc.o
+[260/263] Compiling C++ object lc0.p/src_neural_backends_blas_network_blas.cc.o
+[261/263] Generating cuda fp32 code with a custom command
+[262/263] Generating cuda fp16 code with a custom command
+[263/263] Linking target lc0
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /usr/bin/ninja -C /home/intern/youngseo/CS377_Team1_Concentration-vs.-Dispersion-in-Free-Setup-Chess-via-AlphaZero/external/lc0/build/release
+NOTICE: You are using Python 3.9 which is EOL. Starting with v1.12.0, Meson will require Python 3.10 or newer

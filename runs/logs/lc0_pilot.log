@@ -1,0 +1,1509 @@
+[start] pilot pattern=bishop_6pawns cuda_visible_devices=4
+[start] pilot pattern=knight_6pawns cuda_visible_devices=5
+2026-06-09 05:54:58,220 INFO Game 1/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:54:58,234 WARNING <UciProtocol (pid=2929708)>: stderr >> [1m[31m       _
+2026-06-09 05:54:58,234 WARNING <UciProtocol (pid=2929708)>: stderr >> |   _ | |
+2026-06-09 05:54:58,234 WARNING <UciProtocol (pid=2929708)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:54:58,239 WARNING <UciProtocol (pid=2929708)>: stderr >> Search algorithm: classic
+2026-06-09 05:54:58,247 WARNING <UciProtocol (pid=2929708)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:54:58,777 WARNING <UciProtocol (pid=2929708)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:54:58,793 WARNING <UciProtocol (pid=2929708)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:54:58,793 WARNING <UciProtocol (pid=2929708)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:54:58,801 WARNING <UciProtocol (pid=2929708)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:54:58,801 WARNING <UciProtocol (pid=2929708)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:54:58,801 WARNING <UciProtocol (pid=2929708)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:54:58,801 WARNING <UciProtocol (pid=2929708)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:54:58,801 WARNING <UciProtocol (pid=2929708)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:01,260 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:01,261 INFO Game 2/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:01,278 WARNING <UciProtocol (pid=2930663)>: stderr >> [1m[31m       _
+2026-06-09 05:55:01,279 WARNING <UciProtocol (pid=2930663)>: stderr >> |   _ | |
+2026-06-09 05:55:01,279 WARNING <UciProtocol (pid=2930663)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:01,282 WARNING <UciProtocol (pid=2930663)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:01,289 WARNING <UciProtocol (pid=2930663)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:01,696 WARNING <UciProtocol (pid=2930663)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930663)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930663)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:01,715 WARNING <UciProtocol (pid=2930663)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:01,716 WARNING <UciProtocol (pid=2930663)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:01,716 WARNING <UciProtocol (pid=2930663)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:01,716 WARNING <UciProtocol (pid=2930663)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:01,716 WARNING <UciProtocol (pid=2930663)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:04,138 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:04,138 INFO Game 3/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:04,157 WARNING <UciProtocol (pid=2931607)>: stderr >> [1m[31m       _
+2026-06-09 05:55:04,157 WARNING <UciProtocol (pid=2931607)>: stderr >> |   _ | |
+2026-06-09 05:55:04,157 WARNING <UciProtocol (pid=2931607)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:04,159 WARNING <UciProtocol (pid=2931607)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:04,167 WARNING <UciProtocol (pid=2931607)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:04,546 WARNING <UciProtocol (pid=2931607)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:04,563 WARNING <UciProtocol (pid=2931607)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:04,563 WARNING <UciProtocol (pid=2931607)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:04,563 WARNING <UciProtocol (pid=2931607)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:04,563 WARNING <UciProtocol (pid=2931607)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:04,563 WARNING <UciProtocol (pid=2931607)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:04,563 WARNING <UciProtocol (pid=2931607)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:04,564 WARNING <UciProtocol (pid=2931607)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:07,024 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:07,024 INFO Game 4/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:07,044 WARNING <UciProtocol (pid=2932531)>: stderr >> [1m[31m       _
+2026-06-09 05:55:07,044 WARNING <UciProtocol (pid=2932531)>: stderr >> |   _ | |
+2026-06-09 05:55:07,044 WARNING <UciProtocol (pid=2932531)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:07,046 WARNING <UciProtocol (pid=2932531)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:07,054 WARNING <UciProtocol (pid=2932531)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:07,474 WARNING <UciProtocol (pid=2932531)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:07,495 WARNING <UciProtocol (pid=2932531)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:07,495 WARNING <UciProtocol (pid=2932531)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:07,495 WARNING <UciProtocol (pid=2932531)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:07,495 WARNING <UciProtocol (pid=2932531)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:07,495 WARNING <UciProtocol (pid=2932531)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:07,495 WARNING <UciProtocol (pid=2932531)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:07,496 WARNING <UciProtocol (pid=2932531)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:09,868 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:09,869 INFO Game 5/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:09,887 WARNING <UciProtocol (pid=2933451)>: stderr >> [1m[31m       _
+2026-06-09 05:55:09,887 WARNING <UciProtocol (pid=2933451)>: stderr >> |   _ | |
+2026-06-09 05:55:09,887 WARNING <UciProtocol (pid=2933451)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:09,890 WARNING <UciProtocol (pid=2933451)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:09,898 WARNING <UciProtocol (pid=2933451)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:10,279 WARNING <UciProtocol (pid=2933451)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:10,296 WARNING <UciProtocol (pid=2933451)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:10,296 WARNING <UciProtocol (pid=2933451)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:10,297 WARNING <UciProtocol (pid=2933451)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:10,297 WARNING <UciProtocol (pid=2933451)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:10,297 WARNING <UciProtocol (pid=2933451)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:10,297 WARNING <UciProtocol (pid=2933451)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:10,297 WARNING <UciProtocol (pid=2933451)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:12,715 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:12,715 INFO Game 6/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:12,732 WARNING <UciProtocol (pid=2934346)>: stderr >> [1m[31m       _
+2026-06-09 05:55:12,733 WARNING <UciProtocol (pid=2934346)>: stderr >> |   _ | |
+2026-06-09 05:55:12,733 WARNING <UciProtocol (pid=2934346)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:12,735 WARNING <UciProtocol (pid=2934346)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:12,743 WARNING <UciProtocol (pid=2934346)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:13,117 WARNING <UciProtocol (pid=2934346)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:13,138 WARNING <UciProtocol (pid=2934346)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:13,138 WARNING <UciProtocol (pid=2934346)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:13,139 WARNING <UciProtocol (pid=2934346)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:13,139 WARNING <UciProtocol (pid=2934346)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:13,139 WARNING <UciProtocol (pid=2934346)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:13,140 WARNING <UciProtocol (pid=2934346)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:13,140 WARNING <UciProtocol (pid=2934346)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:15,562 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:15,562 INFO Game 7/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:15,579 WARNING <UciProtocol (pid=2935294)>: stderr >> [1m[31m       _
+2026-06-09 05:55:15,579 WARNING <UciProtocol (pid=2935294)>: stderr >> |   _ | |
+2026-06-09 05:55:15,579 WARNING <UciProtocol (pid=2935294)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:15,581 WARNING <UciProtocol (pid=2935294)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:15,589 WARNING <UciProtocol (pid=2935294)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:15,975 WARNING <UciProtocol (pid=2935294)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:15,995 WARNING <UciProtocol (pid=2935294)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:15,995 WARNING <UciProtocol (pid=2935294)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:16,007 WARNING <UciProtocol (pid=2935294)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:16,007 WARNING <UciProtocol (pid=2935294)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:16,007 WARNING <UciProtocol (pid=2935294)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:16,007 WARNING <UciProtocol (pid=2935294)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:16,007 WARNING <UciProtocol (pid=2935294)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:18,409 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:18,409 INFO Game 8/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:18,426 WARNING <UciProtocol (pid=2936197)>: stderr >> [1m[31m       _
+2026-06-09 05:55:18,427 WARNING <UciProtocol (pid=2936197)>: stderr >> |   _ | |
+2026-06-09 05:55:18,427 WARNING <UciProtocol (pid=2936197)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:18,429 WARNING <UciProtocol (pid=2936197)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:18,438 WARNING <UciProtocol (pid=2936197)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:18,797 WARNING <UciProtocol (pid=2936197)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:18,815 WARNING <UciProtocol (pid=2936197)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:18,815 WARNING <UciProtocol (pid=2936197)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:18,818 WARNING <UciProtocol (pid=2936197)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:18,818 WARNING <UciProtocol (pid=2936197)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:18,818 WARNING <UciProtocol (pid=2936197)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:18,818 WARNING <UciProtocol (pid=2936197)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:18,819 WARNING <UciProtocol (pid=2936197)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:21,154 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:21,154 INFO Game 9/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:21,172 WARNING <UciProtocol (pid=2937044)>: stderr >> [1m[31m       _
+2026-06-09 05:55:21,173 WARNING <UciProtocol (pid=2937044)>: stderr >> |   _ | |
+2026-06-09 05:55:21,173 WARNING <UciProtocol (pid=2937044)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:21,175 WARNING <UciProtocol (pid=2937044)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:21,183 WARNING <UciProtocol (pid=2937044)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:21,677 WARNING <UciProtocol (pid=2937044)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:21,697 WARNING <UciProtocol (pid=2937044)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:21,697 WARNING <UciProtocol (pid=2937044)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:21,701 WARNING <UciProtocol (pid=2937044)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:21,701 WARNING <UciProtocol (pid=2937044)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:21,701 WARNING <UciProtocol (pid=2937044)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:21,702 WARNING <UciProtocol (pid=2937044)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:21,702 WARNING <UciProtocol (pid=2937044)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:24,103 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:24,104 INFO Game 10/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:24,121 WARNING <UciProtocol (pid=2938051)>: stderr >> [1m[31m       _
+2026-06-09 05:55:24,122 WARNING <UciProtocol (pid=2938051)>: stderr >> |   _ | |
+2026-06-09 05:55:24,122 WARNING <UciProtocol (pid=2938051)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:24,124 WARNING <UciProtocol (pid=2938051)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:24,131 WARNING <UciProtocol (pid=2938051)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:24,483 WARNING <UciProtocol (pid=2938051)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:24,500 WARNING <UciProtocol (pid=2938051)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:24,500 WARNING <UciProtocol (pid=2938051)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:24,500 WARNING <UciProtocol (pid=2938051)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:24,500 WARNING <UciProtocol (pid=2938051)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:24,501 WARNING <UciProtocol (pid=2938051)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:24,501 WARNING <UciProtocol (pid=2938051)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:24,501 WARNING <UciProtocol (pid=2938051)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:26,846 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:26,846 INFO Game 11/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:26,862 WARNING <UciProtocol (pid=2938887)>: stderr >> [1m[31m       _
+2026-06-09 05:55:26,862 WARNING <UciProtocol (pid=2938887)>: stderr >> |   _ | |
+2026-06-09 05:55:26,862 WARNING <UciProtocol (pid=2938887)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:26,864 WARNING <UciProtocol (pid=2938887)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:26,872 WARNING <UciProtocol (pid=2938887)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:27,222 WARNING <UciProtocol (pid=2938887)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:27,239 WARNING <UciProtocol (pid=2938887)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:27,239 WARNING <UciProtocol (pid=2938887)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:27,239 WARNING <UciProtocol (pid=2938887)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:27,239 WARNING <UciProtocol (pid=2938887)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:27,239 WARNING <UciProtocol (pid=2938887)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:27,239 WARNING <UciProtocol (pid=2938887)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:27,240 WARNING <UciProtocol (pid=2938887)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:29,724 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:29,724 INFO Game 12/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:29,742 WARNING <UciProtocol (pid=2939831)>: stderr >> [1m[31m       _
+2026-06-09 05:55:29,742 WARNING <UciProtocol (pid=2939831)>: stderr >> |   _ | |
+2026-06-09 05:55:29,742 WARNING <UciProtocol (pid=2939831)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:29,746 WARNING <UciProtocol (pid=2939831)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:29,754 WARNING <UciProtocol (pid=2939831)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:30,156 WARNING <UciProtocol (pid=2939831)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:30,173 WARNING <UciProtocol (pid=2939831)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:30,174 WARNING <UciProtocol (pid=2939831)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:30,174 WARNING <UciProtocol (pid=2939831)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:30,174 WARNING <UciProtocol (pid=2939831)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:30,174 WARNING <UciProtocol (pid=2939831)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:30,174 WARNING <UciProtocol (pid=2939831)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:30,174 WARNING <UciProtocol (pid=2939831)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:32,576 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:32,576 INFO Game 13/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:32,593 WARNING <UciProtocol (pid=2940738)>: stderr >> [1m[31m       _
+2026-06-09 05:55:32,593 WARNING <UciProtocol (pid=2940738)>: stderr >> |   _ | |
+2026-06-09 05:55:32,593 WARNING <UciProtocol (pid=2940738)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:32,595 WARNING <UciProtocol (pid=2940738)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:32,603 WARNING <UciProtocol (pid=2940738)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:33,053 WARNING <UciProtocol (pid=2940738)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:33,071 WARNING <UciProtocol (pid=2940738)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:35,347 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:35,347 INFO Game 14/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:35,366 WARNING <UciProtocol (pid=2941673)>: stderr >> [1m[31m       _
+2026-06-09 05:55:35,366 WARNING <UciProtocol (pid=2941673)>: stderr >> |   _ | |
+2026-06-09 05:55:35,366 WARNING <UciProtocol (pid=2941673)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:35,369 WARNING <UciProtocol (pid=2941673)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:35,377 WARNING <UciProtocol (pid=2941673)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:35,771 WARNING <UciProtocol (pid=2941673)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:35,788 WARNING <UciProtocol (pid=2941673)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:35,788 WARNING <UciProtocol (pid=2941673)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:35,799 WARNING <UciProtocol (pid=2941673)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:35,799 WARNING <UciProtocol (pid=2941673)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:35,799 WARNING <UciProtocol (pid=2941673)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:35,799 WARNING <UciProtocol (pid=2941673)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:35,799 WARNING <UciProtocol (pid=2941673)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:38,398 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:38,398 INFO Game 15/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:38,416 WARNING <UciProtocol (pid=2942787)>: stderr >> [1m[31m       _
+2026-06-09 05:55:38,416 WARNING <UciProtocol (pid=2942787)>: stderr >> |   _ | |
+2026-06-09 05:55:38,416 WARNING <UciProtocol (pid=2942787)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:38,418 WARNING <UciProtocol (pid=2942787)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:38,427 WARNING <UciProtocol (pid=2942787)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:38,800 WARNING <UciProtocol (pid=2942787)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:38,817 WARNING <UciProtocol (pid=2942787)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:38,817 WARNING <UciProtocol (pid=2942787)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:38,820 WARNING <UciProtocol (pid=2942787)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:38,820 WARNING <UciProtocol (pid=2942787)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:38,820 WARNING <UciProtocol (pid=2942787)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:38,820 WARNING <UciProtocol (pid=2942787)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:38,820 WARNING <UciProtocol (pid=2942787)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:41,282 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:41,282 INFO Game 16/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:41,300 WARNING <UciProtocol (pid=2943680)>: stderr >> [1m[31m       _
+2026-06-09 05:55:41,300 WARNING <UciProtocol (pid=2943680)>: stderr >> |   _ | |
+2026-06-09 05:55:41,300 WARNING <UciProtocol (pid=2943680)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:41,302 WARNING <UciProtocol (pid=2943680)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:41,310 WARNING <UciProtocol (pid=2943680)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:41,690 WARNING <UciProtocol (pid=2943680)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:41,711 WARNING <UciProtocol (pid=2943680)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:41,711 WARNING <UciProtocol (pid=2943680)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:41,712 WARNING <UciProtocol (pid=2943680)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:41,712 WARNING <UciProtocol (pid=2943680)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:41,712 WARNING <UciProtocol (pid=2943680)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:41,712 WARNING <UciProtocol (pid=2943680)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:41,712 WARNING <UciProtocol (pid=2943680)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:44,154 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:44,154 INFO Game 17/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:44,172 WARNING <UciProtocol (pid=2944608)>: stderr >> [1m[31m       _
+2026-06-09 05:55:44,172 WARNING <UciProtocol (pid=2944608)>: stderr >> |   _ | |
+2026-06-09 05:55:44,172 WARNING <UciProtocol (pid=2944608)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:44,176 WARNING <UciProtocol (pid=2944608)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:44,184 WARNING <UciProtocol (pid=2944608)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:44,547 WARNING <UciProtocol (pid=2944608)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:44,564 WARNING <UciProtocol (pid=2944608)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:44,565 WARNING <UciProtocol (pid=2944608)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:44,565 WARNING <UciProtocol (pid=2944608)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:44,565 WARNING <UciProtocol (pid=2944608)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:44,565 WARNING <UciProtocol (pid=2944608)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:44,565 WARNING <UciProtocol (pid=2944608)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:44,565 WARNING <UciProtocol (pid=2944608)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:46,799 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:46,799 INFO Game 18/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:46,816 WARNING <UciProtocol (pid=2945366)>: stderr >> [1m[31m       _
+2026-06-09 05:55:46,816 WARNING <UciProtocol (pid=2945366)>: stderr >> |   _ | |
+2026-06-09 05:55:46,816 WARNING <UciProtocol (pid=2945366)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:46,818 WARNING <UciProtocol (pid=2945366)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:46,827 WARNING <UciProtocol (pid=2945366)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:47,195 WARNING <UciProtocol (pid=2945366)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:47,214 WARNING <UciProtocol (pid=2945366)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:49,555 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:49,555 INFO Game 19/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:49,572 WARNING <UciProtocol (pid=2946288)>: stderr >> [1m[31m       _
+2026-06-09 05:55:49,573 WARNING <UciProtocol (pid=2946288)>: stderr >> |   _ | |
+2026-06-09 05:55:49,573 WARNING <UciProtocol (pid=2946288)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:49,575 WARNING <UciProtocol (pid=2946288)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:49,582 WARNING <UciProtocol (pid=2946288)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:49,998 WARNING <UciProtocol (pid=2946288)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:50,015 WARNING <UciProtocol (pid=2946288)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:50,015 WARNING <UciProtocol (pid=2946288)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:50,020 WARNING <UciProtocol (pid=2946288)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:50,020 WARNING <UciProtocol (pid=2946288)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:50,020 WARNING <UciProtocol (pid=2946288)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:50,020 WARNING <UciProtocol (pid=2946288)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:50,020 WARNING <UciProtocol (pid=2946288)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:52,456 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:52,456 INFO Game 20/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:52,474 WARNING <UciProtocol (pid=2947239)>: stderr >> [1m[31m       _
+2026-06-09 05:55:52,474 WARNING <UciProtocol (pid=2947239)>: stderr >> |   _ | |
+2026-06-09 05:55:52,474 WARNING <UciProtocol (pid=2947239)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:52,477 WARNING <UciProtocol (pid=2947239)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:52,484 WARNING <UciProtocol (pid=2947239)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:52,843 WARNING <UciProtocol (pid=2947239)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:52,860 WARNING <UciProtocol (pid=2947239)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:52,860 WARNING <UciProtocol (pid=2947239)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:52,861 WARNING <UciProtocol (pid=2947239)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:52,861 WARNING <UciProtocol (pid=2947239)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:52,861 WARNING <UciProtocol (pid=2947239)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:52,861 WARNING <UciProtocol (pid=2947239)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:52,861 WARNING <UciProtocol (pid=2947239)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:55,103 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:55,103 INFO Game 21/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:55,120 WARNING <UciProtocol (pid=2948183)>: stderr >> [1m[31m       _
+2026-06-09 05:55:55,120 WARNING <UciProtocol (pid=2948183)>: stderr >> |   _ | |
+2026-06-09 05:55:55,121 WARNING <UciProtocol (pid=2948183)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:55,123 WARNING <UciProtocol (pid=2948183)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:55,131 WARNING <UciProtocol (pid=2948183)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:55,565 WARNING <UciProtocol (pid=2948183)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:55,582 WARNING <UciProtocol (pid=2948183)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:55,583 WARNING <UciProtocol (pid=2948183)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:55,587 WARNING <UciProtocol (pid=2948183)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:55,587 WARNING <UciProtocol (pid=2948183)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:55,587 WARNING <UciProtocol (pid=2948183)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:55,587 WARNING <UciProtocol (pid=2948183)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:55,587 WARNING <UciProtocol (pid=2948183)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:57,749 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:55:57,749 INFO Game 22/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:57,766 WARNING <UciProtocol (pid=2949138)>: stderr >> [1m[31m       _
+2026-06-09 05:55:57,766 WARNING <UciProtocol (pid=2949138)>: stderr >> |   _ | |
+2026-06-09 05:55:57,766 WARNING <UciProtocol (pid=2949138)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:57,768 WARNING <UciProtocol (pid=2949138)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:57,775 WARNING <UciProtocol (pid=2949138)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:58,113 WARNING <UciProtocol (pid=2949138)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:58,130 WARNING <UciProtocol (pid=2949138)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:00,421 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:56:00,422 INFO Game 23/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:56:00,439 WARNING <UciProtocol (pid=2950093)>: stderr >> [1m[31m       _
+2026-06-09 05:56:00,439 WARNING <UciProtocol (pid=2950093)>: stderr >> |   _ | |
+2026-06-09 05:56:00,439 WARNING <UciProtocol (pid=2950093)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:00,442 WARNING <UciProtocol (pid=2950093)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:00,449 WARNING <UciProtocol (pid=2950093)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:00,809 WARNING <UciProtocol (pid=2950093)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:00,826 WARNING <UciProtocol (pid=2950093)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:00,826 WARNING <UciProtocol (pid=2950093)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:00,826 WARNING <UciProtocol (pid=2950093)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:00,827 WARNING <UciProtocol (pid=2950093)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:00,827 WARNING <UciProtocol (pid=2950093)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:00,827 WARNING <UciProtocol (pid=2950093)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:00,827 WARNING <UciProtocol (pid=2950093)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:03,064 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:56:03,064 INFO Game 24/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:56:03,082 WARNING <UciProtocol (pid=2951039)>: stderr >> [1m[31m       _
+2026-06-09 05:56:03,082 WARNING <UciProtocol (pid=2951039)>: stderr >> |   _ | |
+2026-06-09 05:56:03,082 WARNING <UciProtocol (pid=2951039)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:03,085 WARNING <UciProtocol (pid=2951039)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:03,093 WARNING <UciProtocol (pid=2951039)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:03,510 WARNING <UciProtocol (pid=2951039)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:03,527 WARNING <UciProtocol (pid=2951039)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:03,528 WARNING <UciProtocol (pid=2951039)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:03,528 WARNING <UciProtocol (pid=2951039)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:03,528 WARNING <UciProtocol (pid=2951039)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:03,528 WARNING <UciProtocol (pid=2951039)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:03,528 WARNING <UciProtocol (pid=2951039)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:03,528 WARNING <UciProtocol (pid=2951039)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:05,602 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:56:05,602 INFO Game 25/25 | pattern=bishop_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:56:05,617 WARNING <UciProtocol (pid=2951978)>: stderr >> [1m[31m       _
+2026-06-09 05:56:05,618 WARNING <UciProtocol (pid=2951978)>: stderr >> |   _ | |
+2026-06-09 05:56:05,618 WARNING <UciProtocol (pid=2951978)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:05,620 WARNING <UciProtocol (pid=2951978)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:05,627 WARNING <UciProtocol (pid=2951978)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:06,005 WARNING <UciProtocol (pid=2951978)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:06,022 WARNING <UciProtocol (pid=2951978)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:06,022 WARNING <UciProtocol (pid=2951978)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:06,024 WARNING <UciProtocol (pid=2951978)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:06,025 WARNING <UciProtocol (pid=2951978)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:06,025 WARNING <UciProtocol (pid=2951978)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:06,025 WARNING <UciProtocol (pid=2951978)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:06,025 WARNING <UciProtocol (pid=2951978)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:08,356 INFO   Result: win in 68 ply (checkmate)
+2026-06-09 05:56:08,356 INFO Game 1/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:08,373 WARNING <UciProtocol (pid=2952873)>: stderr >> [1m[31m       _
+2026-06-09 05:56:08,373 WARNING <UciProtocol (pid=2952873)>: stderr >> |   _ | |
+2026-06-09 05:56:08,373 WARNING <UciProtocol (pid=2952873)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:08,377 WARNING <UciProtocol (pid=2952873)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:08,385 WARNING <UciProtocol (pid=2952873)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:08,812 WARNING <UciProtocol (pid=2952873)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:08,829 WARNING <UciProtocol (pid=2952873)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:08,829 WARNING <UciProtocol (pid=2952873)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:08,832 WARNING <UciProtocol (pid=2952873)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:08,832 WARNING <UciProtocol (pid=2952873)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:08,832 WARNING <UciProtocol (pid=2952873)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:08,832 WARNING <UciProtocol (pid=2952873)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:08,832 WARNING <UciProtocol (pid=2952873)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:11,847 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:11,847 INFO Game 2/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:11,865 WARNING <UciProtocol (pid=2954135)>: stderr >> [1m[31m       _
+2026-06-09 05:56:11,865 WARNING <UciProtocol (pid=2954135)>: stderr >> |   _ | |
+2026-06-09 05:56:11,865 WARNING <UciProtocol (pid=2954135)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:11,869 WARNING <UciProtocol (pid=2954135)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:11,877 WARNING <UciProtocol (pid=2954135)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:12,304 WARNING <UciProtocol (pid=2954135)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:12,325 WARNING <UciProtocol (pid=2954135)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:12,325 WARNING <UciProtocol (pid=2954135)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:12,328 WARNING <UciProtocol (pid=2954135)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:12,328 WARNING <UciProtocol (pid=2954135)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:12,328 WARNING <UciProtocol (pid=2954135)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:12,328 WARNING <UciProtocol (pid=2954135)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:12,328 WARNING <UciProtocol (pid=2954135)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:15,091 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:15,091 INFO Game 3/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:15,109 WARNING <UciProtocol (pid=2955499)>: stderr >> [1m[31m       _
+2026-06-09 05:56:15,109 WARNING <UciProtocol (pid=2955499)>: stderr >> |   _ | |
+2026-06-09 05:56:15,109 WARNING <UciProtocol (pid=2955499)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:15,111 WARNING <UciProtocol (pid=2955499)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:15,119 WARNING <UciProtocol (pid=2955499)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:15,551 WARNING <UciProtocol (pid=2955499)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:15,568 WARNING <UciProtocol (pid=2955499)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:15,569 WARNING <UciProtocol (pid=2955499)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:15,578 WARNING <UciProtocol (pid=2955499)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:15,578 WARNING <UciProtocol (pid=2955499)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:15,578 WARNING <UciProtocol (pid=2955499)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:15,578 WARNING <UciProtocol (pid=2955499)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:15,579 WARNING <UciProtocol (pid=2955499)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:18,449 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:18,449 INFO Game 4/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:18,465 WARNING <UciProtocol (pid=2956857)>: stderr >> [1m[31m       _
+2026-06-09 05:56:18,465 WARNING <UciProtocol (pid=2956857)>: stderr >> |   _ | |
+2026-06-09 05:56:18,465 WARNING <UciProtocol (pid=2956857)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:18,468 WARNING <UciProtocol (pid=2956857)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:18,475 WARNING <UciProtocol (pid=2956857)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:18,882 WARNING <UciProtocol (pid=2956857)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:18,899 WARNING <UciProtocol (pid=2956857)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:18,899 WARNING <UciProtocol (pid=2956857)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:18,901 WARNING <UciProtocol (pid=2956857)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:18,901 WARNING <UciProtocol (pid=2956857)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:18,901 WARNING <UciProtocol (pid=2956857)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:18,901 WARNING <UciProtocol (pid=2956857)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:18,901 WARNING <UciProtocol (pid=2956857)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:21,728 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:21,728 INFO Game 5/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:21,744 WARNING <UciProtocol (pid=2958220)>: stderr >> [1m[31m       _
+2026-06-09 05:56:21,745 WARNING <UciProtocol (pid=2958220)>: stderr >> |   _ | |
+2026-06-09 05:56:21,745 WARNING <UciProtocol (pid=2958220)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:21,747 WARNING <UciProtocol (pid=2958220)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:21,756 WARNING <UciProtocol (pid=2958220)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:22,124 WARNING <UciProtocol (pid=2958220)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:22,141 WARNING <UciProtocol (pid=2958220)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:22,141 WARNING <UciProtocol (pid=2958220)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:22,146 WARNING <UciProtocol (pid=2958220)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:22,146 WARNING <UciProtocol (pid=2958220)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:22,146 WARNING <UciProtocol (pid=2958220)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:22,146 WARNING <UciProtocol (pid=2958220)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:22,146 WARNING <UciProtocol (pid=2958220)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:24,987 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:24,987 INFO Game 6/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:25,004 WARNING <UciProtocol (pid=2959583)>: stderr >> [1m[31m       _
+2026-06-09 05:56:25,005 WARNING <UciProtocol (pid=2959583)>: stderr >> |   _ | |
+2026-06-09 05:56:25,005 WARNING <UciProtocol (pid=2959583)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:25,007 WARNING <UciProtocol (pid=2959583)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:25,014 WARNING <UciProtocol (pid=2959583)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:25,427 WARNING <UciProtocol (pid=2959583)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:25,445 WARNING <UciProtocol (pid=2959583)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:25,445 WARNING <UciProtocol (pid=2959583)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:25,446 WARNING <UciProtocol (pid=2959583)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:25,446 WARNING <UciProtocol (pid=2959583)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:25,446 WARNING <UciProtocol (pid=2959583)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:25,446 WARNING <UciProtocol (pid=2959583)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:25,446 WARNING <UciProtocol (pid=2959583)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:28,236 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:28,237 INFO Game 7/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:28,254 WARNING <UciProtocol (pid=2960958)>: stderr >> [1m[31m       _
+2026-06-09 05:56:28,255 WARNING <UciProtocol (pid=2960958)>: stderr >> |   _ | |
+2026-06-09 05:56:28,255 WARNING <UciProtocol (pid=2960958)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:28,257 WARNING <UciProtocol (pid=2960958)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:28,265 WARNING <UciProtocol (pid=2960958)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:28,677 WARNING <UciProtocol (pid=2960958)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:28,694 WARNING <UciProtocol (pid=2960958)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:28,694 WARNING <UciProtocol (pid=2960958)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:28,694 WARNING <UciProtocol (pid=2960958)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:28,694 WARNING <UciProtocol (pid=2960958)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:28,695 WARNING <UciProtocol (pid=2960958)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:28,695 WARNING <UciProtocol (pid=2960958)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:28,695 WARNING <UciProtocol (pid=2960958)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:31,576 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:31,576 INFO Game 8/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:31,592 WARNING <UciProtocol (pid=2962312)>: stderr >> [1m[31m       _
+2026-06-09 05:56:31,593 WARNING <UciProtocol (pid=2962312)>: stderr >> |   _ | |
+2026-06-09 05:56:31,593 WARNING <UciProtocol (pid=2962312)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:31,595 WARNING <UciProtocol (pid=2962312)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:31,603 WARNING <UciProtocol (pid=2962312)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:32,003 WARNING <UciProtocol (pid=2962312)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:32,021 WARNING <UciProtocol (pid=2962312)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:32,021 WARNING <UciProtocol (pid=2962312)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:32,022 WARNING <UciProtocol (pid=2962312)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:32,022 WARNING <UciProtocol (pid=2962312)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:32,022 WARNING <UciProtocol (pid=2962312)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:32,022 WARNING <UciProtocol (pid=2962312)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:32,022 WARNING <UciProtocol (pid=2962312)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:34,917 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:34,917 INFO Game 9/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:34,934 WARNING <UciProtocol (pid=2963693)>: stderr >> [1m[31m       _
+2026-06-09 05:56:34,934 WARNING <UciProtocol (pid=2963693)>: stderr >> |   _ | |
+2026-06-09 05:56:34,935 WARNING <UciProtocol (pid=2963693)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:34,938 WARNING <UciProtocol (pid=2963693)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:34,946 WARNING <UciProtocol (pid=2963693)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:35,311 WARNING <UciProtocol (pid=2963693)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:35,328 WARNING <UciProtocol (pid=2963693)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:35,328 WARNING <UciProtocol (pid=2963693)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:35,329 WARNING <UciProtocol (pid=2963693)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:35,329 WARNING <UciProtocol (pid=2963693)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:35,329 WARNING <UciProtocol (pid=2963693)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:35,329 WARNING <UciProtocol (pid=2963693)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:35,329 WARNING <UciProtocol (pid=2963693)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:38,257 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:38,257 INFO Game 10/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:38,274 WARNING <UciProtocol (pid=2965065)>: stderr >> [1m[31m       _
+2026-06-09 05:56:38,275 WARNING <UciProtocol (pid=2965065)>: stderr >> |   _ | |
+2026-06-09 05:56:38,275 WARNING <UciProtocol (pid=2965065)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:38,277 WARNING <UciProtocol (pid=2965065)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:38,285 WARNING <UciProtocol (pid=2965065)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:38,640 WARNING <UciProtocol (pid=2965065)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:38,658 WARNING <UciProtocol (pid=2965065)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:38,658 WARNING <UciProtocol (pid=2965065)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:38,669 WARNING <UciProtocol (pid=2965065)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:38,669 WARNING <UciProtocol (pid=2965065)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:38,669 WARNING <UciProtocol (pid=2965065)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:38,669 WARNING <UciProtocol (pid=2965065)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:38,669 WARNING <UciProtocol (pid=2965065)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:41,441 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:41,441 INFO Game 11/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:41,457 WARNING <UciProtocol (pid=2966430)>: stderr >> [1m[31m       _
+2026-06-09 05:56:41,458 WARNING <UciProtocol (pid=2966430)>: stderr >> |   _ | |
+2026-06-09 05:56:41,458 WARNING <UciProtocol (pid=2966430)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:41,460 WARNING <UciProtocol (pid=2966430)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:41,468 WARNING <UciProtocol (pid=2966430)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:41,810 WARNING <UciProtocol (pid=2966430)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:41,827 WARNING <UciProtocol (pid=2966430)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:41,828 WARNING <UciProtocol (pid=2966430)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:41,828 WARNING <UciProtocol (pid=2966430)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:41,828 WARNING <UciProtocol (pid=2966430)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:41,828 WARNING <UciProtocol (pid=2966430)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:41,828 WARNING <UciProtocol (pid=2966430)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:41,828 WARNING <UciProtocol (pid=2966430)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:44,785 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:44,785 INFO Game 12/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:44,801 WARNING <UciProtocol (pid=2967794)>: stderr >> [1m[31m       _
+2026-06-09 05:56:44,802 WARNING <UciProtocol (pid=2967794)>: stderr >> |   _ | |
+2026-06-09 05:56:44,802 WARNING <UciProtocol (pid=2967794)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:44,804 WARNING <UciProtocol (pid=2967794)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:44,812 WARNING <UciProtocol (pid=2967794)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:45,290 WARNING <UciProtocol (pid=2967794)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:45,310 WARNING <UciProtocol (pid=2967794)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:45,311 WARNING <UciProtocol (pid=2967794)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:45,311 WARNING <UciProtocol (pid=2967794)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:45,311 WARNING <UciProtocol (pid=2967794)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:45,311 WARNING <UciProtocol (pid=2967794)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:45,311 WARNING <UciProtocol (pid=2967794)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:45,311 WARNING <UciProtocol (pid=2967794)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:48,241 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:48,241 INFO Game 13/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:48,257 WARNING <UciProtocol (pid=2969146)>: stderr >> [1m[31m       _
+2026-06-09 05:56:48,257 WARNING <UciProtocol (pid=2969146)>: stderr >> |   _ | |
+2026-06-09 05:56:48,257 WARNING <UciProtocol (pid=2969146)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:48,260 WARNING <UciProtocol (pid=2969146)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:48,268 WARNING <UciProtocol (pid=2969146)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:48,764 WARNING <UciProtocol (pid=2969146)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:48,782 WARNING <UciProtocol (pid=2969146)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:51,600 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:51,601 INFO Game 14/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:51,617 WARNING <UciProtocol (pid=2970514)>: stderr >> [1m[31m       _
+2026-06-09 05:56:51,618 WARNING <UciProtocol (pid=2970514)>: stderr >> |   _ | |
+2026-06-09 05:56:51,618 WARNING <UciProtocol (pid=2970514)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:51,621 WARNING <UciProtocol (pid=2970514)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:51,629 WARNING <UciProtocol (pid=2970514)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:52,059 WARNING <UciProtocol (pid=2970514)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:52,076 WARNING <UciProtocol (pid=2970514)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:52,076 WARNING <UciProtocol (pid=2970514)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:52,077 WARNING <UciProtocol (pid=2970514)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:52,077 WARNING <UciProtocol (pid=2970514)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:52,077 WARNING <UciProtocol (pid=2970514)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:52,077 WARNING <UciProtocol (pid=2970514)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:52,077 WARNING <UciProtocol (pid=2970514)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:55,018 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:55,018 INFO Game 15/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:55,033 WARNING <UciProtocol (pid=2971876)>: stderr >> [1m[31m       _
+2026-06-09 05:56:55,034 WARNING <UciProtocol (pid=2971876)>: stderr >> |   _ | |
+2026-06-09 05:56:55,034 WARNING <UciProtocol (pid=2971876)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:55,036 WARNING <UciProtocol (pid=2971876)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:55,044 WARNING <UciProtocol (pid=2971876)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:55,419 WARNING <UciProtocol (pid=2971876)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:55,436 WARNING <UciProtocol (pid=2971876)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:55,437 WARNING <UciProtocol (pid=2971876)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:55,437 WARNING <UciProtocol (pid=2971876)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:55,437 WARNING <UciProtocol (pid=2971876)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:55,437 WARNING <UciProtocol (pid=2971876)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:55,437 WARNING <UciProtocol (pid=2971876)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:55,437 WARNING <UciProtocol (pid=2971876)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:58,379 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:56:58,379 INFO Game 16/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:58,391 WARNING <UciProtocol (pid=2973245)>: stderr >> [1m[31m       _
+2026-06-09 05:56:58,392 WARNING <UciProtocol (pid=2973245)>: stderr >> |   _ | |
+2026-06-09 05:56:58,392 WARNING <UciProtocol (pid=2973245)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:58,395 WARNING <UciProtocol (pid=2973245)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:58,403 WARNING <UciProtocol (pid=2973245)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:58,816 WARNING <UciProtocol (pid=2973245)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:58,833 WARNING <UciProtocol (pid=2973245)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:58,833 WARNING <UciProtocol (pid=2973245)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:58,833 WARNING <UciProtocol (pid=2973245)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:58,833 WARNING <UciProtocol (pid=2973245)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:58,834 WARNING <UciProtocol (pid=2973245)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:58,834 WARNING <UciProtocol (pid=2973245)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:58,834 WARNING <UciProtocol (pid=2973245)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:01,728 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:01,728 INFO Game 17/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:01,744 WARNING <UciProtocol (pid=2974609)>: stderr >> [1m[31m       _
+2026-06-09 05:57:01,744 WARNING <UciProtocol (pid=2974609)>: stderr >> |   _ | |
+2026-06-09 05:57:01,744 WARNING <UciProtocol (pid=2974609)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:01,747 WARNING <UciProtocol (pid=2974609)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:01,755 WARNING <UciProtocol (pid=2974609)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:02,327 WARNING <UciProtocol (pid=2974609)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:02,346 WARNING <UciProtocol (pid=2974609)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:02,346 WARNING <UciProtocol (pid=2974609)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:02,347 WARNING <UciProtocol (pid=2974609)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:02,347 WARNING <UciProtocol (pid=2974609)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:02,347 WARNING <UciProtocol (pid=2974609)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:02,348 WARNING <UciProtocol (pid=2974609)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:02,348 WARNING <UciProtocol (pid=2974609)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:05,211 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:05,211 INFO Game 18/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:05,228 WARNING <UciProtocol (pid=2975979)>: stderr >> [1m[31m       _
+2026-06-09 05:57:05,228 WARNING <UciProtocol (pid=2975979)>: stderr >> |   _ | |
+2026-06-09 05:57:05,229 WARNING <UciProtocol (pid=2975979)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:05,231 WARNING <UciProtocol (pid=2975979)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:05,239 WARNING <UciProtocol (pid=2975979)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:05,644 WARNING <UciProtocol (pid=2975979)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:05,661 WARNING <UciProtocol (pid=2975979)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:05,661 WARNING <UciProtocol (pid=2975979)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:05,672 WARNING <UciProtocol (pid=2975979)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:05,673 WARNING <UciProtocol (pid=2975979)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:05,673 WARNING <UciProtocol (pid=2975979)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:05,673 WARNING <UciProtocol (pid=2975979)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:05,673 WARNING <UciProtocol (pid=2975979)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:08,698 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:08,698 INFO Game 19/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:08,716 WARNING <UciProtocol (pid=2977343)>: stderr >> [1m[31m       _
+2026-06-09 05:57:08,716 WARNING <UciProtocol (pid=2977343)>: stderr >> |   _ | |
+2026-06-09 05:57:08,716 WARNING <UciProtocol (pid=2977343)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:08,718 WARNING <UciProtocol (pid=2977343)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:08,726 WARNING <UciProtocol (pid=2977343)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:09,074 WARNING <UciProtocol (pid=2977343)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:09,091 WARNING <UciProtocol (pid=2977343)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:09,092 WARNING <UciProtocol (pid=2977343)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:09,092 WARNING <UciProtocol (pid=2977343)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:09,092 WARNING <UciProtocol (pid=2977343)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:09,092 WARNING <UciProtocol (pid=2977343)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:09,092 WARNING <UciProtocol (pid=2977343)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:09,092 WARNING <UciProtocol (pid=2977343)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:11,854 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:11,854 INFO Game 20/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:11,870 WARNING <UciProtocol (pid=2978688)>: stderr >> [1m[31m       _
+2026-06-09 05:57:11,870 WARNING <UciProtocol (pid=2978688)>: stderr >> |   _ | |
+2026-06-09 05:57:11,870 WARNING <UciProtocol (pid=2978688)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:11,873 WARNING <UciProtocol (pid=2978688)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:11,881 WARNING <UciProtocol (pid=2978688)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:12,324 WARNING <UciProtocol (pid=2978688)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:12,342 WARNING <UciProtocol (pid=2978688)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:12,343 WARNING <UciProtocol (pid=2978688)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:12,343 WARNING <UciProtocol (pid=2978688)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:12,343 WARNING <UciProtocol (pid=2978688)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:12,343 WARNING <UciProtocol (pid=2978688)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:12,343 WARNING <UciProtocol (pid=2978688)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:12,343 WARNING <UciProtocol (pid=2978688)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:15,216 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:15,217 INFO Game 21/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:15,234 WARNING <UciProtocol (pid=2980050)>: stderr >> [1m[31m       _
+2026-06-09 05:57:15,234 WARNING <UciProtocol (pid=2980050)>: stderr >> |   _ | |
+2026-06-09 05:57:15,234 WARNING <UciProtocol (pid=2980050)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:15,237 WARNING <UciProtocol (pid=2980050)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:15,246 WARNING <UciProtocol (pid=2980050)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:15,646 WARNING <UciProtocol (pid=2980050)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:15,663 WARNING <UciProtocol (pid=2980050)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:15,663 WARNING <UciProtocol (pid=2980050)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:15,664 WARNING <UciProtocol (pid=2980050)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:15,664 WARNING <UciProtocol (pid=2980050)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:15,664 WARNING <UciProtocol (pid=2980050)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:15,664 WARNING <UciProtocol (pid=2980050)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:15,664 WARNING <UciProtocol (pid=2980050)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:18,575 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:18,575 INFO Game 22/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:18,592 WARNING <UciProtocol (pid=2981419)>: stderr >> [1m[31m       _
+2026-06-09 05:57:18,593 WARNING <UciProtocol (pid=2981419)>: stderr >> |   _ | |
+2026-06-09 05:57:18,593 WARNING <UciProtocol (pid=2981419)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:18,595 WARNING <UciProtocol (pid=2981419)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:18,603 WARNING <UciProtocol (pid=2981419)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:19,020 WARNING <UciProtocol (pid=2981419)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:19,037 WARNING <UciProtocol (pid=2981419)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:19,037 WARNING <UciProtocol (pid=2981419)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:19,039 WARNING <UciProtocol (pid=2981419)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:19,039 WARNING <UciProtocol (pid=2981419)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:19,039 WARNING <UciProtocol (pid=2981419)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:19,039 WARNING <UciProtocol (pid=2981419)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:19,039 WARNING <UciProtocol (pid=2981419)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:21,848 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:21,848 INFO Game 23/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:21,865 WARNING <UciProtocol (pid=2982782)>: stderr >> [1m[31m       _
+2026-06-09 05:57:21,865 WARNING <UciProtocol (pid=2982782)>: stderr >> |   _ | |
+2026-06-09 05:57:21,865 WARNING <UciProtocol (pid=2982782)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:21,867 WARNING <UciProtocol (pid=2982782)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:21,876 WARNING <UciProtocol (pid=2982782)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:22,258 WARNING <UciProtocol (pid=2982782)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:22,275 WARNING <UciProtocol (pid=2982782)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:22,276 WARNING <UciProtocol (pid=2982782)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:22,276 WARNING <UciProtocol (pid=2982782)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:22,276 WARNING <UciProtocol (pid=2982782)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:22,276 WARNING <UciProtocol (pid=2982782)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:22,276 WARNING <UciProtocol (pid=2982782)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:22,276 WARNING <UciProtocol (pid=2982782)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:25,195 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:25,195 INFO Game 24/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:25,212 WARNING <UciProtocol (pid=2984134)>: stderr >> [1m[31m       _
+2026-06-09 05:57:25,213 WARNING <UciProtocol (pid=2984134)>: stderr >> |   _ | |
+2026-06-09 05:57:25,213 WARNING <UciProtocol (pid=2984134)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:25,215 WARNING <UciProtocol (pid=2984134)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:25,223 WARNING <UciProtocol (pid=2984134)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:25,663 WARNING <UciProtocol (pid=2984134)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:25,683 WARNING <UciProtocol (pid=2984134)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:25,683 WARNING <UciProtocol (pid=2984134)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:25,685 WARNING <UciProtocol (pid=2984134)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:25,685 WARNING <UciProtocol (pid=2984134)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:25,685 WARNING <UciProtocol (pid=2984134)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:25,685 WARNING <UciProtocol (pid=2984134)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:25,685 WARNING <UciProtocol (pid=2984134)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:28,574 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:28,574 INFO Game 25/25 | pattern=bishop_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:28,590 WARNING <UciProtocol (pid=2985498)>: stderr >> [1m[31m       _
+2026-06-09 05:57:28,590 WARNING <UciProtocol (pid=2985498)>: stderr >> |   _ | |
+2026-06-09 05:57:28,590 WARNING <UciProtocol (pid=2985498)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:28,592 WARNING <UciProtocol (pid=2985498)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:28,599 WARNING <UciProtocol (pid=2985498)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:28,953 WARNING <UciProtocol (pid=2985498)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:28,971 WARNING <UciProtocol (pid=2985498)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:28,971 WARNING <UciProtocol (pid=2985498)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:28,974 WARNING <UciProtocol (pid=2985498)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:28,974 WARNING <UciProtocol (pid=2985498)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:28,974 WARNING <UciProtocol (pid=2985498)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:28,974 WARNING <UciProtocol (pid=2985498)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:28,974 WARNING <UciProtocol (pid=2985498)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:31,725 INFO   Result: win in 109 ply (checkmate)
+2026-06-09 05:57:31,725 INFO Pattern bishop_6pawns complete: 50W/0D/0L = 1.000
+
+[done] pilot pattern=bishop_6pawns cuda_visible_devices=4
+2026-06-09 05:54:58,221 INFO Game 1/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:54:58,239 WARNING <UciProtocol (pid=2929709)>: stderr >> [1m[31m       _
+2026-06-09 05:54:58,239 WARNING <UciProtocol (pid=2929709)>: stderr >> |   _ | |
+2026-06-09 05:54:58,239 WARNING <UciProtocol (pid=2929709)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:54:58,242 WARNING <UciProtocol (pid=2929709)>: stderr >> Search algorithm: classic
+2026-06-09 05:54:58,250 WARNING <UciProtocol (pid=2929709)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:54:58,640 WARNING <UciProtocol (pid=2929709)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:54:58,655 WARNING <UciProtocol (pid=2929709)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:54:58,655 WARNING <UciProtocol (pid=2929709)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:54:58,660 WARNING <UciProtocol (pid=2929709)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:54:58,660 WARNING <UciProtocol (pid=2929709)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:54:58,660 WARNING <UciProtocol (pid=2929709)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:54:58,660 WARNING <UciProtocol (pid=2929709)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:54:58,660 WARNING <UciProtocol (pid=2929709)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:01,184 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:01,185 INFO Game 2/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:01,202 WARNING <UciProtocol (pid=2930657)>: stderr >> [1m[31m       _
+2026-06-09 05:55:01,202 WARNING <UciProtocol (pid=2930657)>: stderr >> |   _ | |
+2026-06-09 05:55:01,202 WARNING <UciProtocol (pid=2930657)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:01,204 WARNING <UciProtocol (pid=2930657)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:01,212 WARNING <UciProtocol (pid=2930657)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:01,693 WARNING <UciProtocol (pid=2930657)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:01,710 WARNING <UciProtocol (pid=2930657)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:01,710 WARNING <UciProtocol (pid=2930657)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930657)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930657)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930657)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930657)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:01,712 WARNING <UciProtocol (pid=2930657)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:04,240 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:04,240 INFO Game 3/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:04,258 WARNING <UciProtocol (pid=2931611)>: stderr >> [1m[31m       _
+2026-06-09 05:55:04,259 WARNING <UciProtocol (pid=2931611)>: stderr >> |   _ | |
+2026-06-09 05:55:04,259 WARNING <UciProtocol (pid=2931611)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:04,262 WARNING <UciProtocol (pid=2931611)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:04,270 WARNING <UciProtocol (pid=2931611)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:04,810 WARNING <UciProtocol (pid=2931611)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:04,827 WARNING <UciProtocol (pid=2931611)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:04,827 WARNING <UciProtocol (pid=2931611)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:04,827 WARNING <UciProtocol (pid=2931611)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:04,827 WARNING <UciProtocol (pid=2931611)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:04,828 WARNING <UciProtocol (pid=2931611)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:04,828 WARNING <UciProtocol (pid=2931611)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:04,828 WARNING <UciProtocol (pid=2931611)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:07,323 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:07,323 INFO Game 4/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:07,340 WARNING <UciProtocol (pid=2932561)>: stderr >> [1m[31m       _
+2026-06-09 05:55:07,341 WARNING <UciProtocol (pid=2932561)>: stderr >> |   _ | |
+2026-06-09 05:55:07,341 WARNING <UciProtocol (pid=2932561)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:07,343 WARNING <UciProtocol (pid=2932561)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:07,351 WARNING <UciProtocol (pid=2932561)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:07,709 WARNING <UciProtocol (pid=2932561)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:07,726 WARNING <UciProtocol (pid=2932561)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:07,726 WARNING <UciProtocol (pid=2932561)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:07,727 WARNING <UciProtocol (pid=2932561)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:07,727 WARNING <UciProtocol (pid=2932561)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:07,727 WARNING <UciProtocol (pid=2932561)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:07,727 WARNING <UciProtocol (pid=2932561)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:07,727 WARNING <UciProtocol (pid=2932561)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:10,221 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:10,221 INFO Game 5/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:10,238 WARNING <UciProtocol (pid=2933517)>: stderr >> [1m[31m       _
+2026-06-09 05:55:10,238 WARNING <UciProtocol (pid=2933517)>: stderr >> |   _ | |
+2026-06-09 05:55:10,239 WARNING <UciProtocol (pid=2933517)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:10,241 WARNING <UciProtocol (pid=2933517)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:10,248 WARNING <UciProtocol (pid=2933517)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:10,711 WARNING <UciProtocol (pid=2933517)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:10,729 WARNING <UciProtocol (pid=2933517)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:10,729 WARNING <UciProtocol (pid=2933517)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:10,733 WARNING <UciProtocol (pid=2933517)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:10,733 WARNING <UciProtocol (pid=2933517)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:10,733 WARNING <UciProtocol (pid=2933517)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:10,733 WARNING <UciProtocol (pid=2933517)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:10,733 WARNING <UciProtocol (pid=2933517)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:13,174 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:13,175 INFO Game 6/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:13,192 WARNING <UciProtocol (pid=2934470)>: stderr >> [1m[31m       _
+2026-06-09 05:55:13,193 WARNING <UciProtocol (pid=2934470)>: stderr >> |   _ | |
+2026-06-09 05:55:13,193 WARNING <UciProtocol (pid=2934470)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:13,195 WARNING <UciProtocol (pid=2934470)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:13,203 WARNING <UciProtocol (pid=2934470)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:13,638 WARNING <UciProtocol (pid=2934470)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:13,657 WARNING <UciProtocol (pid=2934470)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:13,657 WARNING <UciProtocol (pid=2934470)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:13,657 WARNING <UciProtocol (pid=2934470)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:13,657 WARNING <UciProtocol (pid=2934470)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:13,658 WARNING <UciProtocol (pid=2934470)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:13,658 WARNING <UciProtocol (pid=2934470)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:13,658 WARNING <UciProtocol (pid=2934470)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:16,067 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:16,068 INFO Game 7/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:16,085 WARNING <UciProtocol (pid=2935418)>: stderr >> [1m[31m       _
+2026-06-09 05:55:16,085 WARNING <UciProtocol (pid=2935418)>: stderr >> |   _ | |
+2026-06-09 05:55:16,085 WARNING <UciProtocol (pid=2935418)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:16,087 WARNING <UciProtocol (pid=2935418)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:16,096 WARNING <UciProtocol (pid=2935418)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:16,487 WARNING <UciProtocol (pid=2935418)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:16,509 WARNING <UciProtocol (pid=2935418)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:19,052 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:19,052 INFO Game 8/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:19,069 WARNING <UciProtocol (pid=2936358)>: stderr >> [1m[31m       _
+2026-06-09 05:55:19,070 WARNING <UciProtocol (pid=2936358)>: stderr >> |   _ | |
+2026-06-09 05:55:19,070 WARNING <UciProtocol (pid=2936358)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:19,072 WARNING <UciProtocol (pid=2936358)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:19,080 WARNING <UciProtocol (pid=2936358)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:19,521 WARNING <UciProtocol (pid=2936358)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:19,539 WARNING <UciProtocol (pid=2936358)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:21,997 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:21,998 INFO Game 9/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:22,014 WARNING <UciProtocol (pid=2937310)>: stderr >> [1m[31m       _
+2026-06-09 05:55:22,014 WARNING <UciProtocol (pid=2937310)>: stderr >> |   _ | |
+2026-06-09 05:55:22,014 WARNING <UciProtocol (pid=2937310)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:22,017 WARNING <UciProtocol (pid=2937310)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:22,025 WARNING <UciProtocol (pid=2937310)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:22,398 WARNING <UciProtocol (pid=2937310)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:22,415 WARNING <UciProtocol (pid=2937310)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:22,415 WARNING <UciProtocol (pid=2937310)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:22,415 WARNING <UciProtocol (pid=2937310)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:22,415 WARNING <UciProtocol (pid=2937310)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:22,415 WARNING <UciProtocol (pid=2937310)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:22,416 WARNING <UciProtocol (pid=2937310)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:22,416 WARNING <UciProtocol (pid=2937310)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:24,763 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:24,764 INFO Game 10/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:24,781 WARNING <UciProtocol (pid=2938260)>: stderr >> [1m[31m       _
+2026-06-09 05:55:24,781 WARNING <UciProtocol (pid=2938260)>: stderr >> |   _ | |
+2026-06-09 05:55:24,781 WARNING <UciProtocol (pid=2938260)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:24,783 WARNING <UciProtocol (pid=2938260)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:24,791 WARNING <UciProtocol (pid=2938260)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:25,204 WARNING <UciProtocol (pid=2938260)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:25,223 WARNING <UciProtocol (pid=2938260)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:25,224 WARNING <UciProtocol (pid=2938260)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:25,229 WARNING <UciProtocol (pid=2938260)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:25,229 WARNING <UciProtocol (pid=2938260)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:25,229 WARNING <UciProtocol (pid=2938260)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:25,229 WARNING <UciProtocol (pid=2938260)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:25,229 WARNING <UciProtocol (pid=2938260)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:27,717 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:27,717 INFO Game 11/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:27,736 WARNING <UciProtocol (pid=2939195)>: stderr >> [1m[31m       _
+2026-06-09 05:55:27,736 WARNING <UciProtocol (pid=2939195)>: stderr >> |   _ | |
+2026-06-09 05:55:27,736 WARNING <UciProtocol (pid=2939195)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:27,738 WARNING <UciProtocol (pid=2939195)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:27,747 WARNING <UciProtocol (pid=2939195)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:28,225 WARNING <UciProtocol (pid=2939195)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:28,240 WARNING <UciProtocol (pid=2939195)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:28,241 WARNING <UciProtocol (pid=2939195)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:28,241 WARNING <UciProtocol (pid=2939195)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:28,241 WARNING <UciProtocol (pid=2939195)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:28,241 WARNING <UciProtocol (pid=2939195)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:28,241 WARNING <UciProtocol (pid=2939195)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:28,241 WARNING <UciProtocol (pid=2939195)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:30,611 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:30,611 INFO Game 12/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:30,628 WARNING <UciProtocol (pid=2940144)>: stderr >> [1m[31m       _
+2026-06-09 05:55:30,628 WARNING <UciProtocol (pid=2940144)>: stderr >> |   _ | |
+2026-06-09 05:55:30,628 WARNING <UciProtocol (pid=2940144)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:30,631 WARNING <UciProtocol (pid=2940144)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:30,638 WARNING <UciProtocol (pid=2940144)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:31,012 WARNING <UciProtocol (pid=2940144)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:31,032 WARNING <UciProtocol (pid=2940144)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:33,491 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:33,491 INFO Game 13/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:33,508 WARNING <UciProtocol (pid=2941096)>: stderr >> [1m[31m       _
+2026-06-09 05:55:33,508 WARNING <UciProtocol (pid=2941096)>: stderr >> |   _ | |
+2026-06-09 05:55:33,509 WARNING <UciProtocol (pid=2941096)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:33,511 WARNING <UciProtocol (pid=2941096)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:33,519 WARNING <UciProtocol (pid=2941096)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:33,915 WARNING <UciProtocol (pid=2941096)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:33,932 WARNING <UciProtocol (pid=2941096)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:33,932 WARNING <UciProtocol (pid=2941096)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:33,934 WARNING <UciProtocol (pid=2941096)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:33,934 WARNING <UciProtocol (pid=2941096)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:33,934 WARNING <UciProtocol (pid=2941096)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:33,934 WARNING <UciProtocol (pid=2941096)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:33,934 WARNING <UciProtocol (pid=2941096)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:36,347 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:36,347 INFO Game 14/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:36,360 WARNING <UciProtocol (pid=2942048)>: stderr >> [1m[31m       _
+2026-06-09 05:55:36,361 WARNING <UciProtocol (pid=2942048)>: stderr >> |   _ | |
+2026-06-09 05:55:36,361 WARNING <UciProtocol (pid=2942048)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:36,363 WARNING <UciProtocol (pid=2942048)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:36,371 WARNING <UciProtocol (pid=2942048)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:36,737 WARNING <UciProtocol (pid=2942048)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:36,756 WARNING <UciProtocol (pid=2942048)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:36,757 WARNING <UciProtocol (pid=2942048)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:36,760 WARNING <UciProtocol (pid=2942048)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:36,760 WARNING <UciProtocol (pid=2942048)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:36,760 WARNING <UciProtocol (pid=2942048)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:36,760 WARNING <UciProtocol (pid=2942048)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:36,760 WARNING <UciProtocol (pid=2942048)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:39,121 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:39,121 INFO Game 15/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:39,138 WARNING <UciProtocol (pid=2943004)>: stderr >> [1m[31m       _
+2026-06-09 05:55:39,138 WARNING <UciProtocol (pid=2943004)>: stderr >> |   _ | |
+2026-06-09 05:55:39,138 WARNING <UciProtocol (pid=2943004)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:39,140 WARNING <UciProtocol (pid=2943004)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:39,149 WARNING <UciProtocol (pid=2943004)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:39,558 WARNING <UciProtocol (pid=2943004)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:39,575 WARNING <UciProtocol (pid=2943004)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:39,575 WARNING <UciProtocol (pid=2943004)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:39,578 WARNING <UciProtocol (pid=2943004)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:39,578 WARNING <UciProtocol (pid=2943004)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:39,578 WARNING <UciProtocol (pid=2943004)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:39,578 WARNING <UciProtocol (pid=2943004)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:39,578 WARNING <UciProtocol (pid=2943004)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:42,109 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:42,109 INFO Game 16/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:42,128 WARNING <UciProtocol (pid=2943951)>: stderr >> [1m[31m       _
+2026-06-09 05:55:42,128 WARNING <UciProtocol (pid=2943951)>: stderr >> |   _ | |
+2026-06-09 05:55:42,128 WARNING <UciProtocol (pid=2943951)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:42,130 WARNING <UciProtocol (pid=2943951)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:42,137 WARNING <UciProtocol (pid=2943951)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:42,505 WARNING <UciProtocol (pid=2943951)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:42,522 WARNING <UciProtocol (pid=2943951)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:42,522 WARNING <UciProtocol (pid=2943951)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:42,522 WARNING <UciProtocol (pid=2943951)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:42,523 WARNING <UciProtocol (pid=2943951)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:42,523 WARNING <UciProtocol (pid=2943951)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:42,523 WARNING <UciProtocol (pid=2943951)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:42,523 WARNING <UciProtocol (pid=2943951)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:44,979 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:44,980 INFO Game 17/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:44,997 WARNING <UciProtocol (pid=2944903)>: stderr >> [1m[31m       _
+2026-06-09 05:55:44,997 WARNING <UciProtocol (pid=2944903)>: stderr >> |   _ | |
+2026-06-09 05:55:44,997 WARNING <UciProtocol (pid=2944903)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:44,999 WARNING <UciProtocol (pid=2944903)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:45,007 WARNING <UciProtocol (pid=2944903)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:45,411 WARNING <UciProtocol (pid=2944903)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:45,428 WARNING <UciProtocol (pid=2944903)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:45,428 WARNING <UciProtocol (pid=2944903)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:45,428 WARNING <UciProtocol (pid=2944903)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:45,429 WARNING <UciProtocol (pid=2944903)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:45,429 WARNING <UciProtocol (pid=2944903)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:45,429 WARNING <UciProtocol (pid=2944903)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:45,429 WARNING <UciProtocol (pid=2944903)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:48,053 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:48,053 INFO Game 18/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:48,069 WARNING <UciProtocol (pid=2945857)>: stderr >> [1m[31m       _
+2026-06-09 05:55:48,070 WARNING <UciProtocol (pid=2945857)>: stderr >> |   _ | |
+2026-06-09 05:55:48,070 WARNING <UciProtocol (pid=2945857)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:48,072 WARNING <UciProtocol (pid=2945857)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:48,080 WARNING <UciProtocol (pid=2945857)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:48,447 WARNING <UciProtocol (pid=2945857)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:48,463 WARNING <UciProtocol (pid=2945857)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:48,464 WARNING <UciProtocol (pid=2945857)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:48,464 WARNING <UciProtocol (pid=2945857)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:48,464 WARNING <UciProtocol (pid=2945857)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:48,464 WARNING <UciProtocol (pid=2945857)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:48,464 WARNING <UciProtocol (pid=2945857)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:48,464 WARNING <UciProtocol (pid=2945857)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:51,018 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:51,019 INFO Game 19/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:51,038 WARNING <UciProtocol (pid=2946809)>: stderr >> [1m[31m       _
+2026-06-09 05:55:51,038 WARNING <UciProtocol (pid=2946809)>: stderr >> |   _ | |
+2026-06-09 05:55:51,038 WARNING <UciProtocol (pid=2946809)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:51,041 WARNING <UciProtocol (pid=2946809)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:51,049 WARNING <UciProtocol (pid=2946809)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:51,494 WARNING <UciProtocol (pid=2946809)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:51,509 WARNING <UciProtocol (pid=2946809)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:54,021 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:54,021 INFO Game 20/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:54,038 WARNING <UciProtocol (pid=2947760)>: stderr >> [1m[31m       _
+2026-06-09 05:55:54,038 WARNING <UciProtocol (pid=2947760)>: stderr >> |   _ | |
+2026-06-09 05:55:54,038 WARNING <UciProtocol (pid=2947760)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:54,040 WARNING <UciProtocol (pid=2947760)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:54,048 WARNING <UciProtocol (pid=2947760)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:54,465 WARNING <UciProtocol (pid=2947760)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:54,480 WARNING <UciProtocol (pid=2947760)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:54,480 WARNING <UciProtocol (pid=2947760)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:54,482 WARNING <UciProtocol (pid=2947760)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:54,482 WARNING <UciProtocol (pid=2947760)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:54,482 WARNING <UciProtocol (pid=2947760)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:54,482 WARNING <UciProtocol (pid=2947760)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:54,482 WARNING <UciProtocol (pid=2947760)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:56,902 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:56,902 INFO Game 21/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:56,920 WARNING <UciProtocol (pid=2948786)>: stderr >> [1m[31m       _
+2026-06-09 05:55:56,920 WARNING <UciProtocol (pid=2948786)>: stderr >> |   _ | |
+2026-06-09 05:55:56,920 WARNING <UciProtocol (pid=2948786)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:56,923 WARNING <UciProtocol (pid=2948786)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:56,930 WARNING <UciProtocol (pid=2948786)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:55:57,410 WARNING <UciProtocol (pid=2948786)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:55:57,427 WARNING <UciProtocol (pid=2948786)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:55:57,427 WARNING <UciProtocol (pid=2948786)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:55:57,431 WARNING <UciProtocol (pid=2948786)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:55:57,431 WARNING <UciProtocol (pid=2948786)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:55:57,431 WARNING <UciProtocol (pid=2948786)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:55:57,431 WARNING <UciProtocol (pid=2948786)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:55:57,431 WARNING <UciProtocol (pid=2948786)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:55:59,969 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:55:59,970 INFO Game 22/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:55:59,986 WARNING <UciProtocol (pid=2949965)>: stderr >> [1m[31m       _
+2026-06-09 05:55:59,986 WARNING <UciProtocol (pid=2949965)>: stderr >> |   _ | |
+2026-06-09 05:55:59,986 WARNING <UciProtocol (pid=2949965)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:55:59,988 WARNING <UciProtocol (pid=2949965)>: stderr >> Search algorithm: classic
+2026-06-09 05:55:59,994 WARNING <UciProtocol (pid=2949965)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:00,376 WARNING <UciProtocol (pid=2949965)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:00,393 WARNING <UciProtocol (pid=2949965)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:00,393 WARNING <UciProtocol (pid=2949965)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:00,427 WARNING <UciProtocol (pid=2949965)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:00,427 WARNING <UciProtocol (pid=2949965)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:00,427 WARNING <UciProtocol (pid=2949965)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:00,427 WARNING <UciProtocol (pid=2949965)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:00,427 WARNING <UciProtocol (pid=2949965)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:02,939 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:56:02,939 INFO Game 23/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:56:02,957 WARNING <UciProtocol (pid=2951035)>: stderr >> [1m[31m       _
+2026-06-09 05:56:02,957 WARNING <UciProtocol (pid=2951035)>: stderr >> |   _ | |
+2026-06-09 05:56:02,957 WARNING <UciProtocol (pid=2951035)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:02,961 WARNING <UciProtocol (pid=2951035)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:02,968 WARNING <UciProtocol (pid=2951035)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:03,348 WARNING <UciProtocol (pid=2951035)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:03,365 WARNING <UciProtocol (pid=2951035)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:03,366 WARNING <UciProtocol (pid=2951035)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:03,366 WARNING <UciProtocol (pid=2951035)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:03,366 WARNING <UciProtocol (pid=2951035)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:03,366 WARNING <UciProtocol (pid=2951035)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:03,366 WARNING <UciProtocol (pid=2951035)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:03,366 WARNING <UciProtocol (pid=2951035)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:05,843 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:56:05,843 INFO Game 24/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:56:05,861 WARNING <UciProtocol (pid=2951982)>: stderr >> [1m[31m       _
+2026-06-09 05:56:05,862 WARNING <UciProtocol (pid=2951982)>: stderr >> |   _ | |
+2026-06-09 05:56:05,862 WARNING <UciProtocol (pid=2951982)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:05,865 WARNING <UciProtocol (pid=2951982)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:05,873 WARNING <UciProtocol (pid=2951982)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:06,252 WARNING <UciProtocol (pid=2951982)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:06,272 WARNING <UciProtocol (pid=2951982)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:06,273 WARNING <UciProtocol (pid=2951982)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:06,273 WARNING <UciProtocol (pid=2951982)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:06,273 WARNING <UciProtocol (pid=2951982)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:06,273 WARNING <UciProtocol (pid=2951982)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:06,273 WARNING <UciProtocol (pid=2951982)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:06,273 WARNING <UciProtocol (pid=2951982)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:08,749 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:56:08,750 INFO Game 25/25 | pattern=knight_6pawns | noq_color=white (q_side=black)
+2026-06-09 05:56:08,768 WARNING <UciProtocol (pid=2952936)>: stderr >> [1m[31m       _
+2026-06-09 05:56:08,768 WARNING <UciProtocol (pid=2952936)>: stderr >> |   _ | |
+2026-06-09 05:56:08,768 WARNING <UciProtocol (pid=2952936)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:08,770 WARNING <UciProtocol (pid=2952936)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:08,778 WARNING <UciProtocol (pid=2952936)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:09,248 WARNING <UciProtocol (pid=2952936)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:09,265 WARNING <UciProtocol (pid=2952936)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:09,266 WARNING <UciProtocol (pid=2952936)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:09,266 WARNING <UciProtocol (pid=2952936)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:09,266 WARNING <UciProtocol (pid=2952936)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:09,266 WARNING <UciProtocol (pid=2952936)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:09,266 WARNING <UciProtocol (pid=2952936)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:09,266 WARNING <UciProtocol (pid=2952936)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:11,737 INFO   Result: win in 84 ply (checkmate)
+2026-06-09 05:56:11,737 INFO Game 1/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:11,755 WARNING <UciProtocol (pid=2954131)>: stderr >> [1m[31m       _
+2026-06-09 05:56:11,756 WARNING <UciProtocol (pid=2954131)>: stderr >> |   _ | |
+2026-06-09 05:56:11,756 WARNING <UciProtocol (pid=2954131)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:11,758 WARNING <UciProtocol (pid=2954131)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:11,767 WARNING <UciProtocol (pid=2954131)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:12,205 WARNING <UciProtocol (pid=2954131)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:12,223 WARNING <UciProtocol (pid=2954131)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:12,223 WARNING <UciProtocol (pid=2954131)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:12,223 WARNING <UciProtocol (pid=2954131)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:12,223 WARNING <UciProtocol (pid=2954131)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:12,224 WARNING <UciProtocol (pid=2954131)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:12,224 WARNING <UciProtocol (pid=2954131)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:12,224 WARNING <UciProtocol (pid=2954131)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:14,995 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:14,995 INFO Game 2/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:15,012 WARNING <UciProtocol (pid=2955495)>: stderr >> [1m[31m       _
+2026-06-09 05:56:15,013 WARNING <UciProtocol (pid=2955495)>: stderr >> |   _ | |
+2026-06-09 05:56:15,013 WARNING <UciProtocol (pid=2955495)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:15,015 WARNING <UciProtocol (pid=2955495)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:15,024 WARNING <UciProtocol (pid=2955495)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:15,390 WARNING <UciProtocol (pid=2955495)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:15,407 WARNING <UciProtocol (pid=2955495)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:15,408 WARNING <UciProtocol (pid=2955495)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:15,414 WARNING <UciProtocol (pid=2955495)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:15,414 WARNING <UciProtocol (pid=2955495)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:15,414 WARNING <UciProtocol (pid=2955495)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:15,414 WARNING <UciProtocol (pid=2955495)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:15,414 WARNING <UciProtocol (pid=2955495)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:18,173 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:18,173 INFO Game 3/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:18,190 WARNING <UciProtocol (pid=2956802)>: stderr >> [1m[31m       _
+2026-06-09 05:56:18,190 WARNING <UciProtocol (pid=2956802)>: stderr >> |   _ | |
+2026-06-09 05:56:18,190 WARNING <UciProtocol (pid=2956802)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:18,192 WARNING <UciProtocol (pid=2956802)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:18,202 WARNING <UciProtocol (pid=2956802)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:18,575 WARNING <UciProtocol (pid=2956802)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:18,594 WARNING <UciProtocol (pid=2956802)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:18,594 WARNING <UciProtocol (pid=2956802)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:18,595 WARNING <UciProtocol (pid=2956802)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:18,595 WARNING <UciProtocol (pid=2956802)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:18,595 WARNING <UciProtocol (pid=2956802)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:18,595 WARNING <UciProtocol (pid=2956802)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:18,595 WARNING <UciProtocol (pid=2956802)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:21,513 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:21,513 INFO Game 4/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:21,530 WARNING <UciProtocol (pid=2958214)>: stderr >> [1m[31m       _
+2026-06-09 05:56:21,530 WARNING <UciProtocol (pid=2958214)>: stderr >> |   _ | |
+2026-06-09 05:56:21,530 WARNING <UciProtocol (pid=2958214)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:21,532 WARNING <UciProtocol (pid=2958214)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:21,541 WARNING <UciProtocol (pid=2958214)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:21,944 WARNING <UciProtocol (pid=2958214)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:21,961 WARNING <UciProtocol (pid=2958214)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:21,961 WARNING <UciProtocol (pid=2958214)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:21,975 WARNING <UciProtocol (pid=2958214)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:21,975 WARNING <UciProtocol (pid=2958214)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:21,976 WARNING <UciProtocol (pid=2958214)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:21,976 WARNING <UciProtocol (pid=2958214)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:21,976 WARNING <UciProtocol (pid=2958214)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:24,827 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:24,827 INFO Game 5/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:24,842 WARNING <UciProtocol (pid=2959579)>: stderr >> [1m[31m       _
+2026-06-09 05:56:24,842 WARNING <UciProtocol (pid=2959579)>: stderr >> |   _ | |
+2026-06-09 05:56:24,842 WARNING <UciProtocol (pid=2959579)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:24,845 WARNING <UciProtocol (pid=2959579)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:24,853 WARNING <UciProtocol (pid=2959579)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:25,241 WARNING <UciProtocol (pid=2959579)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:25,258 WARNING <UciProtocol (pid=2959579)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:25,258 WARNING <UciProtocol (pid=2959579)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:25,259 WARNING <UciProtocol (pid=2959579)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:25,259 WARNING <UciProtocol (pid=2959579)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:25,259 WARNING <UciProtocol (pid=2959579)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:25,260 WARNING <UciProtocol (pid=2959579)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:25,260 WARNING <UciProtocol (pid=2959579)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:28,013 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:28,013 INFO Game 6/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:28,029 WARNING <UciProtocol (pid=2960934)>: stderr >> [1m[31m       _
+2026-06-09 05:56:28,030 WARNING <UciProtocol (pid=2960934)>: stderr >> |   _ | |
+2026-06-09 05:56:28,030 WARNING <UciProtocol (pid=2960934)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:28,032 WARNING <UciProtocol (pid=2960934)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:28,040 WARNING <UciProtocol (pid=2960934)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:28,419 WARNING <UciProtocol (pid=2960934)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:28,436 WARNING <UciProtocol (pid=2960934)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:28,436 WARNING <UciProtocol (pid=2960934)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:28,438 WARNING <UciProtocol (pid=2960934)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:28,438 WARNING <UciProtocol (pid=2960934)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:28,439 WARNING <UciProtocol (pid=2960934)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:28,439 WARNING <UciProtocol (pid=2960934)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:28,439 WARNING <UciProtocol (pid=2960934)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:31,458 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:31,458 INFO Game 7/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:31,476 WARNING <UciProtocol (pid=2962306)>: stderr >> [1m[31m       _
+2026-06-09 05:56:31,476 WARNING <UciProtocol (pid=2962306)>: stderr >> |   _ | |
+2026-06-09 05:56:31,477 WARNING <UciProtocol (pid=2962306)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:31,479 WARNING <UciProtocol (pid=2962306)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:31,487 WARNING <UciProtocol (pid=2962306)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:31,880 WARNING <UciProtocol (pid=2962306)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:31,898 WARNING <UciProtocol (pid=2962306)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:31,899 WARNING <UciProtocol (pid=2962306)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:31,901 WARNING <UciProtocol (pid=2962306)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:31,901 WARNING <UciProtocol (pid=2962306)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:31,901 WARNING <UciProtocol (pid=2962306)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:31,901 WARNING <UciProtocol (pid=2962306)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:31,901 WARNING <UciProtocol (pid=2962306)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:34,677 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:34,677 INFO Game 8/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:34,696 WARNING <UciProtocol (pid=2963687)>: stderr >> [1m[31m       _
+2026-06-09 05:56:34,696 WARNING <UciProtocol (pid=2963687)>: stderr >> |   _ | |
+2026-06-09 05:56:34,696 WARNING <UciProtocol (pid=2963687)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:34,698 WARNING <UciProtocol (pid=2963687)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:34,706 WARNING <UciProtocol (pid=2963687)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:35,073 WARNING <UciProtocol (pid=2963687)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:35,090 WARNING <UciProtocol (pid=2963687)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:37,956 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:37,957 INFO Game 9/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:37,974 WARNING <UciProtocol (pid=2965026)>: stderr >> [1m[31m       _
+2026-06-09 05:56:37,975 WARNING <UciProtocol (pid=2965026)>: stderr >> |   _ | |
+2026-06-09 05:56:37,975 WARNING <UciProtocol (pid=2965026)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:37,977 WARNING <UciProtocol (pid=2965026)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:37,985 WARNING <UciProtocol (pid=2965026)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:38,356 WARNING <UciProtocol (pid=2965026)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:38,373 WARNING <UciProtocol (pid=2965026)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:38,373 WARNING <UciProtocol (pid=2965026)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:38,375 WARNING <UciProtocol (pid=2965026)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:38,375 WARNING <UciProtocol (pid=2965026)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:38,375 WARNING <UciProtocol (pid=2965026)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:38,375 WARNING <UciProtocol (pid=2965026)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:38,376 WARNING <UciProtocol (pid=2965026)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:41,227 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:41,227 INFO Game 10/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:41,244 WARNING <UciProtocol (pid=2966426)>: stderr >> [1m[31m       _
+2026-06-09 05:56:41,244 WARNING <UciProtocol (pid=2966426)>: stderr >> |   _ | |
+2026-06-09 05:56:41,244 WARNING <UciProtocol (pid=2966426)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:41,248 WARNING <UciProtocol (pid=2966426)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:41,256 WARNING <UciProtocol (pid=2966426)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:41,635 WARNING <UciProtocol (pid=2966426)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:41,652 WARNING <UciProtocol (pid=2966426)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:44,636 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:44,636 INFO Game 11/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:44,654 WARNING <UciProtocol (pid=2967788)>: stderr >> [1m[31m       _
+2026-06-09 05:56:44,654 WARNING <UciProtocol (pid=2967788)>: stderr >> |   _ | |
+2026-06-09 05:56:44,654 WARNING <UciProtocol (pid=2967788)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:44,657 WARNING <UciProtocol (pid=2967788)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:44,665 WARNING <UciProtocol (pid=2967788)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:45,066 WARNING <UciProtocol (pid=2967788)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:45,084 WARNING <UciProtocol (pid=2967788)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:45,084 WARNING <UciProtocol (pid=2967788)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:45,087 WARNING <UciProtocol (pid=2967788)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:45,088 WARNING <UciProtocol (pid=2967788)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:45,088 WARNING <UciProtocol (pid=2967788)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:45,088 WARNING <UciProtocol (pid=2967788)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:45,088 WARNING <UciProtocol (pid=2967788)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:48,054 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:48,054 INFO Game 12/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:48,072 WARNING <UciProtocol (pid=2969142)>: stderr >> [1m[31m       _
+2026-06-09 05:56:48,072 WARNING <UciProtocol (pid=2969142)>: stderr >> |   _ | |
+2026-06-09 05:56:48,072 WARNING <UciProtocol (pid=2969142)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:48,074 WARNING <UciProtocol (pid=2969142)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:48,082 WARNING <UciProtocol (pid=2969142)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:48,545 WARNING <UciProtocol (pid=2969142)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:48,566 WARNING <UciProtocol (pid=2969142)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:48,566 WARNING <UciProtocol (pid=2969142)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:48,567 WARNING <UciProtocol (pid=2969142)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:48,567 WARNING <UciProtocol (pid=2969142)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:48,567 WARNING <UciProtocol (pid=2969142)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:48,568 WARNING <UciProtocol (pid=2969142)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:48,568 WARNING <UciProtocol (pid=2969142)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:51,349 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:51,349 INFO Game 13/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:51,367 WARNING <UciProtocol (pid=2970508)>: stderr >> [1m[31m       _
+2026-06-09 05:56:51,367 WARNING <UciProtocol (pid=2970508)>: stderr >> |   _ | |
+2026-06-09 05:56:51,367 WARNING <UciProtocol (pid=2970508)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:51,369 WARNING <UciProtocol (pid=2970508)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:51,379 WARNING <UciProtocol (pid=2970508)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:51,877 WARNING <UciProtocol (pid=2970508)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:51,895 WARNING <UciProtocol (pid=2970508)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:51,895 WARNING <UciProtocol (pid=2970508)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:51,903 WARNING <UciProtocol (pid=2970508)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:51,903 WARNING <UciProtocol (pid=2970508)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:51,903 WARNING <UciProtocol (pid=2970508)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:51,903 WARNING <UciProtocol (pid=2970508)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:51,903 WARNING <UciProtocol (pid=2970508)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:54,739 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:54,739 INFO Game 14/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:54,755 WARNING <UciProtocol (pid=2971870)>: stderr >> [1m[31m       _
+2026-06-09 05:56:54,755 WARNING <UciProtocol (pid=2971870)>: stderr >> |   _ | |
+2026-06-09 05:56:54,756 WARNING <UciProtocol (pid=2971870)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:54,759 WARNING <UciProtocol (pid=2971870)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:54,768 WARNING <UciProtocol (pid=2971870)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:55,135 WARNING <UciProtocol (pid=2971870)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:55,153 WARNING <UciProtocol (pid=2971870)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:55,153 WARNING <UciProtocol (pid=2971870)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:55,154 WARNING <UciProtocol (pid=2971870)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:55,154 WARNING <UciProtocol (pid=2971870)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:55,154 WARNING <UciProtocol (pid=2971870)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:55,154 WARNING <UciProtocol (pid=2971870)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:55,155 WARNING <UciProtocol (pid=2971870)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:56:58,167 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:56:58,167 INFO Game 15/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:56:58,185 WARNING <UciProtocol (pid=2973239)>: stderr >> [1m[31m       _
+2026-06-09 05:56:58,185 WARNING <UciProtocol (pid=2973239)>: stderr >> |   _ | |
+2026-06-09 05:56:58,185 WARNING <UciProtocol (pid=2973239)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:56:58,189 WARNING <UciProtocol (pid=2973239)>: stderr >> Search algorithm: classic
+2026-06-09 05:56:58,197 WARNING <UciProtocol (pid=2973239)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:56:58,620 WARNING <UciProtocol (pid=2973239)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:56:58,638 WARNING <UciProtocol (pid=2973239)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:56:58,638 WARNING <UciProtocol (pid=2973239)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:56:58,654 WARNING <UciProtocol (pid=2973239)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:56:58,654 WARNING <UciProtocol (pid=2973239)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:56:58,654 WARNING <UciProtocol (pid=2973239)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:56:58,654 WARNING <UciProtocol (pid=2973239)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:56:58,654 WARNING <UciProtocol (pid=2973239)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:01,472 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:01,473 INFO Game 16/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:01,490 WARNING <UciProtocol (pid=2974603)>: stderr >> [1m[31m       _
+2026-06-09 05:57:01,491 WARNING <UciProtocol (pid=2974603)>: stderr >> |   _ | |
+2026-06-09 05:57:01,491 WARNING <UciProtocol (pid=2974603)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:01,493 WARNING <UciProtocol (pid=2974603)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:01,501 WARNING <UciProtocol (pid=2974603)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:02,015 WARNING <UciProtocol (pid=2974603)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:02,033 WARNING <UciProtocol (pid=2974603)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:02,034 WARNING <UciProtocol (pid=2974603)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:02,038 WARNING <UciProtocol (pid=2974603)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:02,038 WARNING <UciProtocol (pid=2974603)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:02,038 WARNING <UciProtocol (pid=2974603)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:02,038 WARNING <UciProtocol (pid=2974603)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:02,038 WARNING <UciProtocol (pid=2974603)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:04,948 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:04,949 INFO Game 17/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:04,966 WARNING <UciProtocol (pid=2975973)>: stderr >> [1m[31m       _
+2026-06-09 05:57:04,966 WARNING <UciProtocol (pid=2975973)>: stderr >> |   _ | |
+2026-06-09 05:57:04,966 WARNING <UciProtocol (pid=2975973)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:04,968 WARNING <UciProtocol (pid=2975973)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:04,976 WARNING <UciProtocol (pid=2975973)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:05,482 WARNING <UciProtocol (pid=2975973)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:05,499 WARNING <UciProtocol (pid=2975973)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:05,499 WARNING <UciProtocol (pid=2975973)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:05,500 WARNING <UciProtocol (pid=2975973)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:05,500 WARNING <UciProtocol (pid=2975973)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:05,500 WARNING <UciProtocol (pid=2975973)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:05,500 WARNING <UciProtocol (pid=2975973)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:05,500 WARNING <UciProtocol (pid=2975973)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:08,379 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:08,379 INFO Game 18/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:08,396 WARNING <UciProtocol (pid=2977330)>: stderr >> [1m[31m       _
+2026-06-09 05:57:08,397 WARNING <UciProtocol (pid=2977330)>: stderr >> |   _ | |
+2026-06-09 05:57:08,397 WARNING <UciProtocol (pid=2977330)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:08,399 WARNING <UciProtocol (pid=2977330)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:08,408 WARNING <UciProtocol (pid=2977330)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:08,902 WARNING <UciProtocol (pid=2977330)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:08,919 WARNING <UciProtocol (pid=2977330)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:08,920 WARNING <UciProtocol (pid=2977330)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:08,922 WARNING <UciProtocol (pid=2977330)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:08,922 WARNING <UciProtocol (pid=2977330)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:08,922 WARNING <UciProtocol (pid=2977330)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:08,922 WARNING <UciProtocol (pid=2977330)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:08,922 WARNING <UciProtocol (pid=2977330)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:11,666 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:11,666 INFO Game 19/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:11,684 WARNING <UciProtocol (pid=2978682)>: stderr >> [1m[31m       _
+2026-06-09 05:57:11,684 WARNING <UciProtocol (pid=2978682)>: stderr >> |   _ | |
+2026-06-09 05:57:11,684 WARNING <UciProtocol (pid=2978682)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:11,687 WARNING <UciProtocol (pid=2978682)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:11,695 WARNING <UciProtocol (pid=2978682)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:12,096 WARNING <UciProtocol (pid=2978682)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:12,114 WARNING <UciProtocol (pid=2978682)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:12,114 WARNING <UciProtocol (pid=2978682)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:12,115 WARNING <UciProtocol (pid=2978682)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:12,115 WARNING <UciProtocol (pid=2978682)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:12,115 WARNING <UciProtocol (pid=2978682)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:12,115 WARNING <UciProtocol (pid=2978682)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:12,115 WARNING <UciProtocol (pid=2978682)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:14,926 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:14,926 INFO Game 20/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:14,944 WARNING <UciProtocol (pid=2980038)>: stderr >> [1m[31m       _
+2026-06-09 05:57:14,944 WARNING <UciProtocol (pid=2980038)>: stderr >> |   _ | |
+2026-06-09 05:57:14,945 WARNING <UciProtocol (pid=2980038)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:14,947 WARNING <UciProtocol (pid=2980038)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:14,954 WARNING <UciProtocol (pid=2980038)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:15,360 WARNING <UciProtocol (pid=2980038)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:15,377 WARNING <UciProtocol (pid=2980038)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:15,377 WARNING <UciProtocol (pid=2980038)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:15,380 WARNING <UciProtocol (pid=2980038)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:15,381 WARNING <UciProtocol (pid=2980038)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:15,381 WARNING <UciProtocol (pid=2980038)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:15,381 WARNING <UciProtocol (pid=2980038)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:15,381 WARNING <UciProtocol (pid=2980038)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:18,205 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:18,205 INFO Game 21/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:18,223 WARNING <UciProtocol (pid=2981353)>: stderr >> [1m[31m       _
+2026-06-09 05:57:18,224 WARNING <UciProtocol (pid=2981353)>: stderr >> |   _ | |
+2026-06-09 05:57:18,224 WARNING <UciProtocol (pid=2981353)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:18,226 WARNING <UciProtocol (pid=2981353)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:18,234 WARNING <UciProtocol (pid=2981353)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:18,712 WARNING <UciProtocol (pid=2981353)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:18,730 WARNING <UciProtocol (pid=2981353)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:18,730 WARNING <UciProtocol (pid=2981353)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:18,731 WARNING <UciProtocol (pid=2981353)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:18,731 WARNING <UciProtocol (pid=2981353)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:18,731 WARNING <UciProtocol (pid=2981353)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:18,732 WARNING <UciProtocol (pid=2981353)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:18,732 WARNING <UciProtocol (pid=2981353)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:21,569 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:21,569 INFO Game 22/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:21,587 WARNING <UciProtocol (pid=2982774)>: stderr >> [1m[31m       _
+2026-06-09 05:57:21,587 WARNING <UciProtocol (pid=2982774)>: stderr >> |   _ | |
+2026-06-09 05:57:21,587 WARNING <UciProtocol (pid=2982774)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:21,590 WARNING <UciProtocol (pid=2982774)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:21,598 WARNING <UciProtocol (pid=2982774)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:22,010 WARNING <UciProtocol (pid=2982774)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:22,027 WARNING <UciProtocol (pid=2982774)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:22,027 WARNING <UciProtocol (pid=2982774)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:22,028 WARNING <UciProtocol (pid=2982774)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:22,028 WARNING <UciProtocol (pid=2982774)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:22,028 WARNING <UciProtocol (pid=2982774)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:22,028 WARNING <UciProtocol (pid=2982774)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:22,028 WARNING <UciProtocol (pid=2982774)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:24,959 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:24,959 INFO Game 23/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:24,977 WARNING <UciProtocol (pid=2984130)>: stderr >> [1m[31m       _
+2026-06-09 05:57:24,977 WARNING <UciProtocol (pid=2984130)>: stderr >> |   _ | |
+2026-06-09 05:57:24,977 WARNING <UciProtocol (pid=2984130)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:24,981 WARNING <UciProtocol (pid=2984130)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:24,989 WARNING <UciProtocol (pid=2984130)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:25,428 WARNING <UciProtocol (pid=2984130)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:25,447 WARNING <UciProtocol (pid=2984130)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:25,447 WARNING <UciProtocol (pid=2984130)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:25,450 WARNING <UciProtocol (pid=2984130)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:25,450 WARNING <UciProtocol (pid=2984130)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:25,450 WARNING <UciProtocol (pid=2984130)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:25,450 WARNING <UciProtocol (pid=2984130)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:25,450 WARNING <UciProtocol (pid=2984130)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:28,246 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:28,246 INFO Game 24/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:28,264 WARNING <UciProtocol (pid=2985459)>: stderr >> [1m[31m       _
+2026-06-09 05:57:28,264 WARNING <UciProtocol (pid=2985459)>: stderr >> |   _ | |
+2026-06-09 05:57:28,264 WARNING <UciProtocol (pid=2985459)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:28,267 WARNING <UciProtocol (pid=2985459)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:28,275 WARNING <UciProtocol (pid=2985459)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:28,681 WARNING <UciProtocol (pid=2985459)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:28,698 WARNING <UciProtocol (pid=2985459)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:28,698 WARNING <UciProtocol (pid=2985459)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:28,707 WARNING <UciProtocol (pid=2985459)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:28,707 WARNING <UciProtocol (pid=2985459)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:28,707 WARNING <UciProtocol (pid=2985459)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:28,707 WARNING <UciProtocol (pid=2985459)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:28,707 WARNING <UciProtocol (pid=2985459)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:31,433 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:31,433 INFO Game 25/25 | pattern=knight_6pawns | noq_color=black (q_side=white)
+2026-06-09 05:57:31,450 WARNING <UciProtocol (pid=2986823)>: stderr >> [1m[31m       _
+2026-06-09 05:57:31,451 WARNING <UciProtocol (pid=2986823)>: stderr >> |   _ | |
+2026-06-09 05:57:31,451 WARNING <UciProtocol (pid=2986823)>: stderr >> |_ |_ |_|[0m v0.32.1 built Jun  8 2026
+2026-06-09 05:57:31,454 WARNING <UciProtocol (pid=2986823)>: stderr >> Search algorithm: classic
+2026-06-09 05:57:31,462 WARNING <UciProtocol (pid=2986823)>: stderr >> Loading weights file from: external/lc0/build/release/t1-256x10-distilled-swa-2432500.pb.gz
+2026-06-09 05:57:31,879 WARNING <UciProtocol (pid=2986823)>: stderr >> Switching to [cuda-fp16]...
+2026-06-09 05:57:31,896 WARNING <UciProtocol (pid=2986823)>: stderr >> CUDA Runtime version: 11.7.0
+2026-06-09 05:57:31,896 WARNING <UciProtocol (pid=2986823)>: stderr >> Latest version of CUDA supported by the driver: 12.0.0
+2026-06-09 05:57:31,899 WARNING <UciProtocol (pid=2986823)>: stderr >> GPU: NVIDIA GeForce RTX 3090
+2026-06-09 05:57:31,899 WARNING <UciProtocol (pid=2986823)>: stderr >> GPU memory: 23.6911 Gb
+2026-06-09 05:57:31,899 WARNING <UciProtocol (pid=2986823)>: stderr >> GPU clock frequency: 1695 MHz
+2026-06-09 05:57:31,899 WARNING <UciProtocol (pid=2986823)>: stderr >> GPU compute capability: 8.6
+2026-06-09 05:57:31,899 WARNING <UciProtocol (pid=2986823)>: stderr >> L2 cache capacity: 6291456
+2026-06-09 05:57:34,791 INFO   Result: win in 111 ply (checkmate)
+2026-06-09 05:57:34,791 INFO Pattern knight_6pawns complete: 50W/0D/0L = 1.000
+
+[done] pilot pattern=knight_6pawns cuda_visible_devices=5
+[all done] wrote runs/floor_pilot.jsonl

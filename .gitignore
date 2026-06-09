@@ -19,20 +19,12 @@ env/
 *.swp
 *.swo
 
-# Training runs & logs
-runs/
-logs/
-checkpoints/
-*.pt
-*.pth
-*.onnx
 
 # lc0
 *.pb
 *.gz
 
 # Data
-*.jsonl
 !tests/fixtures/*.jsonl
 
 # OS
@@ -41,4 +33,3 @@ Thumbs.db
 
 # Misc
 .env
-*.log
