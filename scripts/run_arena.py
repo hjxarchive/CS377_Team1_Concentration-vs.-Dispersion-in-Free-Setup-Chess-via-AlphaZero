@@ -18,7 +18,7 @@ def main():
     parser.add_argument("--checkpoint", type=str, required=True,
                         help="Path to model checkpoint")
     parser.add_argument("--baseline", type=str, default="random",
-                        choices=["random", "greedy", "weak_mcts"],
+                        choices=["random", "greedy", "weak_mcts", "self"],
                         help="Baseline type")
     parser.add_argument("--games", type=int, default=40,
                         help="Number of games")

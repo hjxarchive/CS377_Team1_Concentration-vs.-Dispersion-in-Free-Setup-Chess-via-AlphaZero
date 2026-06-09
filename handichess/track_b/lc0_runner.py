@@ -66,6 +66,8 @@ class Lc0Runner:
         options = {
             "Threads": self.threads,
             "Backend": self.backend,
+            "Temperature": 1.0,
+            "TempDecayMoves": 20,
         }
         if self.weights_path:
             options["WeightsFile"] = self.weights_path

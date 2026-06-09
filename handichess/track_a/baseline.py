@@ -115,6 +115,8 @@ def play_against_baseline(
         baseline = GreedyAgent(game, net, device)
     elif baseline_type == "weak_mcts":
         baseline = WeakMCTSAgent(game, net, num_simulations=25, device=device)
+    elif baseline_type == "self":
+        baseline = None # Handled explicitly in loop
     else:
         raise ValueError(f"Unknown baseline: {baseline_type}")
 
@@ -142,10 +144,16 @@ def play_against_baseline(
             is_trained = (player == 1) == trained_is_player1
 
             if is_trained:
-                probs = mcts.search(state, player, temperature=0.0, add_noise=False)
+                temp = 1.0 if (baseline_type == "self" and move_count < 20) else 0.0
+                probs = mcts.search(state, player, temperature=temp, add_noise=False)
                 action = int(np.argmax(probs))
             else:
-                action = baseline.get_action(state, player)
+                if baseline_type == "self":
+                    temp = 1.0 if move_count < 20 else 0.0
+                    probs = mcts.search(state, player, temperature=temp, add_noise=False)
+                    action = int(np.argmax(probs))
+                else:
+                    action = baseline.get_action(state, player)
 
             state, player = game.get_next_state(state, player, action)
             move_count += 1
