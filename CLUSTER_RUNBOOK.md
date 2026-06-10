@@ -71,24 +71,17 @@ python scripts/train.py \
 
 ---
 
-## 단계 4: Track A 모델 평가 (Arena)
+## 단계 4: 최종 평가 통합 실행 (Track A & Track B & ELO)
 
-훈련된 AlphaZero 에이전트(Track A)의 성과를 최종 측정합니다. 가장 잘 학습된 체크포인트(예: `checkpoint_0050.pt`)를 가져와 Baseline(Random, Greedy, 또는 Weak MCTS)과 각 패턴별로 승률을 측정합니다.
+훈련된 AlphaZero 에이전트(Track A)의 성과와 LC0(Track B)의 평가, 그리고 ELO 점수 추정까지 모든 것을 4-GPU 클러스터에서 한 번에 병렬로 실행하는 통합 마스터 스크립트를 사용합니다.
 
 ```bash
-# 특정 패턴(예: rook_bishop_pawn)에 대해 1000판 평가
-python scripts/run_arena.py \
-    --game chess \
-    --checkpoint runs/checkpoints/checkpoint_0150.pt \
-    --baseline greedy \
-    --games 1000 \
-    --pattern rook_bishop_pawn
+# 4개의 GPU를 풀 가동하여 모든 패턴에 대해 Track A, Track B, Elo 평가를 자동 수행합니다.
+bash scripts/run_all_experiments.sh
 ```
 
-> **팁:** Bash 루프를 사용하여 7개 패턴 모두에 대해 자동 평가를 돌릴 수 있습니다.
-```bash
-for pat in rook_bishop_pawn rook_knight_pawn bishop_bishop_knight rook_4pawns bishop_knight_3pawns bishop_6pawns knight_6pawns; do
-    echo "Evaluating pattern: $pat"
-    python scripts/run_arena.py --game chess --checkpoint runs/checkpoints/checkpoint_0150.pt --baseline greedy --games 1000 --pattern $pat
-done
-```
+- **Track A (AlphaZero)**: `scripts/eval_track_a.py`를 통해 온도(Temperature) 기반 무작위성이 적용된 상태로 패턴별 400판씩 승률과 개별 기보(PGN)를 기록합니다 (`runs/results/track_a_results.jsonl`).
+- **Track B (Lc0)**: `scripts/run_lc0.py`를 통해 800 노드로 패턴별 400판씩 승률과 개별 기보(PGN)를 기록합니다 (`runs/results/track_b_results.jsonl`).
+- **ELO 보정**: 마지막으로 `scripts/evaluate_elo.py`를 호출해 AlphaZero의 최종 ELO 점수를 산출합니다.
+
+> **주의사항:** 이 통합 스크립트는 개별 기보 저장 및 심도 있는 MCTS(400) 탐색으로 인해 실행 시간이 상당히 오래 소요됩니다 (GPU 4대 풀가동 시 수십 시간). 반드시 터미널이 종료되어도 백그라운드에서 돌아가도록 `tmux`나 `nohup`을 사용하여 실행하시길 권장합니다.

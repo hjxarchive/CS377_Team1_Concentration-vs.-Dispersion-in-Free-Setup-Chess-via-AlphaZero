@@ -15,10 +15,12 @@ from typing import Optional
 
 import numpy as np
 import chess
+import chess.pgn
 
 from .game.base import Game
 from .net import AlphaZeroNet
 from .mcts import MCTS
+from .encoding import decode_action
 from handichess.common.gamelog import GameRecord, GameLog, result_from_outcome
 
 logger = logging.getLogger(__name__)
@@ -102,14 +104,20 @@ class Arena:
             else:
                 mcts = mcts2
 
-            # Search with temperature=0 (deterministic)
+            # 처음 10수(하프무브 10번) 동안은 다양성을 위해 temperature 1.0 부여
+            temp = 1.0 if move_count < 10 else 0.0
+            add_n = True if move_count < 10 else False
+            
             action_probs = mcts.search(
                 state, player,
-                temperature=0.0,
-                add_noise=False,
+                temperature=temp,
+                add_noise=add_n,
             )
 
-            action = np.argmax(action_probs)
+            if temp > 0:
+                action = np.random.choice(len(action_probs), p=action_probs)
+            else:
+                action = np.argmax(action_probs)
             state, player = self.game.get_next_state(state, player, action)
             move_count += 1
 
@@ -223,14 +231,35 @@ def evaluate_matchup_patterns(
                 state = game.get_init_board()
                 player = 1
                 move_count = 0
+                
+                # PGN tracking
+                pgn_game = chess.pgn.Game()
+                pgn_game.setup(game._state_to_board(state))
+                pgn_game.headers["Event"] = f"Track A Evaluation ({pid})"
+                pgn_game.headers["White"] = "AlphaZero Trained" if noq_color == "black" else "AlphaZero Trained (NoQ)"
+                pgn_game.headers["Black"] = "AlphaZero Trained (NoQ)" if noq_color == "black" else "AlphaZero Trained"
+                pgn_node = pgn_game
 
                 while move_count < 512:
                     result = game.get_game_ended(state, player)
                     if result != 0:
                         break
 
-                    probs = mcts.search(state, player, temperature=0.0, add_noise=False)
-                    action = np.argmax(probs)
+                    # 처음 10 하프무브 동안은 다양성을 위해 무작위성 부여
+                    temp = 1.0 if move_count < 10 else 0.0
+                    add_n = True if move_count < 10 else False
+                    probs = mcts.search(state, player, temperature=temp, add_noise=add_n)
+                    
+                    if temp > 0:
+                        action = np.random.choice(len(probs), p=probs)
+                    else:
+                        action = np.argmax(probs)
+                        
+                    # Add move to PGN
+                    b = game._state_to_board(state)
+                    move = decode_action(action, b)
+                    pgn_node = pgn_node.add_variation(move)
+                    
                     state, player = game.get_next_state(state, player, action)
                     move_count += 1
 
@@ -248,6 +277,9 @@ def evaluate_matchup_patterns(
                     q_result, q_score = "loss", 0.0
 
                 if game_log:
+                    # Set PGN result headers
+                    pgn_game.headers["Result"] = "1-0" if q_result == "win" and q_side == "white" else "0-1" if q_result == "win" and q_side == "black" else "1/2-1/2"
+                    
                     game_log.write(GameRecord(
                         pattern_id=pid,
                         q_side=q_side,
@@ -259,6 +291,7 @@ def evaluate_matchup_patterns(
                         termination="completed",
                         engine="az_trained",
                         nodes=mc.get("num_simulations", 400),
+                        extra={"pgn": str(pgn_game)}
                     ))
 
         total = wins + draws + losses

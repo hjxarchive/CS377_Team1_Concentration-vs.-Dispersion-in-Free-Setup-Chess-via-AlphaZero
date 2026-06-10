@@ -20,6 +20,7 @@ from typing import Optional
 
 import chess
 import chess.engine
+import chess.pgn
 
 from handichess.common.handicap import (
     get_patterns,
@@ -140,6 +141,13 @@ class Lc0Runner:
 
             result_str, result_score = result_from_outcome(outcome_str, q_side)
 
+            # Create PGN string
+            pgn_game = chess.pgn.Game.from_board(board)
+            pgn_game.headers["Event"] = f"Track B Evaluation ({pattern_id})"
+            pgn_game.headers["White"] = "Lc0" if q_side == "black" else "Lc0 (NoQ)"
+            pgn_game.headers["Black"] = "Lc0 (NoQ)" if q_side == "black" else "Lc0"
+            pgn_game.headers["Result"] = outcome_str
+
             return GameRecord(
                 pattern_id=pattern_id,
                 q_side=q_side,
@@ -151,6 +159,7 @@ class Lc0Runner:
                 termination=termination,
                 engine=f"lc0_n{self.nodes}",
                 nodes=self.nodes,
+                extra={"pgn": str(pgn_game)}
             )
 
         finally:

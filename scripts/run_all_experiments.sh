@@ -18,11 +18,9 @@ for pattern in "${PATTERNS[@]}"; do
   
   # --num-simulations 400: 지능(정확도) 2배 증가!
   # --games 400: 표본 크기 2배 증가! (통계적 유의성 확보)
-  CUDA_VISIBLE_DEVICES=$gpu_idx .venv/bin/python scripts/run_arena.py \
-    --game chess \
+  CUDA_VISIBLE_DEVICES=$gpu_idx .venv/bin/python scripts/eval_track_a.py \
     --checkpoint runs/checkpoints/final.pt \
     --device cuda \
-    --baseline self \
     --pattern $pattern \
     --games 400 \
     --num-simulations 400 \
