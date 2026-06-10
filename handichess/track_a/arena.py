@@ -217,17 +217,16 @@ def evaluate_matchup_patterns(
 
         for noq_color in ["white", "black"]:
             game = game_class.from_matchup(pid, noq_color)
-            mcts = MCTS(
-                game, net,
-                num_simulations=mc.get("num_simulations", 400),
-                c_puct=mc.get("c_puct", 1.25),
-                device=device,
-            )
-
             games_per_side = num_games_per_pattern // 2
             q_side = "black" if noq_color == "white" else "white"
 
             for g in range(games_per_side):
+                mcts = MCTS(
+                    game, net,
+                    num_simulations=mc.get("num_simulations", 400),
+                    c_puct=mc.get("c_puct", 1.25),
+                    device=device,
+                )
                 state = game.get_init_board()
                 player = 1
                 move_count = 0

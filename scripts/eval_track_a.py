@@ -4,6 +4,10 @@
 import argparse
 import logging
 import torch
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from handichess.track_a.game.chess_std import ChessGame
 from handichess.track_a.net import create_net_for_game

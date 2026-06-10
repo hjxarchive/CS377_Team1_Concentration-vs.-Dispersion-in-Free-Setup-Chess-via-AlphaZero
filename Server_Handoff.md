@@ -36,8 +36,8 @@ The codebase is now fully patched and ready for the large-scale evaluation. The 
 **Next Steps for the Server Agent:**
 1. Execute the master bash script: `bash scripts/run_all_experiments.sh`
    *(This single script will now automatically manage 4 GPUs, distribute the load for all 7 handicap patterns, run Track A using the newly integrated `eval_track_a.py`, run Track B via Lc0, and finally run the ELO calibration.)*
-2. **Monitor the Logs**: Ensure that `runs/results/track_a_results.jsonl` and `runs/results/track_b_results.jsonl` are being populated correctly and that the `"extra": {"pgn": "..."}` strings are present.
-3. Once the evaluations finish (which may take hours on the cluster), you can extract the PGN strings from the output JSONL files to perform qualitative analysis of the games.
+2. **Monitor the Logs**: Ensure that the 7 pattern-specific log files (e.g., `runs/results/track_a_rook_bishop_pawn.jsonl`, `track_b_...jsonl`) are being populated correctly and that the `"extra": {"pgn": "..."}` strings are present.
+3. Once the evaluations finish (which may take hours on the cluster), you can extract the PGN strings from the 14 output JSONL files to perform qualitative analysis of the games.
 
 > [!TIP]
 > The PGN string is saved in the `extra` dictionary for every game. In Python, you can extract all PGNs from the log file via `json.loads(line)['extra']['pgn']`.

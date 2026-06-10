@@ -24,7 +24,7 @@ for pattern in "${PATTERNS[@]}"; do
     --pattern $pattern \
     --games 400 \
     --num-simulations 400 \
-    --output runs/results/track_a_results.jsonl &
+    --output "runs/results/track_a_${pattern}.jsonl" &
     
   gpu_idx=$(( (gpu_idx + 1) % 4 ))
   
@@ -49,7 +49,7 @@ for pattern in "${PATTERNS[@]}"; do
     --lc0-path "lc0" \
     --weights-path "runs/checkpoints/lc0_weights.pb.gz" \
     --backend "cuda" \
-    --output runs/results/track_b_results.jsonl &
+    --output "runs/results/track_b_${pattern}.jsonl" &
     
   gpu_idx=$(( (gpu_idx + 1) % 4 ))
   
