@@ -277,7 +277,15 @@ def evaluate_matchup_patterns(
 
                 if game_log:
                     # Set PGN result headers
-                    pgn_game.headers["Result"] = "1-0" if q_result == "win" and q_side == "white" else "0-1" if q_result == "win" and q_side == "black" else "1/2-1/2"
+                    if q_result == "draw":
+                        pgn_result = "1/2-1/2"
+                    elif (q_result == "win" and q_side == "white") or (
+                        q_result == "loss" and q_side == "black"
+                    ):
+                        pgn_result = "1-0"
+                    else:
+                        pgn_result = "0-1"
+                    pgn_game.headers["Result"] = pgn_result
                     
                     game_log.write(GameRecord(
                         pattern_id=pid,

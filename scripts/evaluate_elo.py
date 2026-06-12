@@ -20,7 +20,7 @@ SF_LEVELS = [
 # LC0 nodes: 1 (~800), 2 (~950), 5 (~1100), 10 (~1300)
 LC0_NODES = [1, 2, 4, 8, 16]
 
-def play_one_game(engine, level_name, net, mcts, num_simulations=200):
+def play_one_game(engine, level_name, net, mcts, num_simulations=200, engine_nodes=None):
     game = ChessGame()
     board = chess.Board()
     state = game.get_init_board()
@@ -34,7 +34,7 @@ def play_one_game(engine, level_name, net, mcts, num_simulations=200):
             b = game._state_to_board(state)
             move = decode_action(action, b)
         else:
-            limit = chess.engine.Limit(time=0.1)  # Time limit is a fallback, actual limit controlled by engine options
+            limit = chess.engine.Limit(nodes=engine_nodes) if engine_nodes else chess.engine.Limit(time=0.1)
             result = engine.play(board, limit)
             move = result.move
             b = game._state_to_board(state)
@@ -58,6 +58,8 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate AlphaZero Elo")
     parser.add_argument("--engine", type=str, choices=["stockfish", "lc0"], default="lc0", help="Engine to test against")
     parser.add_argument("--lc0-path", type=str, default="lc0", help="Path to lc0 executable")
+    parser.add_argument("--weights", type=str, default="", help="Path to lc0 weights file")
+    parser.add_argument("--backend", type=str, default="cuda-auto", help="Lc0 neural network backend")
     parser.add_argument("--sims", type=int, default=200, help="AlphaZero MCTS simulations")
     parser.add_argument("--games", type=int, default=10, help="Games per level")
     args = parser.parse_args()
@@ -86,8 +88,17 @@ def main():
         except FileNotFoundError:
             print(f"LC0 executable not found at '{args.lc0_path}'.")
             sys.exit(1)
+        for key, value in {
+            "WeightsFile": args.weights,
+            "Backend": args.backend,
+        }.items():
+            if value:
+                try:
+                    engine.configure({key: value})
+                except chess.engine.EngineError:
+                    print(f"Warning: could not set LC0 option {key}={value}")
             
-        levels = [{"name": f"LC0 Nodes={n}", "config": {"Nodes": n}} for n in LC0_NODES]
+        levels = [{"name": f"LC0 Nodes={n}", "nodes": n, "config": {}} for n in LC0_NODES]
     else:
         engine = chess.engine.SimpleEngine.popen_uci("stockfish")
         levels = SF_LEVELS
@@ -97,11 +108,19 @@ def main():
     total_games = 0
     for level in levels:
         print(f"\n--- Testing against {level['name']} ---")
-        engine.configure(level["config"])
+        if level["config"]:
+            engine.configure(level["config"])
         
         level_score = 0
         for g in range(args.games):
-            name, res, score, ply = play_one_game(engine, level['name'], net, mcts, num_simulations=args.sims)
+            name, res, score, ply = play_one_game(
+                engine,
+                level['name'],
+                net,
+                mcts,
+                num_simulations=args.sims,
+                engine_nodes=level.get("nodes"),
+            )
             print(f"  Game {g+1}: {res} (in {ply} plies)")
             level_score += score
             total_score += score

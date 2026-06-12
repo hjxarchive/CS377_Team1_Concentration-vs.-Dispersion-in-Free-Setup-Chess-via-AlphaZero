@@ -49,6 +49,10 @@ class Lc0Runner:
         backend: str = "cpu",
         exploration_plies: int = 16,
         temperature: float = 1.0,
+        stochastic_plies: int = 0,
+        multipv: int = 1,
+        score_temperature_cp: float = 120.0,
+        seed: int = 42,
     ):
         self.engine_path = engine_path
         self.weights_path = weights_path
@@ -57,7 +61,11 @@ class Lc0Runner:
         self.backend = backend
         self.exploration_plies = exploration_plies
         self.temperature = temperature
-        self.seed = 42
+        self.stochastic_plies = stochastic_plies
+        self.multipv = multipv
+        self.score_temperature_cp = score_temperature_cp
+        self.seed = seed
+        self.rng = random.Random(seed)
 
     def _start_engine(self) -> chess.engine.SimpleEngine:
         """Start an lc0 UCI engine instance."""
@@ -81,6 +89,50 @@ class Lc0Runner:
 
         return engine
 
+    def _sample_multipv_move(
+        self,
+        engine: chess.engine.SimpleEngine,
+        board: chess.Board,
+    ) -> chess.Move:
+        """Sample from LC0's top MultiPV moves using a softmax over centipawns."""
+        import math
+
+        infos = engine.analyse(
+            board,
+            chess.engine.Limit(nodes=self.nodes),
+            multipv=self.multipv,
+        )
+        if isinstance(infos, dict):
+            infos = [infos]
+
+        candidates = []
+        for info in infos:
+            pv = info.get("pv") or []
+            if not pv:
+                continue
+            move = pv[0]
+            if move not in board.legal_moves:
+                continue
+            score = info.get("score")
+            cp = score.pov(board.turn).score(mate_score=10000) if score else 0
+            candidates.append((move, cp))
+
+        if not candidates:
+            result = engine.play(board, chess.engine.Limit(nodes=self.nodes))
+            return result.move
+
+        max_cp = max(cp for _, cp in candidates)
+        temp = max(self.score_temperature_cp, 1e-6)
+        weights = [math.exp((cp - max_cp) / temp) for _, cp in candidates]
+        total = sum(weights)
+        pick = self.rng.random() * total
+        acc = 0.0
+        for (move, _), weight in zip(candidates, weights):
+            acc += weight
+            if pick <= acc:
+                return move
+        return candidates[-1][0]
+
     def play_game(
         self,
         start_fen: str,
@@ -100,9 +152,6 @@ class Lc0Runner:
         Returns:
             GameRecord with the game result.
         """
-        import numpy as np
-        np.random.seed(self.seed)
-        
         engine = self._start_engine()
 
         try:
@@ -113,15 +162,15 @@ class Lc0Runner:
                 if ply >= 512:
                     break
 
-                # Set search limit
-                limit = chess.engine.Limit(nodes=self.nodes)
-
-                # Play move
-                result = engine.play(board, limit)
-                if result.move is None:
+                if self.stochastic_plies > 0 and ply < self.stochastic_plies and self.multipv > 1:
+                    move = self._sample_multipv_move(engine, board)
+                else:
+                    result = engine.play(board, chess.engine.Limit(nodes=self.nodes))
+                    move = result.move
+                if move is None:
                     break
 
-                board.push(result.move)
+                board.push(move)
                 ply += 1
 
             # Determine outcome
@@ -144,8 +193,8 @@ class Lc0Runner:
             # Create PGN string
             pgn_game = chess.pgn.Game.from_board(board)
             pgn_game.headers["Event"] = f"Track B Evaluation ({pattern_id})"
-            pgn_game.headers["White"] = "Lc0" if q_side == "black" else "Lc0 (NoQ)"
-            pgn_game.headers["Black"] = "Lc0 (NoQ)" if q_side == "black" else "Lc0"
+            pgn_game.headers["White"] = "Lc0" if q_side == "white" else "Lc0 (NoQ)"
+            pgn_game.headers["Black"] = "Lc0" if q_side == "black" else "Lc0 (NoQ)"
             pgn_game.headers["Result"] = outcome_str
 
             return GameRecord(
@@ -159,7 +208,17 @@ class Lc0Runner:
                 termination=termination,
                 engine=f"lc0_n{self.nodes}",
                 nodes=self.nodes,
-                extra={"pgn": str(pgn_game)}
+                extra={
+                    "pgn": str(pgn_game),
+                    "sampling": (
+                        f"multipv_softmax_first_{self.stochastic_plies}_plies"
+                        if self.stochastic_plies > 0 and self.multipv > 1
+                        else "deterministic"
+                    ),
+                    "multipv": self.multipv,
+                    "score_temperature_cp": self.score_temperature_cp,
+                    "seed": self.seed,
+                }
             )
 
         finally:

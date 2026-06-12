@@ -1,0 +1,31 @@
+Starting Elo evaluation gauntlet against lc0...
+
+--- Testing against LC0 Nodes=1 ---
+  Game 1: 0-1 (in 16 plies)
+  Level Total: 0.0 / 1
+
+--- Testing against LC0 Nodes=2 ---
+  Game 1: 0-1 (in 16 plies)
+  Level Total: 0.0 / 1
+
+--- Testing against LC0 Nodes=4 ---
+  Game 1: 0-1 (in 16 plies)
+  Level Total: 0.0 / 1
+
+--- Testing against LC0 Nodes=8 ---
+  Game 1: 0-1 (in 16 plies)
+  Level Total: 0.0 / 1
+
+--- Testing against LC0 Nodes=16 ---
+  Game 1: 0-1 (in 16 plies)
+  Level Total: 0.0 / 1
+
+=== Final Summary ===
+LC0 Nodes=1: 0.0/1 (Win Rate: 0.0%)
+LC0 Nodes=2: 0.0/1 (Win Rate: 0.0%)
+LC0 Nodes=4: 0.0/1 (Win Rate: 0.0%)
+LC0 Nodes=8: 0.0/1 (Win Rate: 0.0%)
+LC0 Nodes=16: 0.0/1 (Win Rate: 0.0%)
+
+To calculate BayesElo, feed these results into a standard BayesElo calculator.
+Example reference: LC0 Nodes=1 is ~800, Nodes=2 is ~950, Nodes=5 is ~1100.

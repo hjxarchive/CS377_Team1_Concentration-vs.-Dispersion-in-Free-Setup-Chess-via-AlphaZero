@@ -1,0 +1,1 @@
+{"game": "chess", "checkpoint": "runs/checkpoints/final.pt", "baseline": "self", "games": 400, "pattern": "rook_4pawns", "noq_color": "white", "q_color": "black", "device": "cuda", "num_simulations": 400, "seed": 42, "wins": 0, "draws": 400, "losses": 0, "win_rate": 0.5, "total": 400}

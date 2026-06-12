@@ -46,9 +46,9 @@ for pattern in "${PATTERNS[@]}"; do
     --pattern $pattern \
     --games 400 \
     --nodes 800 \
-    --lc0-path "lc0" \
+    --lc0-path "./lc0" \
     --weights-path "runs/checkpoints/lc0_weights.pb.gz" \
-    --backend "cuda" \
+    --backend "cuda-auto" \
     --output "runs/results/track_b_${pattern}.jsonl" &
     
   gpu_idx=$(( (gpu_idx + 1) % 4 ))
@@ -65,7 +65,9 @@ echo "========================================="
 # GPU 하나만 사용해서 빠르게 진행
 CUDA_VISIBLE_DEVICES=0 .venv/bin/python scripts/evaluate_elo.py \
     --engine lc0 \
-    --lc0-path "lc0" \
+    --lc0-path "./lc0" \
+    --weights "runs/checkpoints/lc0_weights.pb.gz" \
+    --backend "cuda-auto" \
     --sims 400 \
     --games 20 > runs/results/elo_calibration.txt
 
