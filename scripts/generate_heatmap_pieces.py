@@ -71,7 +71,8 @@ def fig_heatmap():
                 matrix[row, col] = s
                 text_matrix[row, col] = f"{s:.3f}"
     
-    cmap = plt.get_cmap("OrRd")
+    cmap = plt.get_cmap("OrRd").copy()
+    cmap.set_bad(color="white")
     # We want low scores to be light, high scores to be dark orange/red
     im = ax.imshow(matrix, cmap=cmap, vmin=0, vmax=1, aspect="auto")
     
@@ -100,13 +101,10 @@ def fig_heatmap():
     ax.grid(which="minor", color="black", linestyle='-', linewidth=2)
     ax.tick_params(which="minor", size=0)
 
-    # Add Delta value where both rows have data
-    for c in range(4):
-        if not np.isnan(matrix[0, c]) and not np.isnan(matrix[1, c]):
-            delta = matrix[0, c] - matrix[1, c]
-            ax.text(c, 0.5, f"Δ {delta:+.3f}", ha="center", va="center", 
-                    fontsize=16, color='blue', fontweight='bold',
-                    bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="blue", alpha=0.9), zorder=10)
+    # Thick outer borders
+    for spine in ax.spines.values():
+        spine.set_linewidth(2)
+        spine.set_edgecolor('black')
 
     ax.set_title("Figure 3: Q-Score by Major vs Minor Pieces Lost", ha="center", va="bottom", fontsize=14, fontweight="bold", y=1.03)
     
