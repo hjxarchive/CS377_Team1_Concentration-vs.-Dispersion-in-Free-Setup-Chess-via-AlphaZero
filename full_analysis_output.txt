@@ -1,0 +1,230 @@
+==========================================================================================
+  COMPREHENSIVE EXPERIMENT RESULTS ANALYSIS
+  Concentration vs. Dispersion in Free-Setup Chess
+==========================================================================================
+
+📊 Total games played: 7000
+   Track A (Custom AlphaZero): 1400 games across 7 patterns
+   Track B (lc0 deterministic): 2800 games across 7 patterns
+   Track B Stochastic (lc0 + softmax): 2800 games across 7 patterns
+
+
+==========================================================================================
+  TRACK A: Custom AlphaZero Self-Play Results
+  (NoQ side = loses Queen, Q side = loses dispersed bundle)
+==========================================================================================
+Pattern                   Pieces     Conc.        N   Q-Win    Draw  Q-Loss  Q-Score               95% CI
+------------------------------------------------------------------------------------------
+rook_bishop_pawn          R+B+P      high       200       0     129      71    0.323 [0.291, 0.358]
+rook_knight_pawn          R+N+P      high       200       0     114      86    0.285 [0.253, 0.323]
+bishop_bishop_knight      B+B+N      high       200       0     118      82    0.295 [0.263, 0.332]
+rook_4pawns               R+4P       medium     200       0     136      64    0.340 [0.309, 0.374]
+bishop_knight_3pawns      B+N+3P     medium     200       0     120      80    0.300 [0.268, 0.337]
+bishop_6pawns             B+6P       low        200       0     117      83    0.292 [0.261, 0.330]
+knight_6pawns             N+6P       low        200       0     127      73    0.318 [0.286, 0.353]
+
+
+==========================================================================================
+  TRACK B: lc0 (n=800, Deterministic) Results
+  Q-Score = Score from queen-side perspective (> 0.5 = queen is better)
+==========================================================================================
+Pattern                   Pieces     Conc.        N   Q-Win    Draw  Q-Loss  Q-Score               95% CI
+------------------------------------------------------------------------------------------
+rook_bishop_pawn          R+B+P      high       400     200     200       0    0.750 [0.723, 0.773]
+rook_knight_pawn          R+N+P      high       400     309      91       0    0.886 [0.862, 0.904]
+bishop_bishop_knight      B+B+N      high       400       0     220     180    0.275 [0.252, 0.301]
+rook_4pawns               R+4P       medium     400     400       0       0    1.000 [0.989, 1.000]
+bishop_knight_3pawns      B+N+3P     medium     400       0     196     204    0.245 [0.222, 0.272]
+bishop_6pawns             B+6P       low        400     300     100       0    0.875 [0.850, 0.893]
+knight_6pawns             N+6P       low        400     400       0       0    1.000 [0.989, 1.000]
+
+
+==========================================================================================
+  TRACK B STOCHASTIC: lc0 (n=800, MultiPV Softmax) Results
+  Stochastic opening play for game diversity
+==========================================================================================
+Pattern                   Pieces     Conc.        N   Q-Win    Draw  Q-Loss  Q-Score               95% CI
+------------------------------------------------------------------------------------------
+rook_bishop_pawn          R+B+P      high       400     257     131      12    0.806 [0.776, 0.830]
+rook_knight_pawn          R+N+P      high       400     285     110       5    0.850 [0.823, 0.871]
+bishop_bishop_knight      B+B+N      high       400      16      70     314    0.128 [0.106, 0.157]
+rook_4pawns               R+4P       medium     400     375      19       6    0.961 [0.940, 0.973]
+bishop_knight_3pawns      B+N+3P     medium     400     119     209      72    0.559 [0.525, 0.592]
+bishop_6pawns             B+6P       low        400     280     102      18    0.828 [0.796, 0.852]
+knight_6pawns             N+6P       low        400     373      17      10    0.954 [0.930, 0.967]
+
+
+==========================================================================================
+  CONCENTRATION-LEVEL ANALYSIS
+  Does dispersing the handicap across more pieces help or hurt?
+==========================================================================================
+
+--- Track B (Deterministic) ---
+Concentration  #Pieces      N   Q-Win    Draw  Q-Loss  Q-Score               95% CI
+--------------------------------------------------------------------------------
+high                3   1200     509     511     180    0.637 [0.617, 0.656]
+medium              5    800     400     196     204    0.623 [0.593, 0.650]
+low                 7    800     700     100       0    0.938 [0.924, 0.947]
+
+--- Track B (Stochastic) ---
+Concentration  #Pieces      N   Q-Win    Draw  Q-Loss  Q-Score               95% CI
+--------------------------------------------------------------------------------
+high                3   1200     558     311     331    0.595 [0.570, 0.618]
+medium              5    800     494     228      78    0.760 [0.736, 0.782]
+low                 7    800     653     119      28    0.891 [0.871, 0.906]
+
+--- Track A (AlphaZero) ---
+Concentration  #Pieces      N   Q-Win    Draw  Q-Loss  Q-Score               95% CI
+--------------------------------------------------------------------------------
+high                3    600       0     361     239    0.301 [0.282, 0.321]
+medium              5    400       0     256     144    0.320 [0.297, 0.345]
+low                 7    400       0     244     156    0.305 [0.282, 0.330]
+
+
+==========================================================================================
+  COLOR ASYMMETRY ANALYSIS
+  Does being handicapped (NoQ) as White vs Black matter?
+  NoQ-Score = Score from handicapped side perspective (< 0.5 = handicap is real)
+==========================================================================================
+
+--- Track B (Deterministic) ---
+Pattern                    NoQ=W Score  NoQ=W N  NoQ=B Score  NoQ=B N   Δ(W-B)
+--------------------------------------------------------------------------------
+rook_bishop_pawn                 0.500      200        0.000      200   +0.500
+rook_knight_pawn                 0.228      200        0.000      200   +0.228
+bishop_bishop_knight             0.850      200        0.600      200   +0.250
+rook_4pawns                      0.000      200        0.000      200   +0.000
+bishop_knight_3pawns             1.000      200        0.510      200   +0.490
+bishop_6pawns                    0.250      200        0.000      200   +0.250
+knight_6pawns                    0.000      200        0.000      200   +0.000
+AGGREGATE                        0.404     1400        0.159     1400   +0.245
+
+--- Track B (Stochastic) ---
+Pattern                    NoQ=W Score  NoQ=W N  NoQ=B Score  NoQ=B N   Δ(W-B)
+--------------------------------------------------------------------------------
+rook_bishop_pawn                 0.273      200        0.115      200   +0.158
+rook_knight_pawn                 0.203      200        0.098      200   +0.105
+bishop_bishop_knight             0.920      200        0.825      200   +0.095
+rook_4pawns                      0.048      200        0.030      200   +0.018
+bishop_knight_3pawns             0.537      200        0.345      200   +0.193
+bishop_6pawns                    0.260      200        0.085      200   +0.175
+knight_6pawns                    0.062      200        0.030      200   +0.033
+AGGREGATE                        0.329     1400        0.218     1400   +0.111
+
+
+==========================================================================================
+  GAME LENGTH ANALYSIS
+==========================================================================================
+
+--- Track B (Deterministic) ---
+Pattern                     Mean Ply   Median    Min    Max      Std
+----------------------------------------------------------------------
+rook_bishop_pawn                91.9       89     83    139     13.8
+rook_knight_pawn               130.6      105     57    249     37.7
+bishop_bishop_knight           114.6      112    103    166     10.7
+rook_4pawns                     86.6       88     53    101      3.8
+bishop_knight_3pawns           106.0      111     67    199     32.1
+bishop_6pawns                  104.6       82     79    274     33.0
+knight_6pawns                  104.5      104     94    121     10.5
+
+--- Track B (Stochastic) ---
+Pattern                     Mean Ply   Median    Min    Max      Std
+----------------------------------------------------------------------
+rook_bishop_pawn               115.6      111     23    260     34.9
+rook_knight_pawn               111.1      105     40    301     32.2
+bishop_bishop_knight           119.5      115     37    315     34.6
+rook_4pawns                     92.8       90     34    227     26.9
+bishop_knight_3pawns           103.7      101     17    279     37.3
+bishop_6pawns                   97.9       95     21    265     32.1
+knight_6pawns                   84.1       81     31    197     26.7
+
+--- Track A (AlphaZero) ---
+Pattern                     Mean Ply   Median    Min    Max      Std
+----------------------------------------------------------------------
+rook_bishop_pawn               136.1      145     22    179     39.4
+rook_knight_pawn               140.1      147     47    179     34.8
+bishop_bishop_knight           134.5      139     13    179     40.3
+rook_4pawns                    139.7      147     30    179     37.2
+bishop_knight_3pawns           134.6      142      6    179     42.0
+bishop_6pawns                  129.5      135     13    179     39.1
+knight_6pawns                  131.0      137      3    179     43.5
+
+
+==========================================================================================
+  TERMINATION TYPE ANALYSIS
+==========================================================================================
+
+--- Track B (Deterministic) ---
+Termination                  Count   Percentage
+--------------------------------------------------
+checkmate                     1993        71.2%
+threefold_repetition           799        28.5%
+insufficient_material            8         0.3%
+
+--- Track B (Stochastic) ---
+Termination                  Count   Percentage
+--------------------------------------------------
+checkmate                     2142        76.5%
+threefold_repetition           631        22.5%
+insufficient_material           17         0.6%
+stalemate                        8         0.3%
+fifty_moves                      2         0.1%
+
+
+==========================================================================================
+  ADDITIVITY TEST
+  Is 9 points the same regardless of how you remove them?
+==========================================================================================
+
+--- Track B (Deterministic) ---
+  Score range: 0.755
+  Best pattern for Q-side:  rook_4pawns (score=1.000)
+  Worst pattern for Q-side: bishop_knight_3pawns (score=0.245)
+
+  Pairwise P(pattern_i Q-score > pattern_j Q-score):
+
+  Concentrated (high) vs Dispersed (low):
+    P(rook_bishop_pawn > bishop_6pawns) = 0.000
+    P(rook_bishop_pawn > knight_6pawns) = 0.000
+    P(rook_knight_pawn > bishop_6pawns) = 0.768
+    P(rook_knight_pawn > knight_6pawns) = 0.000
+    P(bishop_bishop_knight > bishop_6pawns) = 0.000
+    P(bishop_bishop_knight > knight_6pawns) = 0.000
+
+--- Track B (Stochastic) ---
+  Score range: 0.834
+  Best pattern for Q-side:  rook_4pawns (score=0.961)
+  Worst pattern for Q-side: bishop_bishop_knight (score=0.128)
+
+  Pairwise P(pattern_i Q-score > pattern_j Q-score):
+
+  Concentrated (high) vs Dispersed (low):
+    P(rook_bishop_pawn > bishop_6pawns) = 0.143
+    P(rook_bishop_pawn > knight_6pawns) = 0.000
+    P(rook_knight_pawn > bishop_6pawns) = 0.885
+    P(rook_knight_pawn > knight_6pawns) = 0.000
+    P(bishop_bishop_knight > bishop_6pawns) = 0.000
+    P(bishop_bishop_knight > knight_6pawns) = 0.000
+
+
+==========================================================================================
+  KEY FINDINGS SUMMARY
+==========================================================================================
+
+🔬 Track A (Custom AlphaZero, 1400 games):
+   Overall Q-side score: 0.307
+   → Dispersed side has clear advantage (dispersion compensates)
+
+🔬 Track B Deterministic (lc0 n=800, 2800 games):
+   Overall Q-side score: 0.719
+       high concentration: Q-score = 0.637 (N=1200)
+     medium concentration: Q-score = 0.623 (N=800)
+        low concentration: Q-score = 0.938 (N=800)
+
+🔬 Track B Stochastic (lc0 n=800 + softmax, 2800 games):
+   Overall Q-side score: 0.726
+       high concentration: Q-score = 0.595 (N=1200)
+     medium concentration: Q-score = 0.760 (N=800)
+        low concentration: Q-score = 0.891 (N=800)
+
+==========================================================================================

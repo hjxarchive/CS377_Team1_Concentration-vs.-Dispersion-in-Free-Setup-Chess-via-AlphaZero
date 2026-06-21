@@ -1,0 +1,64 @@
+# ============================================================
+# Default Hyperparameters
+# ============================================================
+
+# --- Neural Network ---
+net:
+  num_res_blocks: 10        # residual blocks (small for tractability)
+  num_channels: 128         # channels per conv layer
+  dropout: 0.3
+  # Input planes: 12 piece types + 2 repetition + 1 color + 1 total_move_count + 1 castling (per side) + 1 no-progress
+  # = 12 + 2 + 1 + 1 + 4 + 1 = 21 planes for standard chess
+  # TicTacToe: 3 planes (X, O, empty)
+
+# --- MCTS ---
+mcts:
+  num_simulations: 800      # for chess (reduce for TicTacToe)
+  c_puct: 1.25              # exploration constant
+  dirichlet_alpha: 0.3      # root noise (chess: 0.3, ttt: 1.0)
+  dirichlet_epsilon: 0.25   # fraction of noise at root
+  temperature_threshold: 30  # ply after which temperature → 0
+
+# --- Self-Play ---
+selfplay:
+  num_games_per_iteration: 100
+  max_moves: 512            # max ply per game (resign if exceeded → draw)
+  num_parallel_games: 8     # batch leaf evaluation
+  temperature_init: 1.0     # initial temperature
+  temperature_final: 0.1    # temperature after threshold
+  # Opening diversity (Tomasev style):
+  exploration_plies: 16     # first N ply sampled proportional to visit count
+
+# --- Training ---
+train:
+  num_iterations: 100       # total train iterations
+  epochs_per_iteration: 10  # epochs over replay buffer per iteration
+  batch_size: 256
+  learning_rate: 0.01
+  lr_schedule:              # step decay
+    - [50, 0.001]
+    - [75, 0.0001]
+  weight_decay: 0.0001      # L2 regularization
+  momentum: 0.9             # for SGD
+  optimizer: "sgd"          # "sgd" or "adam"
+  replay_buffer_size: 100000
+  checkpoint_interval: 10   # save every N iterations
+  use_amp: true             # automatic mixed precision
+
+# --- Arena (Evaluation) ---
+arena:
+  num_games: 40             # per pattern per evaluation
+  temperature: 0.0          # deterministic
+  use_dirichlet: false      # no exploration noise
+  win_threshold: 0.55       # accept new model if win rate > this
+
+# --- Track B (lc0) ---
+lc0:
+  engine_path: "lc0"        # path to lc0 binary
+  weights_path: ""          # path to lc0 weights file (.pb.gz)
+  nodes: 800                # fixed nodes per move
+  num_games_per_pattern: 1000
+  exploration_plies: 16     # opening diversity ply
+  temperature: 1.0          # temperature during exploration
+  threads: 1
+  backend: "cpu"            # "cpu", "cuda", "cudnn"

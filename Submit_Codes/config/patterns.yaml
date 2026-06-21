@@ -1,0 +1,160 @@
+# ============================================================
+# Matchup Patterns — Design B (NoQ vs Q)
+# ============================================================
+# Each pattern specifies:
+#   - noq_removals: always Queen (9 pts).
+#   - q_removals: the bundle (9 pts).
+#
+# Square naming follows python-chess convention (for White).
+# Black's removals will be automatically mirrored (rank 1 -> 8).
+#
+# Both sides end up with exactly 30 material points.
+# ============================================================
+
+patterns:
+
+  # --- High concentration (3 pieces) ---
+  rook_bishop_pawn:
+    description: "Remove rook + bishop + pawn (5+3+1 = 9 pts)"
+    total_points: 9
+    num_removed: 3
+    concentration: "high"
+    phase: 1
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: R
+        square: a1   # queenside rook
+      - piece: B
+        square: c1   # dark-square bishop
+      - piece: P
+        square: a2   # a-pawn (edge, minimal structure disruption)
+
+  rook_knight_pawn:
+    description: "Remove rook + knight + pawn (5+3+1 = 9 pts)"
+    total_points: 9
+    num_removed: 3
+    concentration: "high"
+    phase: 1
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: R
+        square: a1   # queenside rook
+      - piece: N
+        square: b1   # queenside knight
+      - piece: P
+        square: a2   # a-pawn
+
+  bishop_bishop_knight:
+    description: "Remove 2 bishops + knight (3+3+3 = 9 pts)"
+    total_points: 9
+    num_removed: 3
+    concentration: "high"
+    phase: 1
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: B
+        square: c1   # dark-square bishop
+      - piece: B
+        square: f1   # light-square bishop
+      - piece: N
+        square: b1   # queenside knight
+
+  # --- Medium concentration (5 pieces) ---
+  rook_4pawns:
+    description: "Remove rook + 4 pawns (5+4 = 9 pts)"
+    total_points: 9
+    num_removed: 5
+    concentration: "medium"
+    phase: 2
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: R
+        square: a1
+      - piece: P
+        square: a2
+      - piece: P
+        square: b2
+      - piece: P
+        square: c2
+      - piece: P
+        square: d2
+
+  bishop_knight_3pawns:
+    description: "Remove bishop + knight + 3 pawns (3+3+3 = 9 pts)"
+    total_points: 9
+    num_removed: 5
+    concentration: "medium"
+    phase: 2
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: B
+        square: c1
+      - piece: N
+        square: b1
+      - piece: P
+        square: a2
+      - piece: P
+        square: b2
+      - piece: P
+        square: c2
+
+  # --- Low concentration / maximum dispersion (7 pieces) ---
+  bishop_6pawns:
+    description: "Remove bishop + 6 pawns (3+6 = 9 pts)"
+    total_points: 9
+    num_removed: 7
+    concentration: "low"
+    phase: 2
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: B
+        square: c1
+      - piece: P
+        square: a2
+      - piece: P
+        square: b2
+      - piece: P
+        square: c2
+      - piece: P
+        square: d2
+      - piece: P
+        square: e2
+      - piece: P
+        square: f2
+
+  knight_6pawns:
+    description: "Remove knight + 6 pawns (3+6 = 9 pts)"
+    total_points: 9
+    num_removed: 7
+    concentration: "low"
+    phase: 2
+    noq_removals:
+      - piece: Q
+        square: d1
+    q_removals:
+      - piece: N
+        square: b1
+      - piece: P
+        square: a2
+      - piece: P
+        square: b2
+      - piece: P
+        square: c2
+      - piece: P
+        square: d2
+      - piece: P
+        square: e2
+      - piece: P
+        square: f2
